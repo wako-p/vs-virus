@@ -1,0 +1,13 @@
+version: '3.9'
+
+services:
+  app:
+    container_name: vs-virus-app
+    build:
+      dockerfile: ./docker/app/Dockerfile
+      context: .
+    volumes:
+      - type: bind
+        source: ./
+        target: /home/work
+    tty: true
