@@ -1,4 +1,4 @@
-package virus;
+package virus.field;
 
 import java.util.ArrayList;
 import java.util.Collections;
