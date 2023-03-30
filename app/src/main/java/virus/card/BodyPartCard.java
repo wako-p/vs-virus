@@ -17,4 +17,8 @@ public class BodyPartCard implements ICard {
         return new BodyPartCard(color, Status.HEALTHY);
     }
 
+    public Color color() {
+        return this.color;
+    }
+
 }
