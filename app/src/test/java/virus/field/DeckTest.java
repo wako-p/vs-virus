@@ -17,7 +17,7 @@ class DeckTest {
             var deck = Deck.create();
 
             // Then:
-            assertEquals(55, deck.count());
+            assertEquals(58, deck.count());
             deck.evilCards().forEach(card -> System.out.println(card.color()));
         }
     }
@@ -48,7 +48,7 @@ class DeckTest {
             var card = deck.draw();
 
             // Then:
-            assertEquals(54, deck.count());
+            assertEquals(57, deck.count());
             assertEquals(Color.MULTI, card.color());
         }
     }

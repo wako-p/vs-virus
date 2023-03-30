@@ -12,7 +12,7 @@ public final class MedicineCardFactory {
         put(Color.RED, 4);
         put(Color.GREEN, 4);
         put(Color.YELLOW, 4);
-        put(Color.MULTI, 1);
+        put(Color.MULTI, 4);
     }};
 
     public List<ICard> create() {

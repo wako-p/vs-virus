@@ -12,7 +12,7 @@ class MedicineCardFactoryTest {
     class CreateTest {
 
         @Test
-        void 青赤緑黄色のカードが4枚とマルチカラーのカードが1枚生成される() {
+        void 青赤緑黄色とマルチカラーのカードがそれぞれ4枚ずつ生成される() {
             // Given:
             var factory = new MedicineCardFactory();
 
@@ -24,7 +24,7 @@ class MedicineCardFactoryTest {
             assertEquals(4, countRed(cards));
             assertEquals(4, countGreen(cards));
             assertEquals(4, countYellow(cards));
-            assertEquals(1, countMulti(cards));
+            assertEquals(4, countMulti(cards));
         }
 
         int countBule(List<ICard> cards) {
