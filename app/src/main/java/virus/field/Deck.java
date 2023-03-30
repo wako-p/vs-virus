@@ -7,6 +7,7 @@ import java.util.List;
 import virus.card.BodyPartCardFactory;
 import virus.card.ICard;
 import virus.card.MedicineCardFactory;
+import virus.card.VirusCardFactory;
 
 /**
  * 山札
@@ -27,9 +28,13 @@ public final class Deck {
         var medicineCardFactory = new MedicineCardFactory();
         var medicineCards = medicineCardFactory.create();
 
+        var virusCardFactory = new VirusCardFactory();
+        var virusCards = virusCardFactory.create();
+
         var cards = new ArrayList<ICard>();
         cards.addAll(bodyPartCards);
         cards.addAll(medicineCards);
+        cards.addAll(virusCards);
 
         return new Deck(cards);
     }
