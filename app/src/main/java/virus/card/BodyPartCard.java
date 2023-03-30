@@ -5,8 +5,8 @@ package virus.card;
  */
 public final class BodyPartCard implements ICard {
 
-    public final Color color;
-    public final Status status;
+    private final Color color;
+    private final Status status;
 
     private BodyPartCard(final Color color, final Status health) {
         this.color = color;
@@ -19,6 +19,10 @@ public final class BodyPartCard implements ICard {
 
     public Color color() {
         return this.color;
+    }
+
+    public Status status() {
+        return this.status;
     }
 
 }

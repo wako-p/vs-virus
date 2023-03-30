@@ -46,10 +46,10 @@ class BodyAreaTest {
             bodyArea.place(card4);
 
             // Then:
-            assertEquals(card1.color, bodyArea.evilCards().get(0).color);
-            assertEquals(card2.color, bodyArea.evilCards().get(1).color);
-            assertEquals(card3.color, bodyArea.evilCards().get(2).color);
-            assertEquals(card4.color, bodyArea.evilCards().get(3).color);
+            assertEquals(card1.color(), bodyArea.evilCards().get(0).color());
+            assertEquals(card2.color(), bodyArea.evilCards().get(1).color());
+            assertEquals(card3.color(), bodyArea.evilCards().get(2).color());
+            assertEquals(card4.color(), bodyArea.evilCards().get(3).color());
         }
 
         @Test

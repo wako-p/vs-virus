@@ -48,7 +48,7 @@ public final class BodyArea {
         // 同じ色のからだパーツカードでフィルタしてその数をカウントする
         var duplicateCount = this.cards
                 .stream()
-                .filter(card -> card.color == newCard.color)
+                .filter(card -> card.color() == newCard.color())
                 .count();
 
         // 重複してたら0にならない

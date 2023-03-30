@@ -20,8 +20,8 @@ class BodyPartCardTest {
             var card = BodyPartCard.create(Color.BLUE);
 
             // Then:
-            assertEquals(Color.BLUE, card.color);
-            assertEquals(Status.HEALTHY, card.status);
+            assertEquals(Color.BLUE, card.color());
+            assertEquals(Status.HEALTHY, card.status());
         }
     }
 
