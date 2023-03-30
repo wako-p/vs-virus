@@ -12,12 +12,12 @@ class DeckTest {
     @Nested
     class CreateTest {
         @Test
-        void カードが21の状態で生成される() {
+        void カードが38の状態で生成される() {
             // When:
             var deck = Deck.create();
 
             // Then:
-            assertEquals(21, deck.count());
+            assertEquals(38, deck.count());
             deck.evilCards().forEach(card -> System.out.println(card.color()));
         }
     }
@@ -48,7 +48,7 @@ class DeckTest {
             var card = deck.draw();
 
             // Then:
-            assertEquals(20, deck.count());
+            assertEquals(37, deck.count());
             assertEquals(Color.MULTI, card.color());
         }
     }

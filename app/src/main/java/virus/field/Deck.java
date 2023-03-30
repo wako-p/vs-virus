@@ -1,10 +1,12 @@
 package virus.field;
 
+import java.util.ArrayList;
 import java.util.Collections;
 import java.util.List;
 
 import virus.card.BodyPartCardFactory;
 import virus.card.ICard;
+import virus.card.MedicineCardFactory;
 
 /**
  * 山札
@@ -18,8 +20,16 @@ public final class Deck {
     } 
 
     public static Deck create() {
+
         var bodyPartCardFactory = new BodyPartCardFactory();
-        var cards = bodyPartCardFactory.create();
+        var bodyPartCards = bodyPartCardFactory.create();
+
+        var medicineCardFactory = new MedicineCardFactory();
+        var medicineCards = medicineCardFactory.create();
+
+        var cards = new ArrayList<ICard>();
+        cards.addAll(bodyPartCards);
+        cards.addAll(medicineCards);
 
         return new Deck(cards);
     }
