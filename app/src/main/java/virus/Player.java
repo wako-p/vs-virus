@@ -5,7 +5,7 @@ import java.util.UUID;
 /**
  * プレイヤー
  */
-public class Player {
+public final class Player {
 
     public final UUID id;
     public final String name;

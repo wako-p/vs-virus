@@ -9,11 +9,11 @@ import virus.card.BodyPartCard;
 /**
  * からだエリア
  */
-public class BodyArea {
+public final class BodyArea {
 
     private List<BodyPartCard> cards;
 
-    private BodyArea(List<BodyPartCard> cards) {
+    private BodyArea(final List<BodyPartCard> cards) {
         this.cards = cards;
     }
 
@@ -31,7 +31,7 @@ public class BodyArea {
         return this.cards.size();
     }
 
-    public void place(BodyPartCard card) {
+    public void place(final BodyPartCard card) {
         if (this.cards.size() == 4) {
             throw new RuntimeException();
         }
@@ -44,7 +44,7 @@ public class BodyArea {
         this.cards.add(card);
     }
 
-    private boolean isDuplicate(BodyPartCard newCard) {
+    private boolean isDuplicate(final BodyPartCard newCard) {
         // 同じ色のからだパーツカードでフィルタしてその数をカウントする
         var duplicateCount = this.cards
                 .stream()

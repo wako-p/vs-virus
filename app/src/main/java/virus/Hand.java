@@ -8,7 +8,7 @@ import virus.card.ICard;
 /**
  * 手札
  */
-public class Hand {
+public final class Hand {
 
     private List<ICard> cards;
 

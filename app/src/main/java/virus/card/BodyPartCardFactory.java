@@ -5,9 +5,9 @@ import java.util.LinkedHashMap;
 import java.util.List;
 import java.util.Map;
 
-public class BodyPartCardFactory {
+public final class BodyPartCardFactory {
 
-    private Map<Color, Integer> rules = new LinkedHashMap<Color, Integer>() {{
+    private final Map<Color, Integer> rules = new LinkedHashMap<Color, Integer>() {{
         put(Color.BLUE, 5);
         put(Color.RED, 5);
         put(Color.GREEN, 5);

@@ -31,7 +31,7 @@ public final class DiscardPile {
         return this.cards.size();
     }
 
-    public void place(ICard card) {
+    public void place(final ICard card) {
         this.cards.add(card);
     }
 

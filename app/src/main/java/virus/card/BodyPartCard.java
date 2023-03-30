@@ -3,7 +3,7 @@ package virus.card;
 /**
  * からだパーツカード
  */
-public class BodyPartCard implements ICard {
+public final class BodyPartCard implements ICard {
 
     public final Color color;
     public final Status status;
