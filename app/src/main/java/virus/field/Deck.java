@@ -1,7 +1,6 @@
 package virus.field;
 
 import java.util.Collections;
-import java.util.LinkedList;
 import java.util.List;
 
 import virus.card.BodyPartCardFactory;
@@ -20,7 +19,7 @@ public final class Deck {
 
     public static Deck create() {
         var bodyPartCardFactory = new BodyPartCardFactory();
-        LinkedList<ICard> cards = bodyPartCardFactory.create();
+        var cards = bodyPartCardFactory.create();
 
         return new Deck(cards);
     }

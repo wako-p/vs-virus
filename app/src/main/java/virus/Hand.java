@@ -1,6 +1,7 @@
 package virus;
 
-import java.util.LinkedList;
+import java.util.ArrayList;
+import java.util.List;
 
 import virus.card.ICard;
 
@@ -9,15 +10,14 @@ import virus.card.ICard;
  */
 public class Hand {
 
-    private LinkedList<ICard> cards;
+    private List<ICard> cards;
 
-    private Hand(final LinkedList<ICard> cards) {
+    private Hand(final List<ICard> cards) {
         this.cards = cards;
     }
 
     public static Hand create() {
-        // 追加、削除が多いのでLinkedList使う
-        LinkedList<ICard> cards = new LinkedList<>();
+        var cards = new ArrayList<ICard>();
         return new Hand(cards);
     }
 

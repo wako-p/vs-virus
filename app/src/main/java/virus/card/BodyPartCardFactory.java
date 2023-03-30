@@ -1,7 +1,8 @@
 package virus.card;
 
+import java.util.ArrayList;
 import java.util.LinkedHashMap;
-import java.util.LinkedList;
+import java.util.List;
 import java.util.Map;
 
 public class BodyPartCardFactory {
@@ -14,9 +15,9 @@ public class BodyPartCardFactory {
         put(Color.MULTI, 1);
     }};
 
-    public LinkedList<ICard> create() {
+    public List<ICard> create() {
 
-        var cards = new LinkedList<ICard>();
+        var cards = new ArrayList<ICard>();
         for (Map.Entry<Color, Integer> rule : rules.entrySet()) {
             var max = rule.getValue();
             for (var count = 1; count <= max; count++) {
