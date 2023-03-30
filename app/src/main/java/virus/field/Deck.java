@@ -4,8 +4,7 @@ import java.util.Collections;
 import java.util.LinkedList;
 import java.util.List;
 
-import virus.card.BodyPartCard;
-import virus.card.Color;
+import virus.card.BodyPartCardFactory;
 import virus.card.ICard;
 
 /**
@@ -20,29 +19,9 @@ public final class Deck {
     } 
 
     public static Deck create() {
-        var cards = new LinkedList<ICard>(){{
-            add(BodyPartCard.create(Color.BLUE));
-            add(BodyPartCard.create(Color.BLUE));
-            add(BodyPartCard.create(Color.BLUE));
-            add(BodyPartCard.create(Color.BLUE));
-            add(BodyPartCard.create(Color.BLUE));
-            add(BodyPartCard.create(Color.RED));
-            add(BodyPartCard.create(Color.RED));
-            add(BodyPartCard.create(Color.RED));
-            add(BodyPartCard.create(Color.RED));
-            add(BodyPartCard.create(Color.RED));
-            add(BodyPartCard.create(Color.GREEN));
-            add(BodyPartCard.create(Color.GREEN));
-            add(BodyPartCard.create(Color.GREEN));
-            add(BodyPartCard.create(Color.GREEN));
-            add(BodyPartCard.create(Color.GREEN));
-            add(BodyPartCard.create(Color.YELLOW));
-            add(BodyPartCard.create(Color.YELLOW));
-            add(BodyPartCard.create(Color.YELLOW));
-            add(BodyPartCard.create(Color.YELLOW));
-            add(BodyPartCard.create(Color.YELLOW));
-            add(BodyPartCard.create(Color.MULTI));
-        }};
+        var bodyPartCardFactory = new BodyPartCardFactory();
+        LinkedList<ICard> cards = bodyPartCardFactory.create();
+
         return new Deck(cards);
     }
 
