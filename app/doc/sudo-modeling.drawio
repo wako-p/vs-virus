@@ -1,4 +1,4 @@
-<mxfile host="app.diagrams.net" modified="2023-03-31T03:01:50.707Z" agent="Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/111.0.0.0 Safari/537.36" etag="9MwgKxF7SicV5WVwzdeK" version="21.1.1" type="device" pages="3">
+<mxfile host="app.diagrams.net" modified="2023-03-31T03:17:03.569Z" agent="Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/111.0.0.0 Safari/537.36" etag="L2TqAX9uzXHXQUmnUhaR" version="21.1.1" type="device" pages="3">
   <diagram name="システム関連図" id="ofx0Wylcf3zZ1w08l28B">
     <mxGraphModel dx="1194" dy="741" grid="1" gridSize="10" guides="1" tooltips="1" connect="1" arrows="1" fold="1" page="1" pageScale="1" pageWidth="827" pageHeight="1169" math="0" shadow="0">
       <root>
@@ -424,13 +424,13 @@
         <mxCell id="c_Ia4zeI4B_aajXnBUTX-111" value="" style="rounded=0;orthogonalLoop=1;jettySize=auto;html=1;endArrow=none;endFill=0;exitX=1;exitY=0.5;exitDx=0;exitDy=0;entryX=0;entryY=0.5;entryDx=0;entryDy=0;fillColor=#dae8fc;strokeColor=#6c8ebf;" parent="1" source="c_Ia4zeI4B_aajXnBUTX-110" target="c_Ia4zeI4B_aajXnBUTX-84" edge="1">
           <mxGeometry relative="1" as="geometry" />
         </mxCell>
-        <mxCell id="c_Ia4zeI4B_aajXnBUTX-114" value="からだパーツカードの状態が感染のときに&lt;br&gt;ウィルスカードが置かれると状態が感染→破壊となり、2枚のウィルスカードと一緒に捨て札に置く" style="rounded=0;whiteSpace=wrap;html=1;fillColor=#FFFFCC;strokeColor=#CCCCCC;fontColor=#333333;align=left;verticalAlign=top;spacing=8;" parent="1" vertex="1">
+        <mxCell id="c_Ia4zeI4B_aajXnBUTX-114" value="からだパーツカードの状態が感染のときに&lt;br&gt;ウィルスカードが置かれると状態が発症となり、2枚のウィルスカードと一緒に捨て札に置く" style="rounded=0;whiteSpace=wrap;html=1;fillColor=#FFFFCC;strokeColor=#CCCCCC;fontColor=#333333;align=left;verticalAlign=top;spacing=8;" parent="1" vertex="1">
           <mxGeometry x="2639" y="730" width="281" height="100" as="geometry" />
         </mxCell>
-        <mxCell id="c_Ia4zeI4B_aajXnBUTX-132" value="からだパーツカードの状態が健康のときに&lt;br&gt;ウィルスカードが置かれると状態が健康→感染になる" style="rounded=0;whiteSpace=wrap;html=1;fillColor=#FFFFCC;strokeColor=#CCCCCC;fontColor=#333333;align=left;verticalAlign=top;spacing=8;" parent="1" vertex="1">
+        <mxCell id="c_Ia4zeI4B_aajXnBUTX-132" value="からだパーツカードの状態が健康のときに&lt;br&gt;ウィルスカードが置かれると状態が感染になる" style="rounded=0;whiteSpace=wrap;html=1;fillColor=#FFFFCC;strokeColor=#CCCCCC;fontColor=#333333;align=left;verticalAlign=top;spacing=8;" parent="1" vertex="1">
           <mxGeometry x="1840" y="730" width="281" height="100" as="geometry" />
         </mxCell>
-        <mxCell id="c_Ia4zeI4B_aajXnBUTX-134" value="からだパーツカードの状態が感染のときに&lt;br&gt;薬カードが置かれると状態が感染→健康となり、ウィルスカードと薬カードを捨て札に置く" style="rounded=0;whiteSpace=wrap;html=1;fillColor=#FFFFCC;strokeColor=#CCCCCC;fontColor=#333333;align=left;verticalAlign=top;spacing=8;" parent="1" vertex="1">
+        <mxCell id="c_Ia4zeI4B_aajXnBUTX-134" value="からだパーツカードの状態が感染のときに&lt;br&gt;薬カードが置かれると状態が健康となり、ウィルスカードと薬カードを捨て札に置く" style="rounded=0;whiteSpace=wrap;html=1;fillColor=#FFFFCC;strokeColor=#CCCCCC;fontColor=#333333;align=left;verticalAlign=top;spacing=8;" parent="1" vertex="1">
           <mxGeometry x="2240" y="730" width="280" height="100" as="geometry" />
         </mxCell>
         <mxCell id="c_Ia4zeI4B_aajXnBUTX-136" value="(からだパーツ&lt;br&gt;カード)&lt;br&gt;&lt;div style=&quot;text-align: left;&quot;&gt;&lt;span style=&quot;background-color: initial;&quot;&gt;- 色: 赤&lt;/span&gt;&lt;/div&gt;&lt;div style=&quot;text-align: left;&quot;&gt;&lt;span style=&quot;background-color: initial;&quot;&gt;- 状態: 健康&lt;/span&gt;&lt;/div&gt;" style="rounded=0;whiteSpace=wrap;html=1;strokeColor=#6c8ebf;fillColor=#dae8fc;" parent="1" vertex="1">
@@ -466,7 +466,7 @@
         <mxCell id="c_Ia4zeI4B_aajXnBUTX-147" value="" style="strokeWidth=1;html=1;shape=mxgraph.flowchart.merge_or_storage;whiteSpace=wrap;strokeColor=#333333;" parent="1" vertex="1">
           <mxGeometry x="2759.5" y="1030" width="40" height="20" as="geometry" />
         </mxCell>
-        <mxCell id="c_Ia4zeI4B_aajXnBUTX-148" value="(からだパーツ&lt;br&gt;カード)&lt;br&gt;&lt;div style=&quot;text-align: left;&quot;&gt;&lt;span style=&quot;background-color: initial;&quot;&gt;- 色: 赤&lt;/span&gt;&lt;/div&gt;&lt;div style=&quot;text-align: left;&quot;&gt;&lt;span style=&quot;background-color: initial;&quot;&gt;- 状態: 破壊&lt;/span&gt;&lt;/div&gt;" style="rounded=0;whiteSpace=wrap;html=1;strokeColor=#6c8ebf;fillColor=#dae8fc;" parent="1" vertex="1">
+        <mxCell id="c_Ia4zeI4B_aajXnBUTX-148" value="(からだパーツ&lt;br&gt;カード)&lt;br&gt;&lt;div style=&quot;text-align: left;&quot;&gt;&lt;span style=&quot;background-color: initial;&quot;&gt;- 色: 赤&lt;/span&gt;&lt;/div&gt;&lt;div style=&quot;text-align: left;&quot;&gt;&lt;span style=&quot;background-color: initial;&quot;&gt;- 状態: 発症&lt;/span&gt;&lt;/div&gt;" style="rounded=0;whiteSpace=wrap;html=1;strokeColor=#6c8ebf;fillColor=#dae8fc;" parent="1" vertex="1">
           <mxGeometry x="2640" y="1080" width="120" height="80" as="geometry" />
         </mxCell>
         <mxCell id="c_Ia4zeI4B_aajXnBUTX-149" value="(ウィルスカード)&lt;br&gt;&lt;div style=&quot;text-align: left;&quot;&gt;&lt;span style=&quot;background-color: initial;&quot;&gt;- 色: 赤&lt;/span&gt;&lt;/div&gt;" style="rounded=0;whiteSpace=wrap;html=1;strokeColor=#6c8ebf;fillColor=#dae8fc;" parent="1" vertex="1">
@@ -544,7 +544,7 @@
         <mxCell id="c_Ia4zeI4B_aajXnBUTX-167" value="ワクチンの無効化" style="text;html=1;strokeColor=#333333;fillColor=none;align=center;verticalAlign=top;whiteSpace=wrap;rounded=0;dashed=1;spacing=8;" parent="1" vertex="1">
           <mxGeometry x="2200" y="1640" width="360" height="560" as="geometry" />
         </mxCell>
-        <mxCell id="c_Ia4zeI4B_aajXnBUTX-168" value="(からだパーツ&lt;br&gt;カード)&lt;br&gt;&lt;div style=&quot;text-align: left;&quot;&gt;&lt;span style=&quot;background-color: initial;&quot;&gt;- 色: 赤&lt;/span&gt;&lt;/div&gt;&lt;div style=&quot;text-align: left;&quot;&gt;&lt;span style=&quot;background-color: initial;&quot;&gt;- 状態: ワクチン&lt;/span&gt;&lt;/div&gt;" style="rounded=0;whiteSpace=wrap;html=1;strokeColor=#6c8ebf;fillColor=#dae8fc;" parent="1" vertex="1">
+        <mxCell id="c_Ia4zeI4B_aajXnBUTX-168" value="(からだパーツ&lt;br&gt;カード)&lt;br&gt;&lt;div style=&quot;text-align: left;&quot;&gt;&lt;span style=&quot;background-color: initial;&quot;&gt;- 色: 赤&lt;/span&gt;&lt;/div&gt;&lt;div style=&quot;text-align: left;&quot;&gt;&lt;span style=&quot;background-color: initial;&quot;&gt;- 状態: 仮免疫&lt;/span&gt;&lt;/div&gt;" style="rounded=0;whiteSpace=wrap;html=1;strokeColor=#6c8ebf;fillColor=#dae8fc;" parent="1" vertex="1">
           <mxGeometry x="2240" y="1680" width="120" height="80" as="geometry" />
         </mxCell>
         <mxCell id="c_Ia4zeI4B_aajXnBUTX-169" value="(薬カード)&lt;br&gt;&lt;div style=&quot;text-align: left;&quot;&gt;&lt;span style=&quot;background-color: initial;&quot;&gt;- 色: 赤&lt;/span&gt;&lt;/div&gt;" style="rounded=0;whiteSpace=wrap;html=1;strokeColor=#6c8ebf;fillColor=#dae8fc;" parent="1" vertex="1">
@@ -580,7 +580,7 @@
             <mxPoint x="2420" y="1220" as="targetPoint" />
           </mxGeometry>
         </mxCell>
-        <mxCell id="c_Ia4zeI4B_aajXnBUTX-177" value="からだパーツカードの状態がワクチンのときに&lt;br&gt;ウィルスカードが置かれると状態がワクチン→健康となり、薬カードとウィルスカードを捨て札に置く" style="rounded=0;whiteSpace=wrap;html=1;fillColor=#FFFFCC;strokeColor=#CCCCCC;fontColor=#333333;align=left;verticalAlign=top;spacing=8;" parent="1" vertex="1">
+        <mxCell id="c_Ia4zeI4B_aajXnBUTX-177" value="からだパーツカードの状態が仮免疫のときに&lt;br&gt;ウィルスカードが置かれると状態が健康となり、薬カードとウィルスカードを捨て札に置く" style="rounded=0;whiteSpace=wrap;html=1;fillColor=#FFFFCC;strokeColor=#CCCCCC;fontColor=#333333;align=left;verticalAlign=top;spacing=8;" parent="1" vertex="1">
           <mxGeometry x="2240" y="1490" width="280" height="100" as="geometry" />
         </mxCell>
         <mxCell id="c_Ia4zeI4B_aajXnBUTX-179" value="(捨て札)" style="rounded=0;whiteSpace=wrap;html=1;fillColor=#dae8fc;strokeColor=#6c8ebf;" parent="1" vertex="1">
@@ -619,7 +619,7 @@
         <mxCell id="c_Ia4zeI4B_aajXnBUTX-188" value="ワクチン接種" style="text;html=1;strokeColor=#333333;fillColor=none;align=center;verticalAlign=top;whiteSpace=wrap;rounded=0;dashed=1;spacing=8;" parent="1" vertex="1">
           <mxGeometry x="1800.5" y="1640" width="360" height="560" as="geometry" />
         </mxCell>
-        <mxCell id="c_Ia4zeI4B_aajXnBUTX-189" value="からだパーツカードの状態が健康のときに&lt;br&gt;薬カードが置かれると状態が健康→ワクチンになる" style="rounded=0;whiteSpace=wrap;html=1;fillColor=#FFFFCC;strokeColor=#CCCCCC;fontColor=#333333;align=left;verticalAlign=top;spacing=8;" parent="1" vertex="1">
+        <mxCell id="c_Ia4zeI4B_aajXnBUTX-189" value="からだパーツカードの状態が健康のときに&lt;br&gt;薬カードが置かれると状態が仮免疫になる" style="rounded=0;whiteSpace=wrap;html=1;fillColor=#FFFFCC;strokeColor=#CCCCCC;fontColor=#333333;align=left;verticalAlign=top;spacing=8;" parent="1" vertex="1">
           <mxGeometry x="1840.5" y="1490" width="281" height="100" as="geometry" />
         </mxCell>
         <mxCell id="c_Ia4zeI4B_aajXnBUTX-190" value="(からだパーツ&lt;br&gt;カード)&lt;br&gt;&lt;div style=&quot;text-align: left;&quot;&gt;&lt;span style=&quot;background-color: initial;&quot;&gt;- 色: 赤&lt;/span&gt;&lt;/div&gt;&lt;div style=&quot;text-align: left;&quot;&gt;&lt;span style=&quot;background-color: initial;&quot;&gt;- 状態: 健康&lt;/span&gt;&lt;/div&gt;" style="rounded=0;whiteSpace=wrap;html=1;strokeColor=#6c8ebf;fillColor=#dae8fc;" parent="1" vertex="1">
@@ -646,7 +646,7 @@
             <mxPoint x="2550.5" y="1170" as="targetPoint" />
           </mxGeometry>
         </mxCell>
-        <mxCell id="c_Ia4zeI4B_aajXnBUTX-198" value="(からだパーツ&lt;br&gt;カード)&lt;br&gt;&lt;div style=&quot;text-align: left;&quot;&gt;&lt;span style=&quot;background-color: initial;&quot;&gt;- 色: 赤&lt;/span&gt;&lt;/div&gt;&lt;div style=&quot;text-align: left;&quot;&gt;&lt;span style=&quot;background-color: initial;&quot;&gt;- 状態: ワクチン&lt;/span&gt;&lt;/div&gt;" style="rounded=0;whiteSpace=wrap;html=1;strokeColor=#6c8ebf;fillColor=#dae8fc;" parent="1" vertex="1">
+        <mxCell id="c_Ia4zeI4B_aajXnBUTX-198" value="(からだパーツ&lt;br&gt;カード)&lt;br&gt;&lt;div style=&quot;text-align: left;&quot;&gt;&lt;span style=&quot;background-color: initial;&quot;&gt;- 色: 赤&lt;/span&gt;&lt;/div&gt;&lt;div style=&quot;text-align: left;&quot;&gt;&lt;span style=&quot;background-color: initial;&quot;&gt;- 状態: 仮免疫&lt;/span&gt;&lt;/div&gt;" style="rounded=0;whiteSpace=wrap;html=1;strokeColor=#6c8ebf;fillColor=#dae8fc;" parent="1" vertex="1">
           <mxGeometry x="2639.5" y="1680" width="120" height="80" as="geometry" />
         </mxCell>
         <mxCell id="c_Ia4zeI4B_aajXnBUTX-199" value="(薬カード)&lt;br&gt;&lt;div style=&quot;text-align: left;&quot;&gt;&lt;span style=&quot;background-color: initial;&quot;&gt;- 色: 赤&lt;/span&gt;&lt;/div&gt;" style="rounded=0;whiteSpace=wrap;html=1;strokeColor=#6c8ebf;fillColor=#dae8fc;" parent="1" vertex="1">
@@ -688,7 +688,7 @@
             <mxPoint x="2849.5" y="1590" as="targetPoint" />
           </mxGeometry>
         </mxCell>
-        <mxCell id="c_Ia4zeI4B_aajXnBUTX-211" value="からだパーツカードの状態がワクチンのときに薬カードが置かれると、状態がワクチン→免疫となり、ウィルスカードや医療カードの影響を受けなくなる" style="rounded=0;whiteSpace=wrap;html=1;fillColor=#FFFFCC;strokeColor=#CCCCCC;fontColor=#333333;align=left;verticalAlign=top;spacing=8;" parent="1" vertex="1">
+        <mxCell id="c_Ia4zeI4B_aajXnBUTX-211" value="からだパーツカードの状態が仮免疫のときに薬カードが置かれると、状態が免疫となり、ウィルスカードや医療カードの影響を受けなくなる" style="rounded=0;whiteSpace=wrap;html=1;fillColor=#FFFFCC;strokeColor=#CCCCCC;fontColor=#333333;align=left;verticalAlign=top;spacing=8;" parent="1" vertex="1">
           <mxGeometry x="2640" y="1490" width="280" height="100" as="geometry" />
         </mxCell>
         <mxCell id="c_Ia4zeI4B_aajXnBUTX-212" value="" style="endArrow=none;html=1;rounded=0;entryX=0.25;entryY=0;entryDx=0;entryDy=0;exitX=0.5;exitY=1;exitDx=0;exitDy=0;dashed=1;" parent="1" source="8Rx44zWbmar0orGI43Fp-10" target="c_Ia4zeI4B_aajXnBUTX-62" edge="1">
@@ -788,6 +788,9 @@
         </mxCell>
         <mxCell id="h-tjwGrXuljhetKIq6Q1-5" value="- 組み立て可能: Assembled&lt;br&gt;- 保護可能: Protectable&lt;br&gt;- 妨害可能: Interruptible" style="rounded=0;whiteSpace=wrap;html=1;fillColor=#FFFFCC;strokeColor=#CCCCCC;fontColor=#333333;align=left;verticalAlign=top;spacing=8;" vertex="1" parent="1">
           <mxGeometry x="840" y="-320" width="200" height="80" as="geometry" />
+        </mxCell>
+        <mxCell id="h-tjwGrXuljhetKIq6Q1-6" value="健康→感染: ウィルスカード&lt;br&gt;健康→仮免疫: 薬カード&lt;br&gt;感染→発症: ウィルスカード&lt;br&gt;感染→健康: 薬カード&lt;br&gt;仮免疫→健康: ウィルスカード&lt;br&gt;仮免疫→免疫: 薬カード" style="rounded=0;whiteSpace=wrap;html=1;fillColor=#FFFFCC;strokeColor=#CCCCCC;fontColor=#333333;align=left;verticalAlign=top;spacing=8;" vertex="1" parent="1">
+          <mxGeometry x="2240" y="560" width="281" height="120" as="geometry" />
         </mxCell>
       </root>
     </mxGraphModel>
