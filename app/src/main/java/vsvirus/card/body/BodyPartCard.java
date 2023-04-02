@@ -32,19 +32,27 @@ public final class BodyPartCard implements ICard {
 
     public void infection(VirusCard virus) {
         // TODO: 感染ルールとか定義してそっちに記述する
-        if (virus.color() != Color.MULTI && this.color != virus.color())
+        if (!canInfected(virus))
         {
             throw new IllegalArgumentException();
         }
         this.status = this.status.next(virus);
     }
 
+    private boolean canInfected(VirusCard virus) {
+        return virus.color() == Color.MULTI || virus.color() == this.color;
+    }
+
     public void care(MedicineCard medicine) {
         // TODO: ケアルールとか定義してそっちに記述する
-        if (medicine.color() != Color.MULTI && this.color != medicine.color()) {
+        if (!canCared(medicine)) {
             throw new IllegalArgumentException();
         }
         this.status = this.status.next(medicine);
+    }
+
+    private boolean canCared(MedicineCard medicine) {
+        return medicine.color() == Color.MULTI || medicine.color() == this.color;
     }
 
 }
