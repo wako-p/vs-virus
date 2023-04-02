@@ -1,7 +1,11 @@
-package virus.card;
+package virus.card.body;
 
 import java.util.ArrayList;
 import java.util.List;
+
+import virus.card.ICard;
+import virus.card.medicine.MedicineCard;
+import virus.card.virus.VirusCard;
 
 /**
  * からだパーツカードの状態遷移を扱う

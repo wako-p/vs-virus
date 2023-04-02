@@ -1,4 +1,4 @@
-package virus.card;
+package virus.card.body;
 
 import static org.junit.jupiter.api.Assertions.assertEquals;
 
@@ -6,6 +6,9 @@ import java.util.List;
 
 import org.junit.jupiter.api.Nested;
 import org.junit.jupiter.api.Test;
+
+import virus.card.Color;
+import virus.card.ICard;
 
 class BodyPartCardFactoryTest {
     @Nested

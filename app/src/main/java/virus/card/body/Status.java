@@ -1,4 +1,6 @@
-package virus.card;
+package virus.card.body;
+
+import virus.card.ICard;
 
 /**
  * 状態

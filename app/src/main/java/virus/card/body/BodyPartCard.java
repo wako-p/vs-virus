@@ -1,4 +1,9 @@
-package virus.card;
+package virus.card.body;
+
+import virus.card.Color;
+import virus.card.ICard;
+import virus.card.medicine.MedicineCard;
+import virus.card.virus.VirusCard;
 
 /**
  * からだパーツカード

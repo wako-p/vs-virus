@@ -1,4 +1,4 @@
-package virus.card;
+package virus.card.medicine;
 
 import static org.junit.jupiter.api.Assertions.assertEquals;
 
@@ -7,14 +7,17 @@ import java.util.List;
 import org.junit.jupiter.api.Nested;
 import org.junit.jupiter.api.Test;
 
-class VirusCardFactoryTest {
+import virus.card.Color;
+import virus.card.ICard;
+
+class MedicineCardFactoryTest {
     @Nested
     class CreateTest {
 
         @Test
-        void 青赤緑黄色のカードがそれぞれ4枚ずつとマルチカラーのカードが1枚生成される() {
+        void 青赤緑黄色とマルチカラーのカードがそれぞれ4枚ずつ生成される() {
             // Given:
-            var factory = new VirusCardFactory();
+            var factory = new MedicineCardFactory();
 
             // When:
             var cards = factory.create();
@@ -24,7 +27,7 @@ class VirusCardFactoryTest {
             assertEquals(4, countRed(cards));
             assertEquals(4, countGreen(cards));
             assertEquals(4, countYellow(cards));
-            assertEquals(1, countMulti(cards));
+            assertEquals(4, countMulti(cards));
         }
 
         int countBule(List<ICard> cards) {

@@ -1,4 +1,6 @@
-package virus.card;
+package virus.card.body;
+
+import virus.card.ICard;
 
 /**
  * 遷移前、遷移後、カード型の組み合わせを扱う

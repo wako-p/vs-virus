@@ -1,4 +1,7 @@
-package virus.card;
+package virus.card.medicine;
+
+import virus.card.Color;
+import virus.card.ICard;
 
 /**
  * 薬カード

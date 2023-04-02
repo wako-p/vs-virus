@@ -1,4 +1,4 @@
-package virus.card;
+package virus.card.medicine;
 
 import static org.junit.jupiter.api.Assertions.assertEquals;
 
@@ -9,7 +9,9 @@ import org.junit.jupiter.params.ParameterizedTest;
 import org.junit.jupiter.params.provider.Arguments;
 import org.junit.jupiter.params.provider.MethodSource;
 
-class VirusCardTest {
+import virus.card.Color;
+
+class MedicineCardTest {
 
     @Nested
     class CreateTest {
@@ -26,9 +28,9 @@ class VirusCardTest {
 
         @ParameterizedTest
         @MethodSource("colors")
-        void 引数に指定した色のウィルスカードを生成できる(Color color, Color expected) {
+        void 引数に指定した色の薬カードを生成できる(Color color, Color expected) {
             // When:
-            var card = VirusCard.create(color);
+            var card = MedicineCard.create(color);
 
             // Then:
             assertEquals(expected, card.color());

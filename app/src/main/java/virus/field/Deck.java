@@ -4,10 +4,10 @@ import java.util.ArrayList;
 import java.util.Collections;
 import java.util.List;
 
-import virus.card.BodyPartCardFactory;
 import virus.card.ICard;
-import virus.card.MedicineCardFactory;
-import virus.card.VirusCardFactory;
+import virus.card.body.BodyPartCardFactory;
+import virus.card.medicine.MedicineCardFactory;
+import virus.card.virus.VirusCardFactory;
 
 /**
  * 山札

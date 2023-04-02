@@ -1,4 +1,7 @@
-package virus.card;
+package virus.card.virus;
+
+import virus.card.Color;
+import virus.card.ICard;
 
 /**
  * ウィルスカード

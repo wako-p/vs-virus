@@ -11,8 +11,8 @@ import org.junit.jupiter.params.ParameterizedTest;
 import org.junit.jupiter.params.provider.Arguments;
 import org.junit.jupiter.params.provider.MethodSource;
 
-import virus.card.BodyPartCard;
 import virus.card.Color;
+import virus.card.body.BodyPartCard;
 
 class BodyAreaTest {
 

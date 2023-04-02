@@ -4,7 +4,7 @@ import java.util.ArrayList;
 import java.util.Collections;
 import java.util.List;
 
-import virus.card.BodyPartCard;
+import virus.card.body.BodyPartCard;
 
 /**
  * からだエリア
