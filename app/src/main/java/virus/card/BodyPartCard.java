@@ -26,41 +26,11 @@ public final class BodyPartCard implements ICard {
     }
 
     public void infection(VirusCard virus) {
-
-        if (this.status == Status.HEALTHY) {
-            this.status = Status.INFECTED;
-            return;
-        }
-
-        if (this.status == Status.INFECTED) {
-            this.status = Status.SYMPTOMATIC;
-            return;
-        }
-
-        if (this.status == Status.PASSIVELY_IMMUNIZED) {
-            this.status = Status.HEALTHY;
-            return;
-        }
-
+        this.status = this.status.next(virus);
     }
 
     public void care(MedicineCard medicine) {
-
-        if (this.status == Status.HEALTHY) {
-            this.status = Status.PASSIVELY_IMMUNIZED;
-            return;
-        }
-
-        if (this.status == Status.PASSIVELY_IMMUNIZED) {
-            this.status = Status.IMMUNIZED;
-            return;
-        }
-
-        if (this.status == Status.INFECTED) {
-            this.status = Status.HEALTHY;
-            return;
-        }
-
+        this.status = this.status.next(medicine);
     }
 
 }
