@@ -1,6 +1,7 @@
 package virus.card;
 
 import static org.junit.jupiter.api.Assertions.assertEquals;
+import static org.junit.jupiter.api.Assertions.assertThrows;
 
 import java.util.stream.Stream;
 
@@ -112,6 +113,49 @@ class BodyPartCardTest {
             assertEquals(Status.HEALTHY, body.status());
         }
 
+        static Stream<Arguments> colors1() {
+            return Stream.of(
+                Arguments.of(Color.RED),
+                Arguments.of(Color.GREEN),
+                Arguments.of(Color.YELLOW)
+            );
+        }
+
+        @ParameterizedTest
+        @MethodSource("colors1")
+        void 引数に指定したウィルスカードの色がからだパーツカードと異なる場合は例外がスローされる(Color color) {
+            // Given:
+            var virus = VirusCard.create(color);
+            var body = BodyPartCard.create(Color.BLUE);
+
+            // When/Then:
+            assertThrows(IllegalArgumentException.class, () -> {
+                body.infection(virus);
+            });
+        }
+
+        static Stream<Arguments> colors2() {
+            return Stream.of(
+                Arguments.of(Color.RED),
+                Arguments.of(Color.GREEN),
+                Arguments.of(Color.YELLOW)
+            );
+        }
+
+        @ParameterizedTest
+        @MethodSource("colors2")
+        void ウィルスカードの色がマルチカードの場合は全ての色のからだパーツカードに感染できる(Color color) {
+            // Given:
+            var virus = VirusCard.create(Color.MULTI);
+            var body = BodyPartCard.create(color);
+
+            // When:
+            body.infection(virus);
+
+            // Then:
+            assertEquals(Status.INFECTED, body.status());
+        }
+
     }
 
     @Nested
@@ -160,6 +204,49 @@ class BodyPartCardTest {
 
             // Given:
             assertEquals(Status.HEALTHY, body.status());
+        }
+
+        static Stream<Arguments> colors1() {
+            return Stream.of(
+                Arguments.of(Color.RED),
+                Arguments.of(Color.GREEN),
+                Arguments.of(Color.YELLOW)
+            );
+        }
+
+        @ParameterizedTest
+        @MethodSource("colors1")
+        void 引数に指定した薬カードの色がからだパーツカードと異なる場合は例外がスローされる(Color color) {
+            // Given:
+            var medicine = MedicineCard.create(color);
+            var body = BodyPartCard.create(Color.BLUE);
+
+            // When/Then:
+            assertThrows(IllegalArgumentException.class, () -> {
+                body.care(medicine);
+            });
+        }
+
+        static Stream<Arguments> colors2() {
+            return Stream.of(
+                Arguments.of(Color.RED),
+                Arguments.of(Color.GREEN),
+                Arguments.of(Color.YELLOW)
+            );
+        }
+
+        @ParameterizedTest
+        @MethodSource("colors2")
+        void 薬カードの色がマルチカードの場合は全ての色のからだパーツカードに感染できる(Color color) {
+            // Given:
+            var medicine = MedicineCard.create(Color.MULTI);
+            var body = BodyPartCard.create(color);
+
+            // When:
+            body.care(medicine);
+
+            // Then:
+            assertEquals(Status.PASSIVELY_IMMUNIZED, body.status());
         }
 
     }
