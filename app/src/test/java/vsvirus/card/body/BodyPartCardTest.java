@@ -58,7 +58,7 @@ class BodyPartCardTest {
 
         @ParameterizedTest
         @MethodSource("colors")
-        void 色を取得することができる(Color color, Color expected) {
+        void からだパーツカードの色を取得することができる(Color color, Color expected) {
             // Given:
             var card = BodyPartCard.create(color);
 
@@ -72,8 +72,9 @@ class BodyPartCardTest {
 
     @Nested
     class InfectionTest {
+
         @Test
-        void 健康から感染() {
+        void からだパーツカードの状態が健康のときに同じ色のウィルスカードを適用すると状態が感染になる() {
             // Given:
             var virus = VirusCard.create(Color.BLUE);
             var body = BodyPartCard.create(Color.BLUE);
@@ -86,7 +87,7 @@ class BodyPartCardTest {
         }
 
         @Test
-        void 感染から発症() {
+        void からだパーツカードの状態が感染のときに同じ色のウィルスカードを適用すると状態が発症になる() {
             // Given:
             var virus1 = VirusCard.create(Color.BLUE);
             var virus2 = VirusCard.create(Color.BLUE);
@@ -102,7 +103,7 @@ class BodyPartCardTest {
         }
 
         @Test
-        void 仮免疫から健康() {
+        void からだパーツカードの状態が仮免疫のときに同じ色の薬カードを適用すると状態が健康になる() {
             // Given:
             var medicine = MedicineCard.create(Color.BLUE);
             var virus = VirusCard.create(Color.BLUE);
@@ -117,7 +118,7 @@ class BodyPartCardTest {
             assertEquals(Status.HEALTHY, body.status());
         }
 
-        static Stream<Arguments> colors1() {
+        static Stream<Arguments> colorPattern1() {
             return Stream.of(
                 Arguments.of(Color.RED),
                 Arguments.of(Color.GREEN),
@@ -125,33 +126,46 @@ class BodyPartCardTest {
             );
         }
 
-        @ParameterizedTest
-        @MethodSource("colors1")
-        void 引数に指定したウィルスカードの色がからだパーツカードと異なる場合は例外がスローされる(Color color) {
-            // Given:
-            var virus = VirusCard.create(color);
-            var body = BodyPartCard.create(Color.BLUE);
+        static Stream<Arguments> cardPattern() {
+            return Stream.of(
+                Arguments.of(BodyPartCard.create(Color.BLUE), VirusCard.create(Color.RED)),
+                Arguments.of(BodyPartCard.create(Color.BLUE), VirusCard.create(Color.GREEN)),
+                Arguments.of(BodyPartCard.create(Color.BLUE), VirusCard.create(Color.YELLOW)),
+                Arguments.of(BodyPartCard.create(Color.RED), VirusCard.create(Color.GREEN)),
+                Arguments.of(BodyPartCard.create(Color.RED), VirusCard.create(Color.YELLOW)),
+                Arguments.of(BodyPartCard.create(Color.RED), VirusCard.create(Color.BLUE)),
+                Arguments.of(BodyPartCard.create(Color.GREEN), VirusCard.create(Color.YELLOW)),
+                Arguments.of(BodyPartCard.create(Color.GREEN), VirusCard.create(Color.BLUE)),
+                Arguments.of(BodyPartCard.create(Color.GREEN), VirusCard.create(Color.RED)),
+                Arguments.of(BodyPartCard.create(Color.YELLOW), VirusCard.create(Color.BLUE)),
+                Arguments.of(BodyPartCard.create(Color.YELLOW), VirusCard.create(Color.RED)),
+                Arguments.of(BodyPartCard.create(Color.YELLOW), VirusCard.create(Color.GREEN))
+            );
+        }
 
+        @ParameterizedTest
+        @MethodSource("cardPattern")
+        void からだパーツカードと違う色のウィルスカードを適用すると例外がスローされる(BodyPartCard body, VirusCard virus) {
             // When/Then:
             assertThrows(IllegalArgumentException.class, () -> {
                 body.infection(virus);
             });
         }
 
-        static Stream<Arguments> colors2() {
+        static Stream<Arguments> bodyPartCards() {
             return Stream.of(
-                Arguments.of(Color.RED),
-                Arguments.of(Color.GREEN),
-                Arguments.of(Color.YELLOW)
+                Arguments.of(BodyPartCard.create(Color.BLUE)),
+                Arguments.of(BodyPartCard.create(Color.RED)),
+                Arguments.of(BodyPartCard.create(Color.GREEN)),
+                Arguments.of(BodyPartCard.create(Color.YELLOW))
             );
         }
 
         @ParameterizedTest
-        @MethodSource("colors2")
-        void ウィルスカードの色がマルチカードの場合は全ての色のからだパーツカードに感染できる(Color color) {
+        @MethodSource("bodyPartCards")
+        void ウィルスカードの色がマルチカラーの場合は全ての色のからだパーツカードに適用できる(BodyPartCard body) {
             // Given:
             var virus = VirusCard.create(Color.MULTI);
-            var body = BodyPartCard.create(color);
 
             // When:
             body.infection(virus);
@@ -166,7 +180,7 @@ class BodyPartCardTest {
     class CareTest {
 
         @Test
-        void 健康から仮免疫() {
+        void からだパーツカードの状態が健康のときに同じ色の薬カードを適用すると状態が仮免疫になる() {
             // Given:
             var medicine = MedicineCard.create(Color.BLUE);
             var body = BodyPartCard.create(Color.BLUE);
@@ -179,7 +193,7 @@ class BodyPartCardTest {
         }
 
         @Test
-        void 仮免疫から免疫() {
+        void からだパーツカードの状態が仮免疫のときに同じ色の薬カードを適用すると状態が免疫になる() {
             // Given:
             var medicine1 = MedicineCard.create(Color.BLUE);
             var medicine2 = MedicineCard.create(Color.BLUE);
@@ -195,7 +209,7 @@ class BodyPartCardTest {
         }
 
         @Test
-        void 感染から健康() {
+        void からだパーツカードの状態が感染のときに同じ色の薬カードを適用すると状態が健康になる() {
             // Given:
             var virus = VirusCard.create(Color.BLUE);
             var medicine = MedicineCard.create(Color.BLUE);
@@ -210,41 +224,46 @@ class BodyPartCardTest {
             assertEquals(Status.HEALTHY, body.status());
         }
 
-        static Stream<Arguments> colors1() {
+        static Stream<Arguments> cardPattern() {
             return Stream.of(
-                Arguments.of(Color.RED),
-                Arguments.of(Color.GREEN),
-                Arguments.of(Color.YELLOW)
+                Arguments.of(BodyPartCard.create(Color.BLUE), MedicineCard.create(Color.RED)),
+                Arguments.of(BodyPartCard.create(Color.BLUE), MedicineCard.create(Color.GREEN)),
+                Arguments.of(BodyPartCard.create(Color.BLUE), MedicineCard.create(Color.YELLOW)),
+                Arguments.of(BodyPartCard.create(Color.RED), MedicineCard.create(Color.GREEN)),
+                Arguments.of(BodyPartCard.create(Color.RED), MedicineCard.create(Color.YELLOW)),
+                Arguments.of(BodyPartCard.create(Color.RED), MedicineCard.create(Color.BLUE)),
+                Arguments.of(BodyPartCard.create(Color.GREEN), MedicineCard.create(Color.YELLOW)),
+                Arguments.of(BodyPartCard.create(Color.GREEN), MedicineCard.create(Color.BLUE)),
+                Arguments.of(BodyPartCard.create(Color.GREEN), MedicineCard.create(Color.RED)),
+                Arguments.of(BodyPartCard.create(Color.YELLOW), MedicineCard.create(Color.BLUE)),
+                Arguments.of(BodyPartCard.create(Color.YELLOW), MedicineCard.create(Color.RED)),
+                Arguments.of(BodyPartCard.create(Color.YELLOW), MedicineCard.create(Color.GREEN))
             );
         }
 
         @ParameterizedTest
-        @MethodSource("colors1")
-        void 引数に指定した薬カードの色がからだパーツカードと異なる場合は例外がスローされる(Color color) {
-            // Given:
-            var medicine = MedicineCard.create(color);
-            var body = BodyPartCard.create(Color.BLUE);
-
+        @MethodSource("cardPattern")
+        void からだパーツカードの色と違う薬カードを適用すると例外がスローされる(BodyPartCard body, MedicineCard medicine) {
             // When/Then:
             assertThrows(IllegalArgumentException.class, () -> {
                 body.care(medicine);
             });
         }
 
-        static Stream<Arguments> colors2() {
+        static Stream<Arguments> bodyPartCards() {
             return Stream.of(
-                Arguments.of(Color.RED),
-                Arguments.of(Color.GREEN),
-                Arguments.of(Color.YELLOW)
+                Arguments.of(BodyPartCard.create(Color.BLUE)),
+                Arguments.of(BodyPartCard.create(Color.RED)),
+                Arguments.of(BodyPartCard.create(Color.GREEN)),
+                Arguments.of(BodyPartCard.create(Color.YELLOW))
             );
         }
 
         @ParameterizedTest
-        @MethodSource("colors2")
-        void 薬カードの色がマルチカードの場合は全ての色のからだパーツカードに感染できる(Color color) {
+        @MethodSource("bodyPartCards")
+        void 薬カードの色がマルチカラーの場合は全ての色のからだパーツカードに適用できる(BodyPartCard body) {
             // Given:
             var medicine = MedicineCard.create(Color.MULTI);
-            var body = BodyPartCard.create(color);
 
             // When:
             body.care(medicine);
