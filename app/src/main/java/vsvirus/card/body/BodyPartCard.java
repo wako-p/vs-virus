@@ -2,6 +2,8 @@ package vsvirus.card.body;
 
 import vsvirus.card.Color;
 import vsvirus.card.ICard;
+import vsvirus.card.medicine.MedicineCard;
+import vsvirus.card.virus.VirusCard;
 
 /**
  * からだパーツカード
@@ -29,15 +31,23 @@ public final class BodyPartCard implements ICard {
     }
 
     public void apply(ICard card) {
-        // TODO: 適用ルールとか定義してそっちに記述する
-        if (!canApplyed(card))
+        // TODO: 適用ポリシーとか定義してそっちに記述する
+
+        // 適用できるカードはウィルスカードと薬カードのみ
+        if (!(card.getClass() == VirusCard.class || card.getClass() == MedicineCard.class)) {
+            throw new IllegalArgumentException();
+        }
+
+        // 適用できるカードは同じ色のカード
+        if (!canApplyedCardColor(card))
         {
             throw new IllegalArgumentException();
         }
+
         this.status = this.status.next(card);
     }
 
-    private boolean canApplyed(ICard virus) {
+    private boolean canApplyedCardColor(ICard virus) {
         return virus.color() == Color.MULTI || virus.color() == this.color;
     }
 

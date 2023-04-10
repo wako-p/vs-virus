@@ -12,6 +12,7 @@ import org.junit.jupiter.params.provider.Arguments;
 import org.junit.jupiter.params.provider.MethodSource;
 
 import vsvirus.card.Color;
+import vsvirus.card.ICard;
 import vsvirus.card.medicine.MedicineCard;
 import vsvirus.card.virus.VirusCard;
 
@@ -72,6 +73,27 @@ class BodyPartCardTest {
 
     @Nested
     class ApplyTest {
+
+        static Stream<Arguments> inapplicableCards() {
+            return Stream.of(
+                Arguments.of(BodyPartCard.create(Color.BLUE)),
+                Arguments.of(BodyPartCard.create(Color.RED)),
+                Arguments.of(BodyPartCard.create(Color.GREEN)),
+                Arguments.of(BodyPartCard.create(Color.YELLOW))
+            );
+        }
+
+        @ParameterizedTest
+        @MethodSource("inapplicableCards")
+        void からだパーツカードにからだパーツカードを適用すると例外がスローされる(ICard inapplicableCard) {
+            // Given:
+            var body = BodyPartCard.create(Color.BLUE);
+
+            // When/Then:
+            assertThrows(IllegalArgumentException.class, () -> {
+                body.apply(inapplicableCard);
+            });
+        }
 
         @Test
         void からだパーツカードの状態が健康のときに同じ色のウィルスカードを適用すると状態が感染になる() {
