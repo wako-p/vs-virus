@@ -95,6 +95,30 @@ class BodyPartCardTest {
             });
         }
 
+        static Stream<Arguments> applicableCards() {
+            return Stream.of(
+                Arguments.of(VirusCard.create(Color.BLUE), VirusCard.create(Color.BLUE), VirusCard.create(Color.BLUE)),
+                Arguments.of(VirusCard.create(Color.BLUE), VirusCard.create(Color.BLUE), MedicineCard.create(Color.BLUE)),
+                Arguments.of(MedicineCard.create(Color.BLUE), MedicineCard.create(Color.BLUE), MedicineCard.create(Color.BLUE)),
+                Arguments.of(MedicineCard.create(Color.BLUE), MedicineCard.create(Color.BLUE), VirusCard.create(Color.BLUE))
+            );
+        }
+
+        @ParameterizedTest
+        @MethodSource("applicableCards")
+        void からだパーツカードに同じ色の3枚目のカードを適用すると例外がスローされる(ICard applyCard1, ICard applyCard2, ICard applyCard3) {
+            // Given:
+            var body = BodyPartCard.create(Color.BLUE);
+
+            body.apply(applyCard1);
+            body.apply(applyCard2);
+
+            // When/Then:
+            assertThrows(IllegalStateException.class, () -> {
+                body.apply(applyCard3);
+            });
+        }
+
         @Test
         void からだパーツカードの状態が健康のときに同じ色のウィルスカードを適用すると状態が感染になる() {
             // Given:
