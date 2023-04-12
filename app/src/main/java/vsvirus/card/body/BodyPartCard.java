@@ -49,7 +49,7 @@ public final class BodyPartCard implements ICard {
         }
 
         // 適用できるカードは同じ色のカード
-        if (!canApplyedCardColor(card))
+        if (!this.color().equals(card.color()))
         {
             throw new IllegalArgumentException();
         }
@@ -61,10 +61,6 @@ public final class BodyPartCard implements ICard {
 
         this.applyedCards.add(card);
         this.status = this.status.next(card);
-    }
-
-    private boolean canApplyedCardColor(ICard virus) {
-        return virus.color() == Color.MULTI || virus.color() == this.color;
     }
 
 }
