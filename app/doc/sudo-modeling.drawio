@@ -1,4 +1,4 @@
-<mxfile host="app.diagrams.net" modified="2023-03-31T03:17:03.569Z" agent="Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/111.0.0.0 Safari/537.36" etag="L2TqAX9uzXHXQUmnUhaR" version="21.1.1" type="device" pages="3">
+<mxfile host="app.diagrams.net" modified="2023-04-15T11:50:35.403Z" agent="Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/112.0.0.0 Safari/537.36" etag="57VXNcWuFX6-Rr5C6wAx" version="21.1.5" type="device" pages="3">
   <diagram name="システム関連図" id="ofx0Wylcf3zZ1w08l28B">
     <mxGraphModel dx="1194" dy="741" grid="1" gridSize="10" guides="1" tooltips="1" connect="1" arrows="1" fold="1" page="1" pageScale="1" pageWidth="827" pageHeight="1169" math="0" shadow="0">
       <root>
@@ -76,7 +76,7 @@
         <mxCell id="46jRlvNg5XImmn10_4z5-1" value="手札から医療カードを1枚&lt;br&gt;捨て札に置いて効果を発動する" style="rounded=1;whiteSpace=wrap;html=1;" parent="1" vertex="1">
           <mxGeometry x="720" y="520" width="280" height="80" as="geometry" />
         </mxCell>
-        <mxCell id="mnCh0vceoB6bXsJ-4PNX-1" value="" style="endArrow=none;html=1;rounded=0;startArrow=open;startFill=0;exitX=1;exitY=0.5;exitDx=0;exitDy=0;entryX=0;entryY=0.5;entryDx=0;entryDy=0;edgeStyle=orthogonalEdgeStyle;" edge="1" parent="1" source="N9D0sJMy-FZw_KNgOCy6-1" target="46jRlvNg5XImmn10_4z5-1">
+        <mxCell id="mnCh0vceoB6bXsJ-4PNX-1" value="" style="endArrow=none;html=1;rounded=0;startArrow=open;startFill=0;exitX=1;exitY=0.5;exitDx=0;exitDy=0;entryX=0;entryY=0.5;entryDx=0;entryDy=0;edgeStyle=orthogonalEdgeStyle;" parent="1" source="N9D0sJMy-FZw_KNgOCy6-1" target="46jRlvNg5XImmn10_4z5-1" edge="1">
           <mxGeometry width="50" height="50" relative="1" as="geometry">
             <mxPoint x="610" y="250" as="sourcePoint" />
             <mxPoint x="660" y="630" as="targetPoint" />
@@ -85,11 +85,14 @@
       </root>
     </mxGraphModel>
   </diagram>
-  <diagram id="ZTexoPvEzaPDKvuqd1vC" name="ドメインモデル/オブジェクト図">
-    <mxGraphModel dx="2021" dy="1910" grid="1" gridSize="10" guides="1" tooltips="1" connect="1" arrows="1" fold="1" page="1" pageScale="1" pageWidth="827" pageHeight="1169" math="0" shadow="0">
+  <diagram id="ZTexoPvEzaPDKvuqd1vC" name="オブジェクト図">
+    <mxGraphModel dx="2419" dy="4495" grid="1" gridSize="10" guides="1" tooltips="1" connect="1" arrows="1" fold="1" page="1" pageScale="1" pageWidth="827" pageHeight="1169" math="0" shadow="0">
       <root>
         <mxCell id="0" />
         <mxCell id="1" parent="0" />
+        <mxCell id="09PAbykDqG3_5M8GWdRA-78" value="&lt;b style=&quot;font-size: 16px;&quot;&gt;アクション1&lt;br&gt;&lt;/b&gt;&lt;br&gt;手札から「からだパーツカード」を1枚、&lt;span style=&quot;color: rgb(0, 0, 0); text-align: center;&quot;&gt;自分の「からだエリア」に置く&lt;/span&gt;" style="text;html=1;strokeColor=none;fillColor=none;align=left;verticalAlign=top;whiteSpace=wrap;rounded=0;fontColor=#333333;" vertex="1" parent="1">
+          <mxGeometry x="1400" y="-3000" width="439.5" height="80" as="geometry" />
+        </mxCell>
         <mxCell id="c_Ia4zeI4B_aajXnBUTX-197" value="免疫" style="text;html=1;strokeColor=#333333;fillColor=none;align=center;verticalAlign=top;whiteSpace=wrap;rounded=0;dashed=1;spacing=8;" parent="1" vertex="1">
           <mxGeometry x="2599.5" y="1640" width="360" height="560" as="geometry" />
         </mxCell>
@@ -137,9 +140,6 @@
         </mxCell>
         <mxCell id="8Rx44zWbmar0orGI43Fp-9" value="医療カード&lt;br&gt;MedicalCard&lt;br&gt;&lt;div style=&quot;text-align: left;&quot;&gt;&lt;span style=&quot;background-color: initial;&quot;&gt;- 色&lt;/span&gt;&lt;/div&gt;" style="rounded=0;whiteSpace=wrap;html=1;fontColor=#333333;" parent="1" vertex="1">
           <mxGeometry x="680" y="440" width="160" height="80" as="geometry" />
-        </mxCell>
-        <mxCell id="8Rx44zWbmar0orGI43Fp-10" value="- 最大70枚" style="rounded=0;whiteSpace=wrap;html=1;fillColor=#FFFFCC;strokeColor=#CCCCCC;fontColor=#333333;align=left;verticalAlign=top;spacing=8;" parent="1" vertex="1">
-          <mxGeometry x="2240" y="-120" width="120" height="80" as="geometry" />
         </mxCell>
         <mxCell id="MoYo7L7CuBFLuLiXsiKe-2" value="プレイヤー&lt;br&gt;Player&lt;br&gt;&lt;div style=&quot;text-align: left;&quot;&gt;&lt;span style=&quot;background-color: initial;&quot;&gt;- id&lt;/span&gt;&lt;/div&gt;&lt;div style=&quot;text-align: left;&quot;&gt;&lt;span style=&quot;background-color: initial;&quot;&gt;- 名前&lt;/span&gt;&lt;/div&gt;" style="rounded=0;whiteSpace=wrap;html=1;fontColor=#333333;" parent="1" vertex="1">
           <mxGeometry x="-120" y="200" width="120" height="80" as="geometry" />
@@ -262,175 +262,13 @@
             <mxPoint x="1240" y="-160" as="targetPoint" />
           </mxGeometry>
         </mxCell>
-        <mxCell id="c_Ia4zeI4B_aajXnBUTX-55" value="(プレイヤー)&lt;br&gt;&lt;div style=&quot;text-align: left;&quot;&gt;&lt;span style=&quot;background-color: initial;&quot;&gt;- id: 1&lt;/span&gt;&lt;/div&gt;&lt;div style=&quot;text-align: left;&quot;&gt;&lt;span style=&quot;background-color: initial;&quot;&gt;- 名前: test1&lt;/span&gt;&lt;/div&gt;" style="rounded=0;whiteSpace=wrap;html=1;fillColor=#dae8fc;strokeColor=#6c8ebf;" parent="1" vertex="1">
-          <mxGeometry x="1520" y="80" width="120" height="80" as="geometry" />
-        </mxCell>
-        <mxCell id="c_Ia4zeI4B_aajXnBUTX-67" value="" style="rounded=0;orthogonalLoop=1;jettySize=auto;html=1;endArrow=none;endFill=0;exitX=1;exitY=0.5;exitDx=0;exitDy=0;entryX=0;entryY=0.5;entryDx=0;entryDy=0;fillColor=#dae8fc;strokeColor=#6c8ebf;" parent="1" source="c_Ia4zeI4B_aajXnBUTX-55" target="c_Ia4zeI4B_aajXnBUTX-61" edge="1">
-          <mxGeometry relative="1" as="geometry" />
-        </mxCell>
-        <mxCell id="c_Ia4zeI4B_aajXnBUTX-56" value="(手札)&lt;br&gt;- 枚数: 3" style="rounded=0;whiteSpace=wrap;html=1;fillColor=#dae8fc;strokeColor=#6c8ebf;" parent="1" vertex="1">
-          <mxGeometry x="1520" y="200" width="120" height="80" as="geometry" />
-        </mxCell>
-        <mxCell id="c_Ia4zeI4B_aajXnBUTX-58" value="(からだパーツ&lt;br&gt;カード)&lt;br&gt;&lt;div style=&quot;text-align: left;&quot;&gt;&lt;span style=&quot;background-color: initial;&quot;&gt;- 色: 黄色&lt;/span&gt;&lt;/div&gt;&lt;div style=&quot;text-align: left;&quot;&gt;&lt;span style=&quot;background-color: initial;&quot;&gt;- 状態: 健康&lt;/span&gt;&lt;/div&gt;" style="rounded=0;whiteSpace=wrap;html=1;strokeColor=#6c8ebf;fillColor=#dae8fc;" parent="1" vertex="1">
-          <mxGeometry x="1360" y="320" width="120" height="80" as="geometry" />
-        </mxCell>
-        <mxCell id="c_Ia4zeI4B_aajXnBUTX-59" value="(ウィルスカード)&lt;br&gt;&lt;div style=&quot;text-align: left;&quot;&gt;&lt;span style=&quot;background-color: initial;&quot;&gt;-色: 青&lt;/span&gt;&lt;/div&gt;" style="rounded=0;whiteSpace=wrap;html=1;strokeColor=#6c8ebf;fillColor=#dae8fc;" parent="1" vertex="1">
-          <mxGeometry x="1520" y="320" width="120" height="80" as="geometry" />
-        </mxCell>
-        <mxCell id="c_Ia4zeI4B_aajXnBUTX-60" value="(薬カード)&lt;br&gt;&lt;div style=&quot;text-align: left;&quot;&gt;&lt;span style=&quot;background-color: initial;&quot;&gt;-色: 黄色&lt;/span&gt;&lt;/div&gt;" style="rounded=0;whiteSpace=wrap;html=1;fillColor=#dae8fc;strokeColor=#6c8ebf;" parent="1" vertex="1">
-          <mxGeometry x="1680" y="320" width="120" height="80" as="geometry" />
-        </mxCell>
-        <mxCell id="c_Ia4zeI4B_aajXnBUTX-61" value="(からだエリア)&lt;br&gt;- 枚数: 4" style="rounded=0;whiteSpace=wrap;html=1;fillColor=#dae8fc;strokeColor=#6c8ebf;" parent="1" vertex="1">
-          <mxGeometry x="1680" y="80" width="120" height="80" as="geometry" />
-        </mxCell>
-        <mxCell id="c_Ia4zeI4B_aajXnBUTX-62" value="(山札)&lt;br&gt;- 枚数: 55" style="rounded=0;whiteSpace=wrap;html=1;fillColor=#dae8fc;strokeColor=#6c8ebf;" parent="1" vertex="1">
-          <mxGeometry x="2240" y="20" width="120" height="80" as="geometry" />
-        </mxCell>
-        <mxCell id="c_Ia4zeI4B_aajXnBUTX-63" value="(捨て札)&lt;br&gt;- 枚数: 0" style="rounded=0;whiteSpace=wrap;html=1;fillColor=#dae8fc;strokeColor=#6c8ebf;" parent="1" vertex="1">
-          <mxGeometry x="2240" y="140" width="120" height="80" as="geometry" />
-        </mxCell>
-        <mxCell id="c_Ia4zeI4B_aajXnBUTX-64" value="(からだエリア)&lt;br&gt;枚数: 2" style="rounded=0;whiteSpace=wrap;html=1;fillColor=#dae8fc;strokeColor=#6c8ebf;" parent="1" vertex="1">
-          <mxGeometry x="2800" y="80" width="120" height="80" as="geometry" />
-        </mxCell>
-        <mxCell id="c_Ia4zeI4B_aajXnBUTX-65" value="(プレイヤー)&lt;br&gt;&lt;div style=&quot;text-align: left;&quot;&gt;&lt;span style=&quot;background-color: initial;&quot;&gt;- id: 2&lt;/span&gt;&lt;/div&gt;&lt;div style=&quot;text-align: left;&quot;&gt;&lt;span style=&quot;background-color: initial;&quot;&gt;- 名前: test2&lt;/span&gt;&lt;/div&gt;" style="rounded=0;whiteSpace=wrap;html=1;fillColor=#dae8fc;strokeColor=#6c8ebf;" parent="1" vertex="1">
-          <mxGeometry x="2960" y="80" width="120" height="80" as="geometry" />
-        </mxCell>
-        <mxCell id="c_Ia4zeI4B_aajXnBUTX-66" value="(手札)&lt;br&gt;- 枚数: 2" style="rounded=0;whiteSpace=wrap;html=1;fillColor=#dae8fc;strokeColor=#6c8ebf;" parent="1" vertex="1">
-          <mxGeometry x="2960" y="200" width="120" height="80" as="geometry" />
-        </mxCell>
-        <mxCell id="c_Ia4zeI4B_aajXnBUTX-68" value="" style="rounded=0;orthogonalLoop=1;jettySize=auto;html=1;endArrow=none;endFill=0;exitX=0.5;exitY=1;exitDx=0;exitDy=0;entryX=0.5;entryY=0;entryDx=0;entryDy=0;fillColor=#dae8fc;strokeColor=#6c8ebf;" parent="1" source="c_Ia4zeI4B_aajXnBUTX-55" target="c_Ia4zeI4B_aajXnBUTX-56" edge="1">
-          <mxGeometry relative="1" as="geometry" />
-        </mxCell>
-        <mxCell id="c_Ia4zeI4B_aajXnBUTX-69" value="" style="rounded=0;orthogonalLoop=1;jettySize=auto;html=1;endArrow=none;endFill=0;exitX=0;exitY=0.5;exitDx=0;exitDy=0;entryX=1;entryY=0.5;entryDx=0;entryDy=0;fillColor=#dae8fc;strokeColor=#6c8ebf;" parent="1" source="c_Ia4zeI4B_aajXnBUTX-65" target="c_Ia4zeI4B_aajXnBUTX-64" edge="1">
-          <mxGeometry relative="1" as="geometry" />
-        </mxCell>
-        <mxCell id="c_Ia4zeI4B_aajXnBUTX-70" value="" style="rounded=0;orthogonalLoop=1;jettySize=auto;html=1;endArrow=none;endFill=0;exitX=0.5;exitY=1;exitDx=0;exitDy=0;entryX=0.5;entryY=0;entryDx=0;entryDy=0;fillColor=#dae8fc;strokeColor=#6c8ebf;" parent="1" source="c_Ia4zeI4B_aajXnBUTX-65" target="c_Ia4zeI4B_aajXnBUTX-66" edge="1">
-          <mxGeometry relative="1" as="geometry">
-            <mxPoint x="2970" y="140" as="sourcePoint" />
-            <mxPoint x="2930" y="200" as="targetPoint" />
-          </mxGeometry>
-        </mxCell>
-        <mxCell id="c_Ia4zeI4B_aajXnBUTX-71" value="" style="rounded=0;orthogonalLoop=1;jettySize=auto;html=1;endArrow=none;endFill=0;exitX=0.5;exitY=1;exitDx=0;exitDy=0;entryX=0.5;entryY=0;entryDx=0;entryDy=0;fillColor=#dae8fc;strokeColor=#6c8ebf;" parent="1" source="c_Ia4zeI4B_aajXnBUTX-56" target="c_Ia4zeI4B_aajXnBUTX-60" edge="1">
-          <mxGeometry relative="1" as="geometry">
-            <mxPoint x="1650" y="130" as="sourcePoint" />
-            <mxPoint x="1730" y="190" as="targetPoint" />
-          </mxGeometry>
-        </mxCell>
-        <mxCell id="c_Ia4zeI4B_aajXnBUTX-72" value="" style="rounded=0;orthogonalLoop=1;jettySize=auto;html=1;endArrow=none;endFill=0;exitX=0.5;exitY=1;exitDx=0;exitDy=0;entryX=0.5;entryY=0;entryDx=0;entryDy=0;fillColor=#dae8fc;strokeColor=#6c8ebf;" parent="1" source="c_Ia4zeI4B_aajXnBUTX-56" target="c_Ia4zeI4B_aajXnBUTX-58" edge="1">
-          <mxGeometry relative="1" as="geometry">
-            <mxPoint x="1650" y="130" as="sourcePoint" />
-            <mxPoint x="1730" y="190" as="targetPoint" />
-          </mxGeometry>
-        </mxCell>
-        <mxCell id="c_Ia4zeI4B_aajXnBUTX-73" value="" style="rounded=0;orthogonalLoop=1;jettySize=auto;html=1;endArrow=none;endFill=0;exitX=0.5;exitY=1;exitDx=0;exitDy=0;entryX=0.5;entryY=0;entryDx=0;entryDy=0;fillColor=#dae8fc;strokeColor=#6c8ebf;" parent="1" source="c_Ia4zeI4B_aajXnBUTX-56" target="c_Ia4zeI4B_aajXnBUTX-59" edge="1">
-          <mxGeometry relative="1" as="geometry">
-            <mxPoint x="1650" y="130" as="sourcePoint" />
-            <mxPoint x="1730" y="190" as="targetPoint" />
-          </mxGeometry>
-        </mxCell>
-        <mxCell id="c_Ia4zeI4B_aajXnBUTX-74" value="(からだパーツ&lt;br&gt;カード)&lt;br&gt;&lt;div style=&quot;text-align: left;&quot;&gt;&lt;span style=&quot;background-color: initial;&quot;&gt;- 色: 赤&lt;/span&gt;&lt;/div&gt;&lt;div style=&quot;text-align: left;&quot;&gt;&lt;span style=&quot;background-color: initial;&quot;&gt;- 状態: 健康&lt;/span&gt;&lt;/div&gt;" style="rounded=0;whiteSpace=wrap;html=1;strokeColor=#6c8ebf;fillColor=#dae8fc;" parent="1" vertex="1">
-          <mxGeometry x="1880" y="-100" width="120" height="80" as="geometry" />
-        </mxCell>
-        <mxCell id="c_Ia4zeI4B_aajXnBUTX-75" value="" style="rounded=0;orthogonalLoop=1;jettySize=auto;html=1;endArrow=none;endFill=0;exitX=1;exitY=0.5;exitDx=0;exitDy=0;entryX=0;entryY=0.5;entryDx=0;entryDy=0;fillColor=#dae8fc;strokeColor=#6c8ebf;" parent="1" source="c_Ia4zeI4B_aajXnBUTX-61" target="c_Ia4zeI4B_aajXnBUTX-74" edge="1">
-          <mxGeometry relative="1" as="geometry" />
-        </mxCell>
-        <mxCell id="c_Ia4zeI4B_aajXnBUTX-76" value="(からだパーツ&lt;br&gt;カード)&lt;br&gt;&lt;div style=&quot;text-align: left;&quot;&gt;&lt;span style=&quot;background-color: initial;&quot;&gt;- 色: 青&lt;/span&gt;&lt;/div&gt;&lt;div style=&quot;text-align: left;&quot;&gt;&lt;span style=&quot;background-color: initial;&quot;&gt;- 状態: 感染&lt;/span&gt;&lt;/div&gt;" style="rounded=0;whiteSpace=wrap;html=1;strokeColor=#6c8ebf;fillColor=#dae8fc;" parent="1" vertex="1">
-          <mxGeometry x="1880" y="20" width="120" height="80" as="geometry" />
-        </mxCell>
-        <mxCell id="c_Ia4zeI4B_aajXnBUTX-77" value="(からだパーツ&lt;br&gt;カード)&lt;br&gt;&lt;div style=&quot;text-align: left;&quot;&gt;&lt;span style=&quot;background-color: initial;&quot;&gt;- 色: 緑&lt;/span&gt;&lt;/div&gt;&lt;div style=&quot;text-align: left;&quot;&gt;&lt;span style=&quot;background-color: initial;&quot;&gt;- 状態: ワクチン&lt;/span&gt;&lt;/div&gt;" style="rounded=0;whiteSpace=wrap;html=1;strokeColor=#6c8ebf;fillColor=#dae8fc;" parent="1" vertex="1">
-          <mxGeometry x="1880" y="140" width="120" height="80" as="geometry" />
-        </mxCell>
-        <mxCell id="c_Ia4zeI4B_aajXnBUTX-78" value="(からだパーツ&lt;br&gt;カード)&lt;br&gt;&lt;div style=&quot;text-align: left;&quot;&gt;&lt;span style=&quot;background-color: initial;&quot;&gt;- 色: 黄色&lt;/span&gt;&lt;/div&gt;&lt;div style=&quot;text-align: left;&quot;&gt;&lt;span style=&quot;background-color: initial;&quot;&gt;- 状態: 免疫&lt;/span&gt;&lt;/div&gt;" style="rounded=0;whiteSpace=wrap;html=1;strokeColor=#6c8ebf;fillColor=#dae8fc;" parent="1" vertex="1">
-          <mxGeometry x="1880" y="260" width="120" height="80" as="geometry" />
-        </mxCell>
-        <mxCell id="c_Ia4zeI4B_aajXnBUTX-79" value="" style="rounded=0;orthogonalLoop=1;jettySize=auto;html=1;endArrow=none;endFill=0;exitX=1;exitY=0.5;exitDx=0;exitDy=0;entryX=0;entryY=0.5;entryDx=0;entryDy=0;fillColor=#dae8fc;strokeColor=#6c8ebf;" parent="1" source="c_Ia4zeI4B_aajXnBUTX-61" target="c_Ia4zeI4B_aajXnBUTX-76" edge="1">
-          <mxGeometry relative="1" as="geometry" />
-        </mxCell>
-        <mxCell id="c_Ia4zeI4B_aajXnBUTX-80" value="" style="rounded=0;orthogonalLoop=1;jettySize=auto;html=1;endArrow=none;endFill=0;exitX=1;exitY=0.5;exitDx=0;exitDy=0;entryX=0;entryY=0.5;entryDx=0;entryDy=0;fillColor=#dae8fc;strokeColor=#6c8ebf;" parent="1" source="c_Ia4zeI4B_aajXnBUTX-61" target="c_Ia4zeI4B_aajXnBUTX-77" edge="1">
-          <mxGeometry relative="1" as="geometry" />
-        </mxCell>
-        <mxCell id="c_Ia4zeI4B_aajXnBUTX-81" value="" style="rounded=0;orthogonalLoop=1;jettySize=auto;html=1;endArrow=none;endFill=0;exitX=1;exitY=0.5;exitDx=0;exitDy=0;entryX=0;entryY=0.5;entryDx=0;entryDy=0;fillColor=#dae8fc;strokeColor=#6c8ebf;" parent="1" source="c_Ia4zeI4B_aajXnBUTX-61" target="c_Ia4zeI4B_aajXnBUTX-78" edge="1">
-          <mxGeometry relative="1" as="geometry" />
-        </mxCell>
-        <mxCell id="c_Ia4zeI4B_aajXnBUTX-83" value="(からだパーツ&lt;br&gt;カード)&lt;br&gt;&lt;div style=&quot;text-align: left;&quot;&gt;&lt;span style=&quot;background-color: initial;&quot;&gt;- 色: 青&lt;/span&gt;&lt;/div&gt;&lt;div style=&quot;text-align: left;&quot;&gt;&lt;span style=&quot;background-color: initial;&quot;&gt;- 状態: 健康&lt;/span&gt;&lt;/div&gt;" style="rounded=0;whiteSpace=wrap;html=1;strokeColor=#6c8ebf;fillColor=#dae8fc;" parent="1" vertex="1">
-          <mxGeometry x="2600" y="20" width="120" height="80" as="geometry" />
-        </mxCell>
-        <mxCell id="c_Ia4zeI4B_aajXnBUTX-84" value="(からだパーツ&lt;br&gt;カード)&lt;br&gt;&lt;div style=&quot;text-align: left;&quot;&gt;&lt;span style=&quot;background-color: initial;&quot;&gt;- 色: 緑&lt;/span&gt;&lt;/div&gt;&lt;div style=&quot;text-align: left;&quot;&gt;&lt;span style=&quot;background-color: initial;&quot;&gt;- 状態: 感染&lt;/span&gt;&lt;/div&gt;" style="rounded=0;whiteSpace=wrap;html=1;strokeColor=#6c8ebf;fillColor=#dae8fc;" parent="1" vertex="1">
-          <mxGeometry x="2600" y="140" width="120" height="80" as="geometry" />
-        </mxCell>
-        <mxCell id="c_Ia4zeI4B_aajXnBUTX-85" value="" style="rounded=0;orthogonalLoop=1;jettySize=auto;html=1;endArrow=none;endFill=0;exitX=1;exitY=0.5;exitDx=0;exitDy=0;entryX=0;entryY=0.5;entryDx=0;entryDy=0;fillColor=#dae8fc;strokeColor=#6c8ebf;" parent="1" source="c_Ia4zeI4B_aajXnBUTX-83" target="c_Ia4zeI4B_aajXnBUTX-64" edge="1">
-          <mxGeometry relative="1" as="geometry" />
-        </mxCell>
-        <mxCell id="c_Ia4zeI4B_aajXnBUTX-86" value="" style="rounded=0;orthogonalLoop=1;jettySize=auto;html=1;endArrow=none;endFill=0;exitX=1;exitY=0.5;exitDx=0;exitDy=0;entryX=0;entryY=0.5;entryDx=0;entryDy=0;fillColor=#dae8fc;strokeColor=#6c8ebf;" parent="1" source="c_Ia4zeI4B_aajXnBUTX-84" target="c_Ia4zeI4B_aajXnBUTX-64" edge="1">
-          <mxGeometry relative="1" as="geometry" />
-        </mxCell>
-        <mxCell id="c_Ia4zeI4B_aajXnBUTX-87" value="(からだパーツ&lt;br&gt;カード)&lt;br&gt;- 色: 赤" style="rounded=0;whiteSpace=wrap;html=1;strokeColor=#6c8ebf;fillColor=#dae8fc;" parent="1" vertex="1">
-          <mxGeometry x="2800" y="320" width="120" height="80" as="geometry" />
-        </mxCell>
-        <mxCell id="c_Ia4zeI4B_aajXnBUTX-88" value="(薬カード)&lt;br&gt;- 色: 赤" style="rounded=0;whiteSpace=wrap;html=1;fillColor=#dae8fc;strokeColor=#6c8ebf;" parent="1" vertex="1">
-          <mxGeometry x="2960" y="320" width="120" height="80" as="geometry" />
-        </mxCell>
-        <mxCell id="c_Ia4zeI4B_aajXnBUTX-90" value="" style="rounded=0;orthogonalLoop=1;jettySize=auto;html=1;endArrow=none;endFill=0;exitX=0.5;exitY=1;exitDx=0;exitDy=0;entryX=0.5;entryY=0;entryDx=0;entryDy=0;fillColor=#dae8fc;strokeColor=#6c8ebf;" parent="1" source="c_Ia4zeI4B_aajXnBUTX-66" target="c_Ia4zeI4B_aajXnBUTX-88" edge="1">
-          <mxGeometry relative="1" as="geometry">
-            <mxPoint x="3030" y="170" as="sourcePoint" />
-            <mxPoint x="3030" y="210" as="targetPoint" />
-          </mxGeometry>
-        </mxCell>
-        <mxCell id="c_Ia4zeI4B_aajXnBUTX-91" value="" style="rounded=0;orthogonalLoop=1;jettySize=auto;html=1;endArrow=none;endFill=0;exitX=0.5;exitY=1;exitDx=0;exitDy=0;entryX=0.5;entryY=0;entryDx=0;entryDy=0;fillColor=#dae8fc;strokeColor=#6c8ebf;" parent="1" source="c_Ia4zeI4B_aajXnBUTX-66" target="c_Ia4zeI4B_aajXnBUTX-87" edge="1">
-          <mxGeometry relative="1" as="geometry">
-            <mxPoint x="3030" y="170" as="sourcePoint" />
-            <mxPoint x="3030" y="210" as="targetPoint" />
-          </mxGeometry>
-        </mxCell>
-        <mxCell id="c_Ia4zeI4B_aajXnBUTX-94" value="- からだパーツカードを置く場所&lt;br&gt;- からだパーツカードは最大4枚まで&lt;br&gt;- 同じ色のからだパーツカードを複数置くことはできない" style="rounded=0;whiteSpace=wrap;html=1;fillColor=#FFFFCC;strokeColor=#CCCCCC;fontColor=#333333;align=left;verticalAlign=top;spacing=8;" parent="1" vertex="1">
-          <mxGeometry x="1440" y="-40" width="360" height="80" as="geometry" />
-        </mxCell>
-        <mxCell id="c_Ia4zeI4B_aajXnBUTX-95" value="" style="endArrow=none;html=1;rounded=0;entryX=0;entryY=0.5;entryDx=0;entryDy=0;exitX=1;exitY=0.75;exitDx=0;exitDy=0;dashed=1;" parent="1" source="c_Ia4zeI4B_aajXnBUTX-96" target="c_Ia4zeI4B_aajXnBUTX-56" edge="1">
-          <mxGeometry width="50" height="50" relative="1" as="geometry">
-            <mxPoint x="930" y="70" as="sourcePoint" />
-            <mxPoint x="890" y="130" as="targetPoint" />
-          </mxGeometry>
-        </mxCell>
-        <mxCell id="c_Ia4zeI4B_aajXnBUTX-96" value="- 手札のカードは最大3枚まで" style="rounded=0;whiteSpace=wrap;html=1;fillColor=#FFFFCC;strokeColor=#CCCCCC;fontColor=#333333;align=left;verticalAlign=top;spacing=8;" parent="1" vertex="1">
-          <mxGeometry x="1280" y="160" width="200" height="80" as="geometry" />
-        </mxCell>
-        <mxCell id="c_Ia4zeI4B_aajXnBUTX-97" value="" style="endArrow=none;html=1;rounded=0;entryX=0.5;entryY=0;entryDx=0;entryDy=0;exitX=0.75;exitY=1;exitDx=0;exitDy=0;dashed=1;" parent="1" source="c_Ia4zeI4B_aajXnBUTX-94" target="c_Ia4zeI4B_aajXnBUTX-61" edge="1">
-          <mxGeometry width="50" height="50" relative="1" as="geometry">
-            <mxPoint x="930" y="70" as="sourcePoint" />
-            <mxPoint x="890" y="130" as="targetPoint" />
-          </mxGeometry>
-        </mxCell>
-        <mxCell id="c_Ia4zeI4B_aajXnBUTX-98" value="(薬カード)&lt;br&gt;&lt;div style=&quot;text-align: left;&quot;&gt;&lt;span style=&quot;background-color: initial;&quot;&gt;- 色: 黄色&lt;/span&gt;&lt;/div&gt;" style="rounded=0;whiteSpace=wrap;html=1;strokeColor=#6c8ebf;fillColor=#dae8fc;" parent="1" vertex="1">
-          <mxGeometry x="2040" y="260" width="120" height="80" as="geometry" />
-        </mxCell>
-        <mxCell id="c_Ia4zeI4B_aajXnBUTX-99" value="" style="rounded=0;orthogonalLoop=1;jettySize=auto;html=1;endArrow=none;endFill=0;exitX=1;exitY=0.5;exitDx=0;exitDy=0;entryX=0;entryY=0.5;entryDx=0;entryDy=0;fillColor=#dae8fc;strokeColor=#6c8ebf;" parent="1" source="c_Ia4zeI4B_aajXnBUTX-78" target="c_Ia4zeI4B_aajXnBUTX-98" edge="1">
-          <mxGeometry relative="1" as="geometry" />
-        </mxCell>
-        <mxCell id="c_Ia4zeI4B_aajXnBUTX-100" value="(薬カード)&lt;br&gt;&lt;div style=&quot;text-align: left;&quot;&gt;&lt;span style=&quot;background-color: initial;&quot;&gt;- 色: 黄色&lt;/span&gt;&lt;/div&gt;" style="rounded=0;whiteSpace=wrap;html=1;strokeColor=#6c8ebf;fillColor=#dae8fc;" parent="1" vertex="1">
-          <mxGeometry x="2040" y="360" width="120" height="80" as="geometry" />
-        </mxCell>
-        <mxCell id="c_Ia4zeI4B_aajXnBUTX-101" value="" style="rounded=0;orthogonalLoop=1;jettySize=auto;html=1;endArrow=none;endFill=0;exitX=1;exitY=0.5;exitDx=0;exitDy=0;entryX=0;entryY=0.5;entryDx=0;entryDy=0;fillColor=#dae8fc;strokeColor=#6c8ebf;" parent="1" source="c_Ia4zeI4B_aajXnBUTX-78" target="c_Ia4zeI4B_aajXnBUTX-100" edge="1">
-          <mxGeometry relative="1" as="geometry" />
-        </mxCell>
-        <mxCell id="c_Ia4zeI4B_aajXnBUTX-102" value="(薬カード)&lt;br&gt;&lt;div style=&quot;text-align: left;&quot;&gt;&lt;span style=&quot;background-color: initial;&quot;&gt;- 色: 緑&lt;/span&gt;&lt;/div&gt;" style="rounded=0;whiteSpace=wrap;html=1;strokeColor=#6c8ebf;fillColor=#dae8fc;" parent="1" vertex="1">
-          <mxGeometry x="2040" y="140" width="120" height="80" as="geometry" />
-        </mxCell>
-        <mxCell id="c_Ia4zeI4B_aajXnBUTX-103" value="" style="rounded=0;orthogonalLoop=1;jettySize=auto;html=1;endArrow=none;endFill=0;exitX=1;exitY=0.5;exitDx=0;exitDy=0;entryX=0;entryY=0.5;entryDx=0;entryDy=0;fillColor=#dae8fc;strokeColor=#6c8ebf;" parent="1" source="c_Ia4zeI4B_aajXnBUTX-77" target="c_Ia4zeI4B_aajXnBUTX-102" edge="1">
-          <mxGeometry relative="1" as="geometry" />
-        </mxCell>
-        <mxCell id="c_Ia4zeI4B_aajXnBUTX-110" value="(ウィルスカード)&lt;br&gt;&lt;div style=&quot;text-align: left;&quot;&gt;&lt;span style=&quot;background-color: initial;&quot;&gt;- 色: 緑&lt;/span&gt;&lt;/div&gt;" style="rounded=0;whiteSpace=wrap;html=1;strokeColor=#6c8ebf;fillColor=#dae8fc;" parent="1" vertex="1">
-          <mxGeometry x="2440" y="140" width="120" height="80" as="geometry" />
-        </mxCell>
-        <mxCell id="c_Ia4zeI4B_aajXnBUTX-111" value="" style="rounded=0;orthogonalLoop=1;jettySize=auto;html=1;endArrow=none;endFill=0;exitX=1;exitY=0.5;exitDx=0;exitDy=0;entryX=0;entryY=0.5;entryDx=0;entryDy=0;fillColor=#dae8fc;strokeColor=#6c8ebf;" parent="1" source="c_Ia4zeI4B_aajXnBUTX-110" target="c_Ia4zeI4B_aajXnBUTX-84" edge="1">
-          <mxGeometry relative="1" as="geometry" />
-        </mxCell>
-        <mxCell id="c_Ia4zeI4B_aajXnBUTX-114" value="からだパーツカードの状態が感染のときに&lt;br&gt;ウィルスカードが置かれると状態が発症となり、2枚のウィルスカードと一緒に捨て札に置く" style="rounded=0;whiteSpace=wrap;html=1;fillColor=#FFFFCC;strokeColor=#CCCCCC;fontColor=#333333;align=left;verticalAlign=top;spacing=8;" parent="1" vertex="1">
+        <mxCell id="c_Ia4zeI4B_aajXnBUTX-114" value="からだパーツカードの状態が感染のときに&lt;br&gt;ウィルスカードを適用すると状態が発症となり、2枚のウィルスカードと一緒に捨て札に置く" style="rounded=0;whiteSpace=wrap;html=1;fillColor=#FFFFCC;strokeColor=#CCCCCC;fontColor=#333333;align=left;verticalAlign=top;spacing=8;" parent="1" vertex="1">
           <mxGeometry x="2639" y="730" width="281" height="100" as="geometry" />
         </mxCell>
-        <mxCell id="c_Ia4zeI4B_aajXnBUTX-132" value="からだパーツカードの状態が健康のときに&lt;br&gt;ウィルスカードが置かれると状態が感染になる" style="rounded=0;whiteSpace=wrap;html=1;fillColor=#FFFFCC;strokeColor=#CCCCCC;fontColor=#333333;align=left;verticalAlign=top;spacing=8;" parent="1" vertex="1">
+        <mxCell id="c_Ia4zeI4B_aajXnBUTX-132" value="からだパーツカードの状態が健康のときに&lt;br&gt;ウィルスカードを適用すると状態が感染になる" style="rounded=0;whiteSpace=wrap;html=1;fillColor=#FFFFCC;strokeColor=#CCCCCC;fontColor=#333333;align=left;verticalAlign=top;spacing=8;" parent="1" vertex="1">
           <mxGeometry x="1840" y="730" width="281" height="100" as="geometry" />
         </mxCell>
-        <mxCell id="c_Ia4zeI4B_aajXnBUTX-134" value="からだパーツカードの状態が感染のときに&lt;br&gt;薬カードが置かれると状態が健康となり、ウィルスカードと薬カードを捨て札に置く" style="rounded=0;whiteSpace=wrap;html=1;fillColor=#FFFFCC;strokeColor=#CCCCCC;fontColor=#333333;align=left;verticalAlign=top;spacing=8;" parent="1" vertex="1">
+        <mxCell id="c_Ia4zeI4B_aajXnBUTX-134" value="からだパーツカードの状態が感染のときに&lt;br&gt;薬カードを適用すると状態が健康となり、ウィルスカードと薬カードを捨て札に置く" style="rounded=0;whiteSpace=wrap;html=1;fillColor=#FFFFCC;strokeColor=#CCCCCC;fontColor=#333333;align=left;verticalAlign=top;spacing=8;" parent="1" vertex="1">
           <mxGeometry x="2240" y="730" width="280" height="100" as="geometry" />
         </mxCell>
         <mxCell id="c_Ia4zeI4B_aajXnBUTX-136" value="(からだパーツ&lt;br&gt;カード)&lt;br&gt;&lt;div style=&quot;text-align: left;&quot;&gt;&lt;span style=&quot;background-color: initial;&quot;&gt;- 色: 赤&lt;/span&gt;&lt;/div&gt;&lt;div style=&quot;text-align: left;&quot;&gt;&lt;span style=&quot;background-color: initial;&quot;&gt;- 状態: 健康&lt;/span&gt;&lt;/div&gt;" style="rounded=0;whiteSpace=wrap;html=1;strokeColor=#6c8ebf;fillColor=#dae8fc;" parent="1" vertex="1">
@@ -445,10 +283,11 @@
         <mxCell id="c_Ia4zeI4B_aajXnBUTX-140" value="" style="strokeWidth=1;html=1;shape=mxgraph.flowchart.merge_or_storage;whiteSpace=wrap;strokeColor=#333333;" parent="1" vertex="1">
           <mxGeometry x="1880" y="1030" width="40" height="20" as="geometry" />
         </mxCell>
-        <mxCell id="c_Ia4zeI4B_aajXnBUTX-142" value="" style="rounded=0;orthogonalLoop=1;jettySize=auto;html=1;endArrow=none;endFill=0;fillColor=#dae8fc;strokeColor=#6c8ebf;entryX=1;entryY=0.5;entryDx=0;entryDy=0;exitX=0;exitY=0.5;exitDx=0;exitDy=0;" parent="1" source="c_Ia4zeI4B_aajXnBUTX-137" target="c_Ia4zeI4B_aajXnBUTX-139" edge="1">
-          <mxGeometry relative="1" as="geometry">
+        <mxCell id="c_Ia4zeI4B_aajXnBUTX-142" value="適用" style="rounded=0;orthogonalLoop=1;jettySize=auto;html=1;endArrow=none;endFill=0;fillColor=#dae8fc;strokeColor=#6c8ebf;entryX=1;entryY=0.5;entryDx=0;entryDy=0;exitX=0;exitY=0.5;exitDx=0;exitDy=0;" parent="1" source="c_Ia4zeI4B_aajXnBUTX-137" target="c_Ia4zeI4B_aajXnBUTX-139" edge="1">
+          <mxGeometry y="-20" relative="1" as="geometry">
             <mxPoint x="2260" y="800" as="sourcePoint" />
             <mxPoint x="2020" y="820" as="targetPoint" />
+            <mxPoint as="offset" />
           </mxGeometry>
         </mxCell>
         <mxCell id="c_Ia4zeI4B_aajXnBUTX-144" value="(からだパーツ&lt;br&gt;カード)&lt;br&gt;&lt;div style=&quot;text-align: left;&quot;&gt;&lt;span style=&quot;background-color: initial;&quot;&gt;- 色: 赤&lt;/span&gt;&lt;/div&gt;&lt;div style=&quot;text-align: left;&quot;&gt;&lt;span style=&quot;background-color: initial;&quot;&gt;- 状態: 感染&lt;/span&gt;&lt;/div&gt;" style="rounded=0;whiteSpace=wrap;html=1;strokeColor=#6c8ebf;fillColor=#dae8fc;" parent="1" vertex="1">
@@ -481,7 +320,7 @@
             <mxPoint x="2820" y="460" as="targetPoint" />
           </mxGeometry>
         </mxCell>
-        <mxCell id="c_Ia4zeI4B_aajXnBUTX-152" value="" style="rounded=0;orthogonalLoop=1;jettySize=auto;html=1;endArrow=none;endFill=0;fillColor=#dae8fc;strokeColor=#6c8ebf;entryX=1;entryY=0.5;entryDx=0;entryDy=0;exitX=0;exitY=0.5;exitDx=0;exitDy=0;" parent="1" source="c_Ia4zeI4B_aajXnBUTX-150" target="c_Ia4zeI4B_aajXnBUTX-148" edge="1">
+        <mxCell id="c_Ia4zeI4B_aajXnBUTX-152" value="適用" style="rounded=0;orthogonalLoop=1;jettySize=auto;html=1;endArrow=none;endFill=0;fillColor=#dae8fc;strokeColor=#6c8ebf;entryX=1;entryY=0.5;entryDx=0;entryDy=0;exitX=0;exitY=0.5;exitDx=0;exitDy=0;" parent="1" source="c_Ia4zeI4B_aajXnBUTX-150" target="c_Ia4zeI4B_aajXnBUTX-148" edge="1">
           <mxGeometry relative="1" as="geometry">
             <mxPoint x="2810" y="1130" as="sourcePoint" />
             <mxPoint x="2770" y="1130" as="targetPoint" />
@@ -529,7 +368,7 @@
         <mxCell id="c_Ia4zeI4B_aajXnBUTX-164" value="(薬カード)&lt;br&gt;- 色: 赤" style="rounded=0;whiteSpace=wrap;html=1;fillColor=#dae8fc;strokeColor=#6c8ebf;" parent="1" vertex="1">
           <mxGeometry x="2400" y="1180" width="120" height="80" as="geometry" />
         </mxCell>
-        <mxCell id="c_Ia4zeI4B_aajXnBUTX-165" value="" style="rounded=0;orthogonalLoop=1;jettySize=auto;html=1;endArrow=none;endFill=0;fillColor=#dae8fc;strokeColor=#6c8ebf;entryX=1;entryY=0.5;entryDx=0;entryDy=0;exitX=0;exitY=0.5;exitDx=0;exitDy=0;" parent="1" source="c_Ia4zeI4B_aajXnBUTX-164" target="c_Ia4zeI4B_aajXnBUTX-160" edge="1">
+        <mxCell id="c_Ia4zeI4B_aajXnBUTX-165" value="適用" style="rounded=0;orthogonalLoop=1;jettySize=auto;html=1;endArrow=none;endFill=0;fillColor=#dae8fc;strokeColor=#6c8ebf;entryX=1;entryY=0.5;entryDx=0;entryDy=0;exitX=0;exitY=0.5;exitDx=0;exitDy=0;" parent="1" source="c_Ia4zeI4B_aajXnBUTX-164" target="c_Ia4zeI4B_aajXnBUTX-160" edge="1">
           <mxGeometry relative="1" as="geometry">
             <mxPoint x="2660" y="440" as="sourcePoint" />
             <mxPoint x="2420" y="460" as="targetPoint" />
@@ -574,13 +413,13 @@
         <mxCell id="c_Ia4zeI4B_aajXnBUTX-175" value="(ウィルスカード)&lt;br&gt;- 色: 赤" style="rounded=0;whiteSpace=wrap;html=1;fillColor=#dae8fc;strokeColor=#6c8ebf;" parent="1" vertex="1">
           <mxGeometry x="2400" y="1940" width="120" height="80" as="geometry" />
         </mxCell>
-        <mxCell id="c_Ia4zeI4B_aajXnBUTX-176" value="" style="rounded=0;orthogonalLoop=1;jettySize=auto;html=1;endArrow=none;endFill=0;fillColor=#dae8fc;strokeColor=#6c8ebf;entryX=1;entryY=0.5;entryDx=0;entryDy=0;exitX=0;exitY=0.5;exitDx=0;exitDy=0;" parent="1" source="c_Ia4zeI4B_aajXnBUTX-175" target="c_Ia4zeI4B_aajXnBUTX-172" edge="1">
+        <mxCell id="c_Ia4zeI4B_aajXnBUTX-176" value="適用" style="rounded=0;orthogonalLoop=1;jettySize=auto;html=1;endArrow=none;endFill=0;fillColor=#dae8fc;strokeColor=#6c8ebf;entryX=1;entryY=0.5;entryDx=0;entryDy=0;exitX=0;exitY=0.5;exitDx=0;exitDy=0;" parent="1" source="c_Ia4zeI4B_aajXnBUTX-175" target="c_Ia4zeI4B_aajXnBUTX-172" edge="1">
           <mxGeometry relative="1" as="geometry">
             <mxPoint x="2660" y="1200" as="sourcePoint" />
             <mxPoint x="2420" y="1220" as="targetPoint" />
           </mxGeometry>
         </mxCell>
-        <mxCell id="c_Ia4zeI4B_aajXnBUTX-177" value="からだパーツカードの状態が仮免疫のときに&lt;br&gt;ウィルスカードが置かれると状態が健康となり、薬カードとウィルスカードを捨て札に置く" style="rounded=0;whiteSpace=wrap;html=1;fillColor=#FFFFCC;strokeColor=#CCCCCC;fontColor=#333333;align=left;verticalAlign=top;spacing=8;" parent="1" vertex="1">
+        <mxCell id="c_Ia4zeI4B_aajXnBUTX-177" value="からだパーツカードの状態が仮免疫のときに&lt;br&gt;ウィルスカードを適用すると状態が健康となり、薬カードとウィルスカードを捨て札に置く" style="rounded=0;whiteSpace=wrap;html=1;fillColor=#FFFFCC;strokeColor=#CCCCCC;fontColor=#333333;align=left;verticalAlign=top;spacing=8;" parent="1" vertex="1">
           <mxGeometry x="2240" y="1490" width="280" height="100" as="geometry" />
         </mxCell>
         <mxCell id="c_Ia4zeI4B_aajXnBUTX-179" value="(捨て札)" style="rounded=0;whiteSpace=wrap;html=1;fillColor=#dae8fc;strokeColor=#6c8ebf;" parent="1" vertex="1">
@@ -619,7 +458,7 @@
         <mxCell id="c_Ia4zeI4B_aajXnBUTX-188" value="ワクチン接種" style="text;html=1;strokeColor=#333333;fillColor=none;align=center;verticalAlign=top;whiteSpace=wrap;rounded=0;dashed=1;spacing=8;" parent="1" vertex="1">
           <mxGeometry x="1800.5" y="1640" width="360" height="560" as="geometry" />
         </mxCell>
-        <mxCell id="c_Ia4zeI4B_aajXnBUTX-189" value="からだパーツカードの状態が健康のときに&lt;br&gt;薬カードが置かれると状態が仮免疫になる" style="rounded=0;whiteSpace=wrap;html=1;fillColor=#FFFFCC;strokeColor=#CCCCCC;fontColor=#333333;align=left;verticalAlign=top;spacing=8;" parent="1" vertex="1">
+        <mxCell id="c_Ia4zeI4B_aajXnBUTX-189" value="からだパーツカードの状態が健康のときに&lt;br&gt;薬カードを適用すると状態が仮免疫になる" style="rounded=0;whiteSpace=wrap;html=1;fillColor=#FFFFCC;strokeColor=#CCCCCC;fontColor=#333333;align=left;verticalAlign=top;spacing=8;" parent="1" vertex="1">
           <mxGeometry x="1840.5" y="1490" width="281" height="100" as="geometry" />
         </mxCell>
         <mxCell id="c_Ia4zeI4B_aajXnBUTX-190" value="(からだパーツ&lt;br&gt;カード)&lt;br&gt;&lt;div style=&quot;text-align: left;&quot;&gt;&lt;span style=&quot;background-color: initial;&quot;&gt;- 色: 赤&lt;/span&gt;&lt;/div&gt;&lt;div style=&quot;text-align: left;&quot;&gt;&lt;span style=&quot;background-color: initial;&quot;&gt;- 状態: 健康&lt;/span&gt;&lt;/div&gt;" style="rounded=0;whiteSpace=wrap;html=1;strokeColor=#6c8ebf;fillColor=#dae8fc;" parent="1" vertex="1">
@@ -634,7 +473,7 @@
         <mxCell id="c_Ia4zeI4B_aajXnBUTX-193" value="" style="strokeWidth=1;html=1;shape=mxgraph.flowchart.merge_or_storage;whiteSpace=wrap;strokeColor=#333333;" parent="1" vertex="1">
           <mxGeometry x="1880.5" y="1790" width="40" height="20" as="geometry" />
         </mxCell>
-        <mxCell id="c_Ia4zeI4B_aajXnBUTX-194" value="" style="rounded=0;orthogonalLoop=1;jettySize=auto;html=1;endArrow=none;endFill=0;fillColor=#dae8fc;strokeColor=#6c8ebf;entryX=1;entryY=0.5;entryDx=0;entryDy=0;exitX=0;exitY=0.5;exitDx=0;exitDy=0;" parent="1" source="c_Ia4zeI4B_aajXnBUTX-191" target="c_Ia4zeI4B_aajXnBUTX-192" edge="1">
+        <mxCell id="c_Ia4zeI4B_aajXnBUTX-194" value="適用" style="rounded=0;orthogonalLoop=1;jettySize=auto;html=1;endArrow=none;endFill=0;fillColor=#dae8fc;strokeColor=#6c8ebf;entryX=1;entryY=0.5;entryDx=0;entryDy=0;exitX=0;exitY=0.5;exitDx=0;exitDy=0;" parent="1" source="c_Ia4zeI4B_aajXnBUTX-191" target="c_Ia4zeI4B_aajXnBUTX-192" edge="1">
           <mxGeometry relative="1" as="geometry">
             <mxPoint x="2260.5" y="1560" as="sourcePoint" />
             <mxPoint x="2020.5" y="1580" as="targetPoint" />
@@ -676,7 +515,7 @@
         <mxCell id="c_Ia4zeI4B_aajXnBUTX-205" value="(薬カード)&lt;br&gt;- 色: 赤" style="rounded=0;whiteSpace=wrap;html=1;fillColor=#dae8fc;strokeColor=#6c8ebf;" parent="1" vertex="1">
           <mxGeometry x="2799.5" y="1940" width="120" height="80" as="geometry" />
         </mxCell>
-        <mxCell id="c_Ia4zeI4B_aajXnBUTX-206" value="" style="rounded=0;orthogonalLoop=1;jettySize=auto;html=1;endArrow=none;endFill=0;fillColor=#dae8fc;strokeColor=#6c8ebf;entryX=1;entryY=0.5;entryDx=0;entryDy=0;exitX=0;exitY=0.5;exitDx=0;exitDy=0;" parent="1" source="c_Ia4zeI4B_aajXnBUTX-205" target="c_Ia4zeI4B_aajXnBUTX-202" edge="1">
+        <mxCell id="c_Ia4zeI4B_aajXnBUTX-206" value="適用" style="rounded=0;orthogonalLoop=1;jettySize=auto;html=1;endArrow=none;endFill=0;fillColor=#dae8fc;strokeColor=#6c8ebf;entryX=1;entryY=0.5;entryDx=0;entryDy=0;exitX=0;exitY=0.5;exitDx=0;exitDy=0;" parent="1" source="c_Ia4zeI4B_aajXnBUTX-205" target="c_Ia4zeI4B_aajXnBUTX-202" edge="1">
           <mxGeometry relative="1" as="geometry">
             <mxPoint x="3059.5" y="1200" as="sourcePoint" />
             <mxPoint x="2819.5" y="1220" as="targetPoint" />
@@ -688,14 +527,8 @@
             <mxPoint x="2849.5" y="1590" as="targetPoint" />
           </mxGeometry>
         </mxCell>
-        <mxCell id="c_Ia4zeI4B_aajXnBUTX-211" value="からだパーツカードの状態が仮免疫のときに薬カードが置かれると、状態が免疫となり、ウィルスカードや医療カードの影響を受けなくなる" style="rounded=0;whiteSpace=wrap;html=1;fillColor=#FFFFCC;strokeColor=#CCCCCC;fontColor=#333333;align=left;verticalAlign=top;spacing=8;" parent="1" vertex="1">
+        <mxCell id="c_Ia4zeI4B_aajXnBUTX-211" value="からだパーツカードの状態が仮免疫のときに薬カードを適用すると状態が免疫となり、ウィルスカードや医療カードの影響を受けなくなる" style="rounded=0;whiteSpace=wrap;html=1;fillColor=#FFFFCC;strokeColor=#CCCCCC;fontColor=#333333;align=left;verticalAlign=top;spacing=8;" parent="1" vertex="1">
           <mxGeometry x="2640" y="1490" width="280" height="100" as="geometry" />
-        </mxCell>
-        <mxCell id="c_Ia4zeI4B_aajXnBUTX-212" value="" style="endArrow=none;html=1;rounded=0;entryX=0.25;entryY=0;entryDx=0;entryDy=0;exitX=0.5;exitY=1;exitDx=0;exitDy=0;dashed=1;" parent="1" source="8Rx44zWbmar0orGI43Fp-10" target="c_Ia4zeI4B_aajXnBUTX-62" edge="1">
-          <mxGeometry width="50" height="50" relative="1" as="geometry">
-            <mxPoint x="930" y="70" as="sourcePoint" />
-            <mxPoint x="890" y="130" as="targetPoint" />
-          </mxGeometry>
         </mxCell>
         <mxCell id="c_Ia4zeI4B_aajXnBUTX-213" value="置く" style="endArrow=open;html=1;rounded=0;entryX=0;entryY=0.25;entryDx=0;entryDy=0;exitX=0.5;exitY=0;exitDx=0;exitDy=0;edgeStyle=orthogonalEdgeStyle;startArrow=diamond;startFill=1;endFill=0;" parent="1" source="8Rx44zWbmar0orGI43Fp-4" target="8Rx44zWbmar0orGI43Fp-6" edge="1">
           <mxGeometry x="0.1563" y="10" width="50" height="50" relative="1" as="geometry">
@@ -774,23 +607,379 @@
             <mxPoint x="-12" y="-13" as="offset" />
           </mxGeometry>
         </mxCell>
-        <mxCell id="h-tjwGrXuljhetKIq6Q1-1" value="組み立てる&lt;br&gt;Assemble" style="rounded=0;whiteSpace=wrap;html=1;fontColor=#333333;" vertex="1" parent="1">
+        <mxCell id="h-tjwGrXuljhetKIq6Q1-1" value="組み立てる&lt;br&gt;Assemble" style="rounded=0;whiteSpace=wrap;html=1;fontColor=#333333;" parent="1" vertex="1">
           <mxGeometry x="480" y="-160" width="120" height="80" as="geometry" />
         </mxCell>
-        <mxCell id="h-tjwGrXuljhetKIq6Q1-2" value="保護する&lt;br&gt;Protection" style="rounded=0;whiteSpace=wrap;html=1;fontColor=#333333;" vertex="1" parent="1">
+        <mxCell id="h-tjwGrXuljhetKIq6Q1-2" value="保護する&lt;br&gt;Protection" style="rounded=0;whiteSpace=wrap;html=1;fontColor=#333333;" parent="1" vertex="1">
           <mxGeometry x="640" y="-160" width="120" height="80" as="geometry" />
         </mxCell>
-        <mxCell id="h-tjwGrXuljhetKIq6Q1-3" value="妨害する&lt;br&gt;Interference" style="rounded=0;whiteSpace=wrap;html=1;fontColor=#333333;" vertex="1" parent="1">
+        <mxCell id="h-tjwGrXuljhetKIq6Q1-3" value="妨害する&lt;br&gt;Interference" style="rounded=0;whiteSpace=wrap;html=1;fontColor=#333333;" parent="1" vertex="1">
           <mxGeometry x="800" y="-160" width="120" height="80" as="geometry" />
         </mxCell>
-        <mxCell id="h-tjwGrXuljhetKIq6Q1-4" value="&amp;lt;&amp;lt;interface&amp;gt;&amp;gt;&lt;br&gt;アクション/戦略&lt;br&gt;Action/Strategy" style="rounded=0;whiteSpace=wrap;html=1;fontColor=#333333;" vertex="1" parent="1">
+        <mxCell id="h-tjwGrXuljhetKIq6Q1-4" value="&amp;lt;&amp;lt;interface&amp;gt;&amp;gt;&lt;br&gt;アクション/戦略&lt;br&gt;Action/Strategy" style="rounded=0;whiteSpace=wrap;html=1;fontColor=#333333;" parent="1" vertex="1">
           <mxGeometry x="640" y="-280" width="120" height="80" as="geometry" />
         </mxCell>
-        <mxCell id="h-tjwGrXuljhetKIq6Q1-5" value="- 組み立て可能: Assembled&lt;br&gt;- 保護可能: Protectable&lt;br&gt;- 妨害可能: Interruptible" style="rounded=0;whiteSpace=wrap;html=1;fillColor=#FFFFCC;strokeColor=#CCCCCC;fontColor=#333333;align=left;verticalAlign=top;spacing=8;" vertex="1" parent="1">
+        <mxCell id="h-tjwGrXuljhetKIq6Q1-5" value="- 組み立て可能: Assembled&lt;br&gt;- 保護可能: Protectable&lt;br&gt;- 妨害可能: Interruptible" style="rounded=0;whiteSpace=wrap;html=1;fillColor=#FFFFCC;strokeColor=#CCCCCC;fontColor=#333333;align=left;verticalAlign=top;spacing=8;" parent="1" vertex="1">
           <mxGeometry x="840" y="-320" width="200" height="80" as="geometry" />
         </mxCell>
-        <mxCell id="h-tjwGrXuljhetKIq6Q1-6" value="健康→感染: ウィルスカード&lt;br&gt;健康→仮免疫: 薬カード&lt;br&gt;感染→発症: ウィルスカード&lt;br&gt;感染→健康: 薬カード&lt;br&gt;仮免疫→健康: ウィルスカード&lt;br&gt;仮免疫→免疫: 薬カード" style="rounded=0;whiteSpace=wrap;html=1;fillColor=#FFFFCC;strokeColor=#CCCCCC;fontColor=#333333;align=left;verticalAlign=top;spacing=8;" vertex="1" parent="1">
-          <mxGeometry x="2240" y="560" width="281" height="120" as="geometry" />
+        <mxCell id="h-tjwGrXuljhetKIq6Q1-6" value="ウィルスカード: 健康→感染&lt;br&gt;ウィルスカード: 感染→発症&lt;br&gt;ウィルスカード: 仮免疫→健康&lt;br&gt;&lt;br&gt;薬カード: 健康→仮免疫&lt;br&gt;薬カード: 感染→健康&lt;br&gt;薬カード: 仮免疫→免疫&lt;br&gt;&lt;br&gt;" style="rounded=0;whiteSpace=wrap;html=1;fillColor=#FFFFCC;strokeColor=#CCCCCC;fontColor=#333333;align=left;verticalAlign=top;spacing=8;" parent="1" vertex="1">
+          <mxGeometry x="2240" y="520" width="281" height="160" as="geometry" />
+        </mxCell>
+        <mxCell id="09PAbykDqG3_5M8GWdRA-12" value=":手札&lt;br&gt;- 枚数: 3" style="rounded=0;whiteSpace=wrap;html=1;fillColor=#dae8fc;strokeColor=#6c8ebf;" vertex="1" parent="1">
+          <mxGeometry x="1560" y="-2720" width="120" height="80" as="geometry" />
+        </mxCell>
+        <mxCell id="09PAbykDqG3_5M8GWdRA-14" value="ウィルス:カード&lt;br&gt;&lt;div style=&quot;text-align: left;&quot;&gt;&lt;span style=&quot;background-color: initial;&quot;&gt;- 色=青&lt;/span&gt;&lt;/div&gt;" style="rounded=0;whiteSpace=wrap;html=1;strokeColor=#6c8ebf;fillColor=#dae8fc;" vertex="1" parent="1">
+          <mxGeometry x="1720" y="-2840" width="120" height="80" as="geometry" />
+        </mxCell>
+        <mxCell id="09PAbykDqG3_5M8GWdRA-15" value="薬:カード&lt;br&gt;&lt;div style=&quot;text-align: left;&quot;&gt;&lt;span style=&quot;background-color: initial;&quot;&gt;- 色=黄&lt;/span&gt;&lt;/div&gt;" style="rounded=0;whiteSpace=wrap;html=1;fillColor=#dae8fc;strokeColor=#6c8ebf;" vertex="1" parent="1">
+          <mxGeometry x="1720" y="-2720" width="120" height="80" as="geometry" />
+        </mxCell>
+        <mxCell id="09PAbykDqG3_5M8GWdRA-16" value="" style="endArrow=none;html=1;rounded=0;exitX=1;exitY=0.5;exitDx=0;exitDy=0;entryX=0;entryY=0.5;entryDx=0;entryDy=0;edgeStyle=orthogonalEdgeStyle;curved=1;" edge="1" source="09PAbykDqG3_5M8GWdRA-12" parent="1" target="09PAbykDqG3_5M8GWdRA-38">
+          <mxGeometry x="-0.0041" width="50" height="50" relative="1" as="geometry">
+            <mxPoint x="1910" y="-2350" as="sourcePoint" />
+            <mxPoint x="1749.75" y="-2600" as="targetPoint" />
+            <mxPoint as="offset" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="09PAbykDqG3_5M8GWdRA-17" value="" style="endArrow=none;html=1;rounded=0;entryX=0;entryY=0.5;entryDx=0;entryDy=0;exitX=1;exitY=0.5;exitDx=0;exitDy=0;edgeStyle=orthogonalEdgeStyle;curved=1;" edge="1" source="09PAbykDqG3_5M8GWdRA-12" target="09PAbykDqG3_5M8GWdRA-15" parent="1">
+          <mxGeometry x="-0.0041" width="50" height="50" relative="1" as="geometry">
+            <mxPoint x="1910" y="-2350" as="sourcePoint" />
+            <mxPoint x="1960" y="-2400" as="targetPoint" />
+            <mxPoint as="offset" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="09PAbykDqG3_5M8GWdRA-18" value="" style="endArrow=none;html=1;rounded=0;exitX=1;exitY=0.5;exitDx=0;exitDy=0;entryX=0;entryY=0.5;entryDx=0;entryDy=0;edgeStyle=orthogonalEdgeStyle;curved=1;" edge="1" source="09PAbykDqG3_5M8GWdRA-12" target="09PAbykDqG3_5M8GWdRA-14" parent="1">
+          <mxGeometry x="-0.0041" width="50" height="50" relative="1" as="geometry">
+            <mxPoint x="1910" y="-2350" as="sourcePoint" />
+            <mxPoint x="1920" y="-2760" as="targetPoint" />
+            <mxPoint as="offset" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="09PAbykDqG3_5M8GWdRA-20" value=":からだエリア&lt;br&gt;- 枚数: 0" style="rounded=0;whiteSpace=wrap;html=1;fillColor=#dae8fc;strokeColor=#6c8ebf;" vertex="1" parent="1">
+          <mxGeometry x="2040" y="-2720" width="120" height="80" as="geometry" />
+        </mxCell>
+        <mxCell id="09PAbykDqG3_5M8GWdRA-35" value="置く&lt;br&gt;:アクション" style="rounded=0;whiteSpace=wrap;html=1;fillColor=#e1d5e7;strokeColor=#9673a6;" vertex="1" parent="1">
+          <mxGeometry x="1880" y="-2600" width="120" height="80" as="geometry" />
+        </mxCell>
+        <mxCell id="09PAbykDqG3_5M8GWdRA-36" value="" style="endArrow=none;html=1;rounded=0;entryX=0;entryY=0.5;entryDx=0;entryDy=0;exitX=1;exitY=0.5;exitDx=0;exitDy=0;edgeStyle=orthogonalEdgeStyle;curved=1;" edge="1" parent="1" source="09PAbykDqG3_5M8GWdRA-35" target="09PAbykDqG3_5M8GWdRA-20">
+          <mxGeometry x="-0.0041" width="50" height="50" relative="1" as="geometry">
+            <mxPoint x="2000" y="-2680" as="sourcePoint" />
+            <mxPoint x="1750" y="-2830" as="targetPoint" />
+            <mxPoint as="offset" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="09PAbykDqG3_5M8GWdRA-38" value="からだパーツ&lt;br&gt;:カード&lt;br&gt;&lt;div style=&quot;text-align: left;&quot;&gt;&lt;span style=&quot;background-color: initial;&quot;&gt;- 色=黄&lt;/span&gt;&lt;/div&gt;" style="rounded=0;whiteSpace=wrap;html=1;strokeColor=#6c8ebf;fillColor=#dae8fc;" vertex="1" parent="1">
+          <mxGeometry x="1720.25" y="-2600" width="120" height="80" as="geometry" />
+        </mxCell>
+        <mxCell id="09PAbykDqG3_5M8GWdRA-39" value="" style="endArrow=none;html=1;rounded=0;exitX=0;exitY=0.5;exitDx=0;exitDy=0;entryX=1;entryY=0.5;entryDx=0;entryDy=0;" edge="1" parent="1" source="09PAbykDqG3_5M8GWdRA-35" target="09PAbykDqG3_5M8GWdRA-38">
+          <mxGeometry x="-0.0041" width="50" height="50" relative="1" as="geometry">
+            <mxPoint x="1910" y="-2350" as="sourcePoint" />
+            <mxPoint x="1750" y="-2710" as="targetPoint" />
+            <mxPoint as="offset" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="09PAbykDqG3_5M8GWdRA-66" value=":手札&lt;br&gt;- 枚数: 2" style="rounded=0;whiteSpace=wrap;html=1;fillColor=#dae8fc;strokeColor=#6c8ebf;" vertex="1" parent="1">
+          <mxGeometry x="1560" y="-2240.07" width="120" height="80" as="geometry" />
+        </mxCell>
+        <mxCell id="09PAbykDqG3_5M8GWdRA-67" value="ウィルス:カード&lt;br&gt;&lt;div style=&quot;text-align: left;&quot;&gt;&lt;span style=&quot;background-color: initial;&quot;&gt;- 色=青&lt;/span&gt;&lt;/div&gt;" style="rounded=0;whiteSpace=wrap;html=1;strokeColor=#6c8ebf;fillColor=#dae8fc;" vertex="1" parent="1">
+          <mxGeometry x="1720.5" y="-2360.07" width="120" height="80" as="geometry" />
+        </mxCell>
+        <mxCell id="09PAbykDqG3_5M8GWdRA-68" value="薬:カード&lt;br&gt;&lt;div style=&quot;text-align: left;&quot;&gt;&lt;span style=&quot;background-color: initial;&quot;&gt;- 色=黄&lt;/span&gt;&lt;/div&gt;" style="rounded=0;whiteSpace=wrap;html=1;fillColor=#dae8fc;strokeColor=#6c8ebf;" vertex="1" parent="1">
+          <mxGeometry x="1720" y="-2240.07" width="120" height="80" as="geometry" />
+        </mxCell>
+        <mxCell id="09PAbykDqG3_5M8GWdRA-69" value="" style="endArrow=none;html=1;rounded=0;exitX=1;exitY=0.5;exitDx=0;exitDy=0;entryX=0;entryY=0.5;entryDx=0;entryDy=0;" edge="1" source="09PAbykDqG3_5M8GWdRA-72" target="09PAbykDqG3_5M8GWdRA-75" parent="1">
+          <mxGeometry x="-0.0041" width="50" height="50" relative="1" as="geometry">
+            <mxPoint x="1910" y="-1990.07" as="sourcePoint" />
+            <mxPoint x="1749.75" y="-2240.07" as="targetPoint" />
+            <mxPoint as="offset" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="09PAbykDqG3_5M8GWdRA-70" value="" style="endArrow=none;html=1;rounded=0;entryX=0;entryY=0.5;entryDx=0;entryDy=0;exitX=1;exitY=0.5;exitDx=0;exitDy=0;edgeStyle=orthogonalEdgeStyle;curved=1;" edge="1" source="09PAbykDqG3_5M8GWdRA-66" target="09PAbykDqG3_5M8GWdRA-68" parent="1">
+          <mxGeometry x="-0.0041" width="50" height="50" relative="1" as="geometry">
+            <mxPoint x="1910" y="-1990.07" as="sourcePoint" />
+            <mxPoint x="1960" y="-2040.07" as="targetPoint" />
+            <mxPoint as="offset" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="09PAbykDqG3_5M8GWdRA-71" value="" style="endArrow=none;html=1;rounded=0;entryX=0;entryY=0.5;entryDx=0;entryDy=0;exitX=1;exitY=0.5;exitDx=0;exitDy=0;edgeStyle=orthogonalEdgeStyle;curved=1;" edge="1" source="09PAbykDqG3_5M8GWdRA-66" target="09PAbykDqG3_5M8GWdRA-67" parent="1">
+          <mxGeometry x="-0.0041" width="50" height="50" relative="1" as="geometry">
+            <mxPoint x="1910" y="-1990.07" as="sourcePoint" />
+            <mxPoint x="1960" y="-2040.07" as="targetPoint" />
+            <mxPoint as="offset" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="09PAbykDqG3_5M8GWdRA-72" value=":からだエリア&lt;br&gt;- 枚数: 1" style="rounded=0;whiteSpace=wrap;html=1;fillColor=#dae8fc;strokeColor=#6c8ebf;" vertex="1" parent="1">
+          <mxGeometry x="2040" y="-2240.07" width="120" height="80" as="geometry" />
+        </mxCell>
+        <mxCell id="09PAbykDqG3_5M8GWdRA-75" value="からだパーツ&lt;br&gt;:カード&lt;br&gt;&lt;div style=&quot;text-align: left;&quot;&gt;&lt;span style=&quot;background-color: initial;&quot;&gt;- 色=黄&lt;/span&gt;&lt;/div&gt;" style="rounded=0;whiteSpace=wrap;html=1;strokeColor=#6c8ebf;fillColor=#dae8fc;" vertex="1" parent="1">
+          <mxGeometry x="2200" y="-2240.07" width="120" height="80" as="geometry" />
+        </mxCell>
+        <mxCell id="09PAbykDqG3_5M8GWdRA-77" value="" style="strokeWidth=1;html=1;shape=mxgraph.flowchart.merge_or_storage;whiteSpace=wrap;rotation=0;strokeColor=#9673a6;fillColor=#e1d5e7;" vertex="1" parent="1">
+          <mxGeometry x="1920" y="-2470" width="40" height="20" as="geometry" />
+        </mxCell>
+        <mxCell id="09PAbykDqG3_5M8GWdRA-79" value="- からだエリアにおけるからだパーツカードは最大4枚まで&lt;br&gt;- からだエリアに同じ色のからだパーツカードは置けない" style="rounded=0;whiteSpace=wrap;html=1;fillColor=#FFFFCC;strokeColor=#CCCCCC;fontColor=#333333;align=left;verticalAlign=top;spacing=8;" vertex="1" parent="1">
+          <mxGeometry x="2200" y="-2720" width="360" height="80" as="geometry" />
+        </mxCell>
+        <mxCell id="09PAbykDqG3_5M8GWdRA-80" value="" style="endArrow=none;html=1;rounded=0;entryX=1;entryY=0.5;entryDx=0;entryDy=0;dashed=1;exitX=0;exitY=0.5;exitDx=0;exitDy=0;" edge="1" parent="1" source="09PAbykDqG3_5M8GWdRA-79" target="09PAbykDqG3_5M8GWdRA-20">
+          <mxGeometry width="50" height="50" relative="1" as="geometry">
+            <mxPoint x="2220" y="-2710" as="sourcePoint" />
+            <mxPoint x="2190" y="-2650" as="targetPoint" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="09PAbykDqG3_5M8GWdRA-81" value="" style="endArrow=none;dashed=1;html=1;rounded=0;" edge="1" parent="1">
+          <mxGeometry width="50" height="50" relative="1" as="geometry">
+            <mxPoint x="1360" y="-2000.07" as="sourcePoint" />
+            <mxPoint x="2520" y="-2000.07" as="targetPoint" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="09PAbykDqG3_5M8GWdRA-82" value="&lt;b style=&quot;font-size: 16px;&quot;&gt;アクション2&lt;br&gt;&lt;/b&gt;&lt;br&gt;手札から「薬カード」を1枚、&lt;span style=&quot;color: rgb(0, 0, 0); text-align: center;&quot;&gt;自分の「からだパーツカード」に適用する&lt;/span&gt;" style="text;html=1;strokeColor=none;fillColor=none;align=left;verticalAlign=top;whiteSpace=wrap;rounded=0;fontColor=#333333;" vertex="1" parent="1">
+          <mxGeometry x="1400" y="-1960" width="480" height="80" as="geometry" />
+        </mxCell>
+        <mxCell id="09PAbykDqG3_5M8GWdRA-89" value="- 適用できるのは同じ色の薬カードのみ" style="rounded=0;whiteSpace=wrap;html=1;fillColor=#FFFFCC;strokeColor=#CCCCCC;fontColor=#333333;align=left;verticalAlign=top;spacing=8;" vertex="1" parent="1">
+          <mxGeometry x="2120" y="-1800.07" width="280" height="80" as="geometry" />
+        </mxCell>
+        <mxCell id="qIhLdYmx_uWk4HKMJdgb-1" value="" style="rounded=0;whiteSpace=wrap;html=1;fillColor=#dae8fc;strokeColor=#6c8ebf;dashed=1;" vertex="1" parent="1">
+          <mxGeometry x="1720" y="-2120.07" width="120" height="80" as="geometry" />
+        </mxCell>
+        <mxCell id="qIhLdYmx_uWk4HKMJdgb-2" value="" style="endArrow=open;html=1;rounded=0;exitX=1;exitY=0.5;exitDx=0;exitDy=0;dashed=1;entryX=0.5;entryY=1;entryDx=0;entryDy=0;endFill=0;edgeStyle=orthogonalEdgeStyle;curved=1;fillColor=#dae8fc;strokeColor=#6c8ebf;" edge="1" parent="1" source="qIhLdYmx_uWk4HKMJdgb-1" target="09PAbykDqG3_5M8GWdRA-75">
+          <mxGeometry width="50" height="50" relative="1" as="geometry">
+            <mxPoint x="2300" y="-1710.07" as="sourcePoint" />
+            <mxPoint x="2340" y="-1830.07" as="targetPoint" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="pBPPr-686neLxa9rwMFT-1" value=":手札&lt;br&gt;- 枚数: 3" style="rounded=0;whiteSpace=wrap;html=1;fillColor=#dae8fc;strokeColor=#6c8ebf;" vertex="1" parent="1">
+          <mxGeometry x="1560" y="-1680.07" width="120" height="80" as="geometry" />
+        </mxCell>
+        <mxCell id="pBPPr-686neLxa9rwMFT-2" value="ウィルス:カード&lt;br&gt;&lt;div style=&quot;text-align: left;&quot;&gt;&lt;span style=&quot;background-color: initial;&quot;&gt;- 色=青&lt;/span&gt;&lt;/div&gt;" style="rounded=0;whiteSpace=wrap;html=1;strokeColor=#6c8ebf;fillColor=#dae8fc;" vertex="1" parent="1">
+          <mxGeometry x="1720" y="-1800.07" width="120" height="80" as="geometry" />
+        </mxCell>
+        <mxCell id="pBPPr-686neLxa9rwMFT-3" value="薬:カード&lt;br&gt;&lt;div style=&quot;text-align: left;&quot;&gt;&lt;span style=&quot;background-color: initial;&quot;&gt;- 色=赤&lt;/span&gt;&lt;/div&gt;" style="rounded=0;whiteSpace=wrap;html=1;fillColor=#dae8fc;strokeColor=#6c8ebf;" vertex="1" parent="1">
+          <mxGeometry x="1720" y="-1680.07" width="120" height="80" as="geometry" />
+        </mxCell>
+        <mxCell id="pBPPr-686neLxa9rwMFT-4" value="" style="endArrow=none;html=1;rounded=0;exitX=1;exitY=0.5;exitDx=0;exitDy=0;entryX=0;entryY=0.5;entryDx=0;entryDy=0;edgeStyle=orthogonalEdgeStyle;curved=1;" edge="1" parent="1" source="pBPPr-686neLxa9rwMFT-1" target="pBPPr-686neLxa9rwMFT-10">
+          <mxGeometry x="-0.0041" width="50" height="50" relative="1" as="geometry">
+            <mxPoint x="1910" y="-1310.07" as="sourcePoint" />
+            <mxPoint x="1749.75" y="-1560.07" as="targetPoint" />
+            <mxPoint as="offset" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="pBPPr-686neLxa9rwMFT-5" value="" style="endArrow=none;html=1;rounded=0;entryX=0;entryY=0.5;entryDx=0;entryDy=0;exitX=1;exitY=0.5;exitDx=0;exitDy=0;edgeStyle=orthogonalEdgeStyle;curved=1;" edge="1" parent="1" source="pBPPr-686neLxa9rwMFT-1" target="pBPPr-686neLxa9rwMFT-3">
+          <mxGeometry x="-0.0041" width="50" height="50" relative="1" as="geometry">
+            <mxPoint x="1910" y="-1310.07" as="sourcePoint" />
+            <mxPoint x="1960" y="-1360.07" as="targetPoint" />
+            <mxPoint as="offset" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="pBPPr-686neLxa9rwMFT-6" value="" style="endArrow=none;html=1;rounded=0;exitX=1;exitY=0.5;exitDx=0;exitDy=0;entryX=0;entryY=0.5;entryDx=0;entryDy=0;edgeStyle=orthogonalEdgeStyle;curved=1;" edge="1" parent="1" source="pBPPr-686neLxa9rwMFT-1" target="pBPPr-686neLxa9rwMFT-2">
+          <mxGeometry x="-0.0041" width="50" height="50" relative="1" as="geometry">
+            <mxPoint x="1910" y="-1310.07" as="sourcePoint" />
+            <mxPoint x="1920" y="-1720.07" as="targetPoint" />
+            <mxPoint as="offset" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="pBPPr-686neLxa9rwMFT-7" value=":からだエリア&lt;br&gt;- 枚数: 1" style="rounded=0;whiteSpace=wrap;html=1;fillColor=#dae8fc;strokeColor=#6c8ebf;" vertex="1" parent="1">
+          <mxGeometry x="2040" y="-1680.07" width="120" height="80" as="geometry" />
+        </mxCell>
+        <mxCell id="pBPPr-686neLxa9rwMFT-8" value="適用する&lt;br&gt;:アクション" style="rounded=0;whiteSpace=wrap;html=1;fillColor=#e1d5e7;strokeColor=#9673a6;" vertex="1" parent="1">
+          <mxGeometry x="1880" y="-1560.07" width="120" height="80" as="geometry" />
+        </mxCell>
+        <mxCell id="pBPPr-686neLxa9rwMFT-9" value="" style="endArrow=none;html=1;rounded=0;exitX=1;exitY=0.5;exitDx=0;exitDy=0;edgeStyle=orthogonalEdgeStyle;curved=1;entryX=0.5;entryY=1;entryDx=0;entryDy=0;" edge="1" parent="1" source="pBPPr-686neLxa9rwMFT-8" target="pBPPr-686neLxa9rwMFT-25">
+          <mxGeometry x="-0.0041" width="50" height="50" relative="1" as="geometry">
+            <mxPoint x="1910" y="-1310.07" as="sourcePoint" />
+            <mxPoint x="2180" y="-1580.07" as="targetPoint" />
+            <mxPoint as="offset" />
+            <Array as="points">
+              <mxPoint x="2260" y="-1520.07" />
+            </Array>
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="pBPPr-686neLxa9rwMFT-10" value="薬:カード&lt;br&gt;&lt;div style=&quot;text-align: left;&quot;&gt;&lt;span style=&quot;background-color: initial;&quot;&gt;- 色=黄&lt;/span&gt;&lt;/div&gt;" style="rounded=0;whiteSpace=wrap;html=1;strokeColor=#6c8ebf;fillColor=#dae8fc;" vertex="1" parent="1">
+          <mxGeometry x="1720.25" y="-1560.07" width="120" height="80" as="geometry" />
+        </mxCell>
+        <mxCell id="pBPPr-686neLxa9rwMFT-11" value="" style="endArrow=none;html=1;rounded=0;exitX=0;exitY=0.5;exitDx=0;exitDy=0;entryX=1;entryY=0.5;entryDx=0;entryDy=0;" edge="1" parent="1" source="pBPPr-686neLxa9rwMFT-8" target="pBPPr-686neLxa9rwMFT-10">
+          <mxGeometry x="-0.0041" width="50" height="50" relative="1" as="geometry">
+            <mxPoint x="1910" y="-1310.07" as="sourcePoint" />
+            <mxPoint x="1750" y="-1670.07" as="targetPoint" />
+            <mxPoint as="offset" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="pBPPr-686neLxa9rwMFT-12" value=":手札&lt;br&gt;- 枚数: 2" style="rounded=0;whiteSpace=wrap;html=1;fillColor=#dae8fc;strokeColor=#6c8ebf;" vertex="1" parent="1">
+          <mxGeometry x="1560" y="-1200" width="120" height="80" as="geometry" />
+        </mxCell>
+        <mxCell id="pBPPr-686neLxa9rwMFT-13" value="ウィルス:カード&lt;br&gt;&lt;div style=&quot;text-align: left;&quot;&gt;&lt;span style=&quot;background-color: initial;&quot;&gt;- 色=青&lt;/span&gt;&lt;/div&gt;" style="rounded=0;whiteSpace=wrap;html=1;strokeColor=#6c8ebf;fillColor=#dae8fc;" vertex="1" parent="1">
+          <mxGeometry x="1720.5" y="-1320" width="120" height="80" as="geometry" />
+        </mxCell>
+        <mxCell id="pBPPr-686neLxa9rwMFT-14" value="薬:カード&lt;br&gt;&lt;div style=&quot;text-align: left;&quot;&gt;&lt;span style=&quot;background-color: initial;&quot;&gt;- 色=黄&lt;/span&gt;&lt;/div&gt;" style="rounded=0;whiteSpace=wrap;html=1;fillColor=#dae8fc;strokeColor=#6c8ebf;" vertex="1" parent="1">
+          <mxGeometry x="1720" y="-1200" width="120" height="80" as="geometry" />
+        </mxCell>
+        <mxCell id="pBPPr-686neLxa9rwMFT-15" value="" style="endArrow=none;html=1;rounded=0;exitX=1;exitY=0.5;exitDx=0;exitDy=0;entryX=0;entryY=0.5;entryDx=0;entryDy=0;" edge="1" parent="1" source="pBPPr-686neLxa9rwMFT-18" target="pBPPr-686neLxa9rwMFT-19">
+          <mxGeometry x="-0.0041" width="50" height="50" relative="1" as="geometry">
+            <mxPoint x="1910" y="-950" as="sourcePoint" />
+            <mxPoint x="1749.75" y="-1200" as="targetPoint" />
+            <mxPoint as="offset" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="pBPPr-686neLxa9rwMFT-16" value="" style="endArrow=none;html=1;rounded=0;entryX=0;entryY=0.5;entryDx=0;entryDy=0;exitX=1;exitY=0.5;exitDx=0;exitDy=0;edgeStyle=orthogonalEdgeStyle;curved=1;" edge="1" parent="1" source="pBPPr-686neLxa9rwMFT-12" target="pBPPr-686neLxa9rwMFT-14">
+          <mxGeometry x="-0.0041" width="50" height="50" relative="1" as="geometry">
+            <mxPoint x="1910" y="-950" as="sourcePoint" />
+            <mxPoint x="1960" y="-1000" as="targetPoint" />
+            <mxPoint as="offset" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="pBPPr-686neLxa9rwMFT-17" value="" style="endArrow=none;html=1;rounded=0;entryX=0;entryY=0.5;entryDx=0;entryDy=0;exitX=1;exitY=0.5;exitDx=0;exitDy=0;edgeStyle=orthogonalEdgeStyle;curved=1;" edge="1" parent="1" source="pBPPr-686neLxa9rwMFT-12" target="pBPPr-686neLxa9rwMFT-13">
+          <mxGeometry x="-0.0041" width="50" height="50" relative="1" as="geometry">
+            <mxPoint x="1910" y="-950" as="sourcePoint" />
+            <mxPoint x="1960" y="-1000" as="targetPoint" />
+            <mxPoint as="offset" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="pBPPr-686neLxa9rwMFT-18" value=":からだエリア&lt;br&gt;- 枚数: 1" style="rounded=0;whiteSpace=wrap;html=1;fillColor=#dae8fc;strokeColor=#6c8ebf;" vertex="1" parent="1">
+          <mxGeometry x="2040" y="-1200" width="120" height="80" as="geometry" />
+        </mxCell>
+        <mxCell id="pBPPr-686neLxa9rwMFT-19" value="からだパーツ&lt;br&gt;:カード&lt;br&gt;&lt;div style=&quot;text-align: left;&quot;&gt;&lt;span style=&quot;background-color: initial;&quot;&gt;- 色=黄&lt;/span&gt;&lt;/div&gt;" style="rounded=0;whiteSpace=wrap;html=1;strokeColor=#6c8ebf;fillColor=#dae8fc;" vertex="1" parent="1">
+          <mxGeometry x="2200" y="-1200" width="120" height="80" as="geometry" />
+        </mxCell>
+        <mxCell id="pBPPr-686neLxa9rwMFT-20" value="" style="strokeWidth=1;html=1;shape=mxgraph.flowchart.merge_or_storage;whiteSpace=wrap;rotation=0;strokeColor=#9673a6;fillColor=#e1d5e7;" vertex="1" parent="1">
+          <mxGeometry x="1920" y="-1430" width="40" height="20" as="geometry" />
+        </mxCell>
+        <mxCell id="pBPPr-686neLxa9rwMFT-21" value="" style="endArrow=none;html=1;rounded=0;entryX=0.5;entryY=0;entryDx=0;entryDy=0;exitX=0.5;exitY=1;exitDx=0;exitDy=0;dashed=1;" edge="1" parent="1" target="pBPPr-686neLxa9rwMFT-25" source="09PAbykDqG3_5M8GWdRA-89">
+          <mxGeometry width="50" height="50" relative="1" as="geometry">
+            <mxPoint x="2140" y="-1720.07" as="sourcePoint" />
+            <mxPoint x="2190" y="-1610.07" as="targetPoint" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="pBPPr-686neLxa9rwMFT-22" value="" style="rounded=0;whiteSpace=wrap;html=1;fillColor=#dae8fc;strokeColor=#6c8ebf;dashed=1;" vertex="1" parent="1">
+          <mxGeometry x="1720" y="-1080" width="120" height="80" as="geometry" />
+        </mxCell>
+        <mxCell id="pBPPr-686neLxa9rwMFT-23" value="" style="endArrow=open;html=1;rounded=0;exitX=1;exitY=0.5;exitDx=0;exitDy=0;dashed=1;entryX=0.5;entryY=1;entryDx=0;entryDy=0;endFill=0;edgeStyle=orthogonalEdgeStyle;curved=1;fillColor=#dae8fc;strokeColor=#6c8ebf;" edge="1" parent="1" source="pBPPr-686neLxa9rwMFT-22" target="pBPPr-686neLxa9rwMFT-24">
+          <mxGeometry width="50" height="50" relative="1" as="geometry">
+            <mxPoint x="2300" y="-670" as="sourcePoint" />
+            <mxPoint x="2340" y="-790" as="targetPoint" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="pBPPr-686neLxa9rwMFT-24" value="薬:カード&lt;br&gt;&lt;div style=&quot;text-align: left;&quot;&gt;&lt;span style=&quot;background-color: initial;&quot;&gt;- 色=黄&lt;/span&gt;&lt;/div&gt;" style="rounded=0;whiteSpace=wrap;html=1;strokeColor=#6c8ebf;fillColor=#dae8fc;" vertex="1" parent="1">
+          <mxGeometry x="2360" y="-1200" width="120" height="80" as="geometry" />
+        </mxCell>
+        <mxCell id="pBPPr-686neLxa9rwMFT-25" value="からだパーツ&lt;br&gt;:カード&lt;br&gt;&lt;div style=&quot;text-align: left;&quot;&gt;&lt;span style=&quot;background-color: initial;&quot;&gt;- 色=黄&lt;/span&gt;&lt;/div&gt;" style="rounded=0;whiteSpace=wrap;html=1;strokeColor=#6c8ebf;fillColor=#dae8fc;" vertex="1" parent="1">
+          <mxGeometry x="2200" y="-1680.07" width="120" height="80" as="geometry" />
+        </mxCell>
+        <mxCell id="pBPPr-686neLxa9rwMFT-26" value="" style="endArrow=none;html=1;rounded=0;exitX=1;exitY=0.5;exitDx=0;exitDy=0;entryX=0;entryY=0.5;entryDx=0;entryDy=0;" edge="1" parent="1" source="pBPPr-686neLxa9rwMFT-7" target="pBPPr-686neLxa9rwMFT-25">
+          <mxGeometry x="-0.0041" width="50" height="50" relative="1" as="geometry">
+            <mxPoint x="1910" y="-1150.07" as="sourcePoint" />
+            <mxPoint x="1749.75" y="-1400.07" as="targetPoint" />
+            <mxPoint as="offset" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="pBPPr-686neLxa9rwMFT-27" value="" style="endArrow=none;html=1;rounded=0;exitX=1;exitY=0.5;exitDx=0;exitDy=0;entryX=0;entryY=0.5;entryDx=0;entryDy=0;" edge="1" parent="1" source="pBPPr-686neLxa9rwMFT-19" target="pBPPr-686neLxa9rwMFT-24">
+          <mxGeometry x="-0.0041" width="50" height="50" relative="1" as="geometry">
+            <mxPoint x="1910" y="-950" as="sourcePoint" />
+            <mxPoint x="1749.75" y="-1200" as="targetPoint" />
+            <mxPoint as="offset" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="pBPPr-686neLxa9rwMFT-29" value="" style="endArrow=none;dashed=1;html=1;rounded=0;" edge="1" parent="1">
+          <mxGeometry width="50" height="50" relative="1" as="geometry">
+            <mxPoint x="1361" y="-960" as="sourcePoint" />
+            <mxPoint x="2521" y="-960" as="targetPoint" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="YgA03bzmH8YJKxXAZx8s-4" value="" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;" edge="1" parent="1" source="pBPPr-686neLxa9rwMFT-30" target="09PAbykDqG3_5M8GWdRA-12">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="pBPPr-686neLxa9rwMFT-30" value="自分:プレイヤー" style="rounded=0;whiteSpace=wrap;html=1;fillColor=#dae8fc;strokeColor=#6c8ebf;" vertex="1" parent="1">
+          <mxGeometry x="1400" y="-2720" width="120" height="80" as="geometry" />
+        </mxCell>
+        <mxCell id="pBPPr-686neLxa9rwMFT-31" value="" style="endArrow=none;html=1;rounded=0;exitX=0;exitY=0.5;exitDx=0;exitDy=0;entryX=1;entryY=0.5;entryDx=0;entryDy=0;" edge="1" parent="1" source="09PAbykDqG3_5M8GWdRA-12" target="pBPPr-686neLxa9rwMFT-30">
+          <mxGeometry x="-0.0041" width="50" height="50" relative="1" as="geometry">
+            <mxPoint x="1890" y="-2550" as="sourcePoint" />
+            <mxPoint x="1850" y="-2550" as="targetPoint" />
+            <mxPoint as="offset" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="pBPPr-686neLxa9rwMFT-32" value="自分:プレイヤー" style="rounded=0;whiteSpace=wrap;html=1;fillColor=#dae8fc;strokeColor=#6c8ebf;" vertex="1" parent="1">
+          <mxGeometry x="1400" y="-1680.07" width="120" height="80" as="geometry" />
+        </mxCell>
+        <mxCell id="pBPPr-686neLxa9rwMFT-33" value="" style="endArrow=none;html=1;rounded=0;exitX=0;exitY=0.5;exitDx=0;exitDy=0;entryX=1;entryY=0.5;entryDx=0;entryDy=0;" edge="1" parent="1" target="pBPPr-686neLxa9rwMFT-32" source="pBPPr-686neLxa9rwMFT-1">
+          <mxGeometry x="-0.0041" width="50" height="50" relative="1" as="geometry">
+            <mxPoint x="1560" y="-1640.07" as="sourcePoint" />
+            <mxPoint x="1850" y="-1510.07" as="targetPoint" />
+            <mxPoint as="offset" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="pBPPr-686neLxa9rwMFT-34" value="自分:プレイヤー" style="rounded=0;whiteSpace=wrap;html=1;fillColor=#dae8fc;strokeColor=#6c8ebf;" vertex="1" parent="1">
+          <mxGeometry x="1400" y="-1200" width="120" height="80" as="geometry" />
+        </mxCell>
+        <mxCell id="pBPPr-686neLxa9rwMFT-35" value="" style="endArrow=none;html=1;rounded=0;exitX=0;exitY=0.5;exitDx=0;exitDy=0;entryX=1;entryY=0.5;entryDx=0;entryDy=0;" edge="1" parent="1" target="pBPPr-686neLxa9rwMFT-34" source="pBPPr-686neLxa9rwMFT-12">
+          <mxGeometry x="-0.0041" width="50" height="50" relative="1" as="geometry">
+            <mxPoint x="1560" y="-1160" as="sourcePoint" />
+            <mxPoint x="1850" y="-1030" as="targetPoint" />
+            <mxPoint as="offset" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="pBPPr-686neLxa9rwMFT-36" value="自分:プレイヤー" style="rounded=0;whiteSpace=wrap;html=1;fillColor=#dae8fc;strokeColor=#6c8ebf;" vertex="1" parent="1">
+          <mxGeometry x="1400" y="-2240.07" width="120" height="80" as="geometry" />
+        </mxCell>
+        <mxCell id="pBPPr-686neLxa9rwMFT-37" value="" style="endArrow=none;html=1;rounded=0;exitX=0;exitY=0.5;exitDx=0;exitDy=0;entryX=1;entryY=0.5;entryDx=0;entryDy=0;" edge="1" parent="1" target="pBPPr-686neLxa9rwMFT-36" source="09PAbykDqG3_5M8GWdRA-66">
+          <mxGeometry x="-0.0041" width="50" height="50" relative="1" as="geometry">
+            <mxPoint x="1560" y="-2200.07" as="sourcePoint" />
+            <mxPoint x="1850" y="-2070.07" as="targetPoint" />
+            <mxPoint as="offset" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="pBPPr-686neLxa9rwMFT-38" value="&lt;b style=&quot;font-size: 16px;&quot;&gt;アクション3&lt;br&gt;&lt;/b&gt;&lt;br&gt;手札から「ウィルスカード」を1枚、&lt;span style=&quot;color: rgb(0, 0, 0); text-align: center;&quot;&gt;相手の「からだパーツカード」に適用する&lt;/span&gt;" style="text;html=1;strokeColor=none;fillColor=none;align=left;verticalAlign=top;whiteSpace=wrap;rounded=0;fontColor=#333333;" vertex="1" parent="1">
+          <mxGeometry x="1401.5" y="-920" width="480" height="80" as="geometry" />
+        </mxCell>
+        <mxCell id="YgA03bzmH8YJKxXAZx8s-2" value="" style="endArrow=none;html=1;rounded=0;entryX=0;entryY=0.5;entryDx=0;entryDy=0;edgeStyle=orthogonalEdgeStyle;curved=1;exitX=1;exitY=0.5;exitDx=0;exitDy=0;" edge="1" parent="1" source="pBPPr-686neLxa9rwMFT-30" target="09PAbykDqG3_5M8GWdRA-20">
+          <mxGeometry x="-0.0041" width="50" height="50" relative="1" as="geometry">
+            <mxPoint x="1960" y="-2730" as="sourcePoint" />
+            <mxPoint x="2050" y="-2670" as="targetPoint" />
+            <mxPoint as="offset" />
+            <Array as="points">
+              <mxPoint x="1540" y="-2680" />
+              <mxPoint x="1540" y="-2880" />
+              <mxPoint x="2020" y="-2880" />
+              <mxPoint x="2020" y="-2680" />
+            </Array>
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="YgA03bzmH8YJKxXAZx8s-3" value="" style="endArrow=none;html=1;rounded=0;entryX=0;entryY=0.5;entryDx=0;entryDy=0;edgeStyle=orthogonalEdgeStyle;curved=1;exitX=1;exitY=0.5;exitDx=0;exitDy=0;" edge="1" parent="1" source="pBPPr-686neLxa9rwMFT-36" target="09PAbykDqG3_5M8GWdRA-72">
+          <mxGeometry x="-0.0041" width="50" height="50" relative="1" as="geometry">
+            <mxPoint x="1490" y="-2320.07" as="sourcePoint" />
+            <mxPoint x="2050" y="-2590.07" as="targetPoint" />
+            <mxPoint as="offset" />
+            <Array as="points">
+              <mxPoint x="1540" y="-2200" />
+              <mxPoint x="1540" y="-2400" />
+              <mxPoint x="2020" y="-2400" />
+              <mxPoint x="2020" y="-2200" />
+            </Array>
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="YgA03bzmH8YJKxXAZx8s-6" value="" style="endArrow=none;html=1;rounded=0;entryX=0;entryY=0.5;entryDx=0;entryDy=0;edgeStyle=orthogonalEdgeStyle;curved=1;exitX=1;exitY=0.5;exitDx=0;exitDy=0;" edge="1" parent="1" source="pBPPr-686neLxa9rwMFT-32" target="pBPPr-686neLxa9rwMFT-7">
+          <mxGeometry x="-0.0041" width="50" height="50" relative="1" as="geometry">
+            <mxPoint x="1520.5" y="-1640.1399999999999" as="sourcePoint" />
+            <mxPoint x="2040.5" y="-1640.1399999999999" as="targetPoint" />
+            <mxPoint as="offset" />
+            <Array as="points">
+              <mxPoint x="1540" y="-1640.07" />
+              <mxPoint x="1540" y="-1840.07" />
+              <mxPoint x="2020" y="-1840.07" />
+              <mxPoint x="2020" y="-1640.07" />
+            </Array>
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="YgA03bzmH8YJKxXAZx8s-7" value="" style="endArrow=none;html=1;rounded=0;entryX=0;entryY=0.5;entryDx=0;entryDy=0;edgeStyle=orthogonalEdgeStyle;curved=1;exitX=1;exitY=0.5;exitDx=0;exitDy=0;" edge="1" parent="1" source="pBPPr-686neLxa9rwMFT-34" target="pBPPr-686neLxa9rwMFT-18">
+          <mxGeometry x="-0.0041" width="50" height="50" relative="1" as="geometry">
+            <mxPoint x="1520.5" y="-1640.1399999999999" as="sourcePoint" />
+            <mxPoint x="2040.5" y="-1640.1399999999999" as="targetPoint" />
+            <mxPoint as="offset" />
+            <Array as="points">
+              <mxPoint x="1540" y="-1160" />
+              <mxPoint x="1540" y="-1360" />
+              <mxPoint x="2020" y="-1360" />
+              <mxPoint x="2020" y="-1160" />
+            </Array>
+          </mxGeometry>
         </mxCell>
       </root>
     </mxGraphModel>
