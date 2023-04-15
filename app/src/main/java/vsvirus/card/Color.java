@@ -4,25 +4,19 @@ package vsvirus.card;
  * 色
  */
 public enum Color {
-    RED("Red"),
-    BLUE("Blue"),
-    GREEN("Green"),
-    YELLOW("Yellow"),
-    MULTI("Multi");
-
-    private String value;
-
-    private Color(String value) {
-        this.value = value;
-    }
+    RED,
+    BLUE,
+    GREEN,
+    YELLOW,
+    MULTI;
 
     public boolean equals(Color other) {
 
-        if (this.value.equals("Multi") || other.value.equals("Multi")) {
+        if (this == MULTI || other == MULTI) {
             return true;
         }
 
-        if (this.value.equals(other.value)) {
+        if (this == other) {
             return true;
         }
 
