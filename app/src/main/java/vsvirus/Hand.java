@@ -21,7 +21,7 @@ public final class Hand {
         return new Hand(cards);
     }
 
-    public int count() {
+    public int getCount() {
         return this.cards.size();
     }
 

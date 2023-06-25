@@ -37,15 +37,15 @@ public final class BodyPartCard implements ICard {
         return new BodyPartCard(color, Status.HEALTHY, new ArrayList<ICard>());
     }
 
-    public Color color() {
+    public Color getColor() {
         return this.color;
     }
 
-    public Status status() {
+    public Status getStatus() {
         return this.status;
     }
 
-    public List<ICard> evilApplyedCards() {
+    public List<ICard> getEvilApplyedCards() {
         return Collections.unmodifiableList(this.applyedCards);
     }
 

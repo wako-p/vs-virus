@@ -18,7 +18,7 @@ class DiscardPileTest {
             var discardPile = DiscardPile.create();
 
             // Then:
-            assertEquals(0, discardPile.count());
+            assertEquals(0, discardPile.getCount());
         }
     }
 
@@ -40,11 +40,11 @@ class DiscardPileTest {
             discardPile.place(card4);
 
             // Then:
-            assertEquals(4, discardPile.count());
-            assertEquals(Color.BLUE, discardPile.evilCards().get(0).color());
-            assertEquals(Color.RED, discardPile.evilCards().get(1).color());
-            assertEquals(Color.GREEN, discardPile.evilCards().get(2).color());
-            assertEquals(Color.YELLOW, discardPile.evilCards().get(3).color());
+            assertEquals(4, discardPile.getCount());
+            assertEquals(Color.BLUE, discardPile.getEvilCards().get(0).getColor());
+            assertEquals(Color.RED, discardPile.getEvilCards().get(1).getColor());
+            assertEquals(Color.GREEN, discardPile.getEvilCards().get(2).getColor());
+            assertEquals(Color.YELLOW, discardPile.getEvilCards().get(3).getColor());
         }
     }
 }

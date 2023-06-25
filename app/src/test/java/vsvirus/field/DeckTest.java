@@ -17,8 +17,8 @@ class DeckTest {
             var deck = Deck.create();
 
             // Then:
-            assertEquals(58, deck.count());
-            deck.evilCards().forEach(card -> System.out.println(card.color()));
+            assertEquals(58, deck.getCount());
+            deck.getEvilCards().forEach(card -> System.out.println(card.getColor()));
         }
     }
 
@@ -33,7 +33,7 @@ class DeckTest {
             deck.shuffle();
 
             // Then:
-            deck.evilCards().forEach(card -> System.out.println(card.color()));
+            deck.getEvilCards().forEach(card -> System.out.println(card.getColor()));
         }
     }
 
@@ -48,8 +48,8 @@ class DeckTest {
             var card = deck.draw();
 
             // Then:
-            assertEquals(57, deck.count());
-            assertEquals(Color.MULTI, card.color());
+            assertEquals(57, deck.getCount());
+            assertEquals(Color.MULTI, card.getColor());
         }
     }
 }

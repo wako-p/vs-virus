@@ -33,7 +33,7 @@ class VirusCardTest {
             var card = VirusCard.create(color);
 
             // Then:
-            assertEquals(expected, card.color());
+            assertEquals(expected, card.getColor());
         }
 
     }

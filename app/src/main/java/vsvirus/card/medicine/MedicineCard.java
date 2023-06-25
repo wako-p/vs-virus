@@ -18,7 +18,7 @@ public final class MedicineCard implements ICard {
         return new MedicineCard(color);
     }
 
-    public Color color() {
+    public Color getColor() {
         return this.color;
     }
 

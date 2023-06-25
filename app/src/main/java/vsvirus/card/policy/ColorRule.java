@@ -16,7 +16,7 @@ public final class ColorRule extends Rule {
 
     @Override
     public boolean ok(final ICard card) {
-        return this.color.equals(card.color());
+        return this.color.equals(card.getColor());
     }
 
 }

@@ -19,7 +19,7 @@ class HandTest {
             var hand = Hand.create();
 
             // Then:
-            assertEquals(0, hand.count());
+            assertEquals(0, hand.getCount());
         }
     }
 
@@ -40,7 +40,7 @@ class HandTest {
             hand.add(card3);
 
             // Then:
-            assertEquals(3, hand.count());
+            assertEquals(3, hand.getCount());
         }
 
         @Test

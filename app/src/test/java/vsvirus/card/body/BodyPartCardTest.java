@@ -38,14 +38,14 @@ class BodyPartCardTest {
             var card = BodyPartCard.create(color);
 
             // Then:
-            assertEquals(expected, card.color());
-            assertEquals(Status.HEALTHY, card.status());
+            assertEquals(expected, card.getColor());
+            assertEquals(Status.HEALTHY, card.getStatus());
         }
 
     }
 
     @Nested
-    class ColorTest {
+    class GetColorTest {
 
         static Stream<Arguments> colors() {
             return Stream.of(
@@ -64,7 +64,7 @@ class BodyPartCardTest {
             var card = BodyPartCard.create(color);
 
             // When:
-            var actual = card.color();
+            var actual = card.getColor();
 
             // Then:
             assertEquals(expected, actual);
@@ -129,7 +129,7 @@ class BodyPartCardTest {
             body.apply(virus);
 
             // Then:
-            assertEquals(Status.INFECTED, body.status());
+            assertEquals(Status.INFECTED, body.getStatus());
         }
 
         @Test
@@ -145,7 +145,7 @@ class BodyPartCardTest {
             body.apply(virus2);
 
             // Then:
-            assertEquals(Status.SYMPTOMATIC, body.status());
+            assertEquals(Status.SYMPTOMATIC, body.getStatus());
         }
 
         @Test
@@ -161,7 +161,7 @@ class BodyPartCardTest {
             body.apply(virus);
 
             // Then:
-            assertEquals(Status.HEALTHY, body.status());
+            assertEquals(Status.HEALTHY, body.getStatus());
         }
 
         static Stream<Arguments> colorPattern1() {
@@ -208,7 +208,7 @@ class BodyPartCardTest {
             body.apply(medicine);
 
             // Given:
-            assertEquals(Status.PASSIVELY_IMMUNIZED, body.status());
+            assertEquals(Status.PASSIVELY_IMMUNIZED, body.getStatus());
         }
 
         @Test
@@ -224,7 +224,7 @@ class BodyPartCardTest {
             body.apply(medicine2);
 
             // Given:
-            assertEquals(Status.IMMUNIZED, body.status());
+            assertEquals(Status.IMMUNIZED, body.getStatus());
         }
 
         @Test
@@ -240,7 +240,7 @@ class BodyPartCardTest {
             body.apply(medicine);
 
             // Given:
-            assertEquals(Status.HEALTHY, body.status());
+            assertEquals(Status.HEALTHY, body.getStatus());
         }
 
         static Stream<Arguments> medicneCardApplicationPatterns() {
@@ -288,7 +288,7 @@ class BodyPartCardTest {
             body.apply(virus);
 
             // Then:
-            assertEquals(Status.INFECTED, body.status());
+            assertEquals(Status.INFECTED, body.getStatus());
         }
 
         @ParameterizedTest
@@ -301,7 +301,7 @@ class BodyPartCardTest {
             body.apply(medicine);
 
             // Then:
-            assertEquals(Status.PASSIVELY_IMMUNIZED, body.status());
+            assertEquals(Status.PASSIVELY_IMMUNIZED, body.getStatus());
         }
 
     }

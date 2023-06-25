@@ -33,7 +33,7 @@ class MedicineCardTest {
             var card = MedicineCard.create(color);
 
             // Then:
-            assertEquals(expected, card.color());
+            assertEquals(expected, card.getColor());
         }
 
     }

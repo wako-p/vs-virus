@@ -18,7 +18,7 @@ public final class VirusCard implements ICard {
         return new VirusCard(color);
     }
 
-    public Color color() {
+    public Color getColor() {
         return this.color;
     }
 

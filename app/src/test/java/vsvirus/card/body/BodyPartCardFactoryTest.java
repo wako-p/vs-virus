@@ -32,35 +32,35 @@ class BodyPartCardFactoryTest {
         int countBule(List<ICard> cards) {
             return (int)(cards
                 .stream()
-                .filter(card -> card.color() == Color.BLUE)
+                .filter(card -> card.getColor() == Color.BLUE)
                 .count());
         }
 
         int countRed(List<ICard> cards) {
             return (int)(cards
                 .stream()
-                .filter(card -> card.color() == Color.RED)
+                .filter(card -> card.getColor() == Color.RED)
                 .count());
         }
 
         int countGreen(List<ICard> cards) {
             return (int)(cards
                 .stream()
-                .filter(card -> card.color() == Color.GREEN)
+                .filter(card -> card.getColor() == Color.GREEN)
                 .count());
         }
 
         int countYellow(List<ICard> cards) {
             return (int)(cards
                 .stream()
-                .filter(card -> card.color() == Color.YELLOW)
+                .filter(card -> card.getColor() == Color.YELLOW)
                 .count());
         }
 
         int countMulti(List<ICard> cards) {
             return (int)(cards
                 .stream()
-                .filter(card -> card.color() == Color.MULTI)
+                .filter(card -> card.getColor() == Color.MULTI)
                 .count());
         }
 

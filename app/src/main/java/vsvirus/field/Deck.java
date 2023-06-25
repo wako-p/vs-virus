@@ -39,11 +39,11 @@ public final class Deck {
         return new Deck(cards);
     }
 
-    public int count() {
+    public int getCount() {
         return this.cards.size();
     }
 
-    public List<ICard> evilCards() {
+    public List<ICard> getEvilCards() {
         // 追加、変更、削除ができないようにして返す
         return Collections.unmodifiableList(this.cards);
     }
