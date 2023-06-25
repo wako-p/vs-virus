@@ -1,9 +1,10 @@
 package vsvirus.card.medicine;
 
-import java.util.ArrayList;
 import java.util.LinkedHashMap;
 import java.util.List;
 import java.util.Map;
+import java.util.stream.Collectors;
+import java.util.stream.Stream;
 
 import vsvirus.card.Color;
 import vsvirus.card.ICard;
@@ -19,18 +20,10 @@ public final class MedicineCardFactory {
     }};
 
     public List<ICard> create() {
-
-        var cards = new ArrayList<ICard>();
-        for (Map.Entry<Color, Integer> rule : rules.entrySet()) {
-            var max = rule.getValue();
-            for (var count = 1; count <= max; count++) {
-                var color = rule.getKey();
-                var card = MedicineCard.create(color);
-                cards.add(card);
-            }
-        }
-
-        return cards;
+        return this.rules.entrySet().stream()
+            .flatMap(rule -> Stream.generate(
+                () -> MedicineCard.create(rule.getKey())).limit(rule.getValue()))
+            .collect(Collectors.toList());
     }
 
 }
