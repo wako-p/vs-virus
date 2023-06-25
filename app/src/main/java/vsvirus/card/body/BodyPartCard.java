@@ -1,7 +1,6 @@
 package vsvirus.card.body;
 
 import java.util.ArrayList;
-import java.util.Collections;
 import java.util.List;
 
 import vsvirus.card.Color;
@@ -19,18 +18,18 @@ public final class BodyPartCard implements ICard {
 
     private final Color color;
     private Status status;
-    private List<ICard> applyedCards;
-
     private final ApplicationPolicy policy;
+    private final ApplicationCards applyedCards;
 
     private BodyPartCard(final Color color, final Status status, List<ICard> applyedCards) {
         this.color = color;
         this.status = status;
-        this.applyedCards = applyedCards;
 
         this.policy = new ApplicationPolicy();
         this.policy.add(new TypeRule(VirusCard.class).or(new TypeRule(MedicineCard.class)));
         this.policy.add(new ColorRule(color));
+
+        this.applyedCards = new ApplicationCards();
     }
 
     public static BodyPartCard create(final Color color) {
@@ -45,8 +44,8 @@ public final class BodyPartCard implements ICard {
         return this.status;
     }
 
-    public List<ICard> getEvilApplyedCards() {
-        return Collections.unmodifiableList(this.applyedCards);
+    public List<ICard> getApplyedCards() {
+        return this.applyedCards.getEvilCards();
     }
 
     public void apply(final ICard card) {
@@ -55,13 +54,7 @@ public final class BodyPartCard implements ICard {
             throw new IllegalArgumentException();
         }
 
-        // TODO: applyedCardsはファーストクラスコレクションクラスにする
-        // 適用できるカードの枚数は2枚まで
-        if (this.applyedCards.size() == 2) {
-            throw new IllegalStateException();
-        }
         this.applyedCards.add(card);
-
         this.status = this.status.next(card);
     }
 
