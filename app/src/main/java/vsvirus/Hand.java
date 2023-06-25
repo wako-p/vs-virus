@@ -10,7 +10,7 @@ import vsvirus.card.ICard;
  */
 public final class Hand {
 
-    private List<ICard> cards;
+    private final List<ICard> cards;
 
     private Hand(final List<ICard> cards) {
         this.cards = cards;

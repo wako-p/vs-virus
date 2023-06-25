@@ -24,9 +24,9 @@ public final class Trasitions {
         this.trasitions.add(new Trasition(Status.PASSIVELY_IMMUNIZED, Status.IMMUNIZED, MedicineCard.class));
     }
 
-    Status next(Status from, Class<? extends ICard> card) {
+    Status next(final Status from, final Class<? extends ICard> type) {
         for (Trasition trasition : trasitions) {
-            if (trasition.match(from, card)) return trasition.next();
+            if (trasition.match(from, type)) return trasition.next();
         }
         throw new IllegalArgumentException();
     }

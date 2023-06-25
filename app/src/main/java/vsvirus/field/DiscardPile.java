@@ -11,7 +11,7 @@ import vsvirus.card.ICard;
  */
 public final class DiscardPile {
 
-    private List<ICard> cards;
+    private final List<ICard> cards;
 
     private DiscardPile(final List<ICard> cards) {
         this.cards = cards;

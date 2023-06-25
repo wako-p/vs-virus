@@ -10,7 +10,7 @@ public enum Color {
     YELLOW,
     MULTI;
 
-    public boolean equals(Color other) {
+    public boolean equals(final Color other) {
 
         if (this == MULTI || other == MULTI) {
             return true;

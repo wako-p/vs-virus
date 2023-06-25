@@ -11,7 +11,7 @@ import vsvirus.card.body.BodyPartCard;
  */
 public final class BodyArea {
 
-    private List<BodyPartCard> cards;
+    private final List<BodyPartCard> cards;
 
     private BodyArea(final List<BodyPartCard> cards) {
         this.cards = cards;

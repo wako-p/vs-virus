@@ -49,7 +49,7 @@ public final class BodyPartCard implements ICard {
         return Collections.unmodifiableList(this.applyedCards);
     }
 
-    public void apply(ICard card) {
+    public void apply(final ICard card) {
         // 適用ポリシー満たしてる？
         if (!this.policy.verify(card)) {
             throw new IllegalArgumentException();

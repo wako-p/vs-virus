@@ -14,7 +14,7 @@ public enum Status {
 
     private static Trasitions trasitions = new Trasitions();
 
-    public Status next(ICard card) {
+    public Status next(final ICard card) {
         return trasitions.next(this, card.getClass());
     }
 

@@ -9,16 +9,16 @@ public final class Trasition {
 
     private final Status to;
     private final Status from;
-    private final Class<? extends ICard> card;
+    private final Class<? extends ICard> type;
 
-    Trasition(Status from, Status to, Class<? extends ICard> card) {
+    Trasition(final Status from, final Status to, final Class<? extends ICard> type) {
         this.from = from;
         this.to = to;
-        this.card = card;
+        this.type = type;
     }
 
-    boolean match(Status from, Class<? extends ICard> card) {
-        return this.from == from && this.card == card;
+    boolean match(final Status from, final Class<? extends ICard> type) {
+        return this.from == from && this.type == type;
     }
 
     Status next() {

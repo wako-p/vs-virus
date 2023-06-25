@@ -14,7 +14,7 @@ import vsvirus.card.virus.VirusCardFactory;
  */
 public final class Deck {
 
-    private List<ICard> cards; 
+    private final List<ICard> cards; 
 
     private Deck(final List<ICard> cards) {
         this.cards = cards;
