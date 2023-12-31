@@ -1,9 +1,9 @@
 package vsvirus.card.body;
 
-import java.util.ArrayList;
 import java.util.List;
 
 import vsvirus.card.ApplicationPolicy;
+import vsvirus.card.AppliedCards;
 import vsvirus.card.Color;
 import vsvirus.card.ICard;
 import vsvirus.card.medicine.MedicineCard;
@@ -19,9 +19,9 @@ public final class BodyPartCard implements ICard {
     private final Color color;
     private Status status;
     private final ApplicationPolicy policy;
-    private final ApplicationCards applyedCards;
+    private final AppliedCards applyedCards;
 
-    private BodyPartCard(final Color color, final Status status, List<ICard> applyedCards) {
+    private BodyPartCard(final Color color, final Status status, AppliedCards applyedCards) {
         this.color = color;
         this.status = status;
 
@@ -29,11 +29,11 @@ public final class BodyPartCard implements ICard {
         this.policy.add(new TypeRule(VirusCard.class).or(new TypeRule(MedicineCard.class)));
         this.policy.add(new ColorRule(color));
 
-        this.applyedCards = new ApplicationCards();
+        this.applyedCards = applyedCards;
     }
 
     public static BodyPartCard create(final Color color) {
-        return new BodyPartCard(color, Status.HEALTHY, new ArrayList<ICard>());
+        return new BodyPartCard(color, Status.HEALTHY, new AppliedCards(2));
     }
 
     public Color getColor() {

@@ -1,4 +1,4 @@
-package vsvirus.card.body;
+package vsvirus.card;
 
 import static org.junit.jupiter.api.Assertions.assertEquals;
 import static org.junit.jupiter.api.Assertions.assertThrows;
@@ -6,19 +6,19 @@ import static org.junit.jupiter.api.Assertions.assertThrows;
 import org.junit.jupiter.api.Nested;
 import org.junit.jupiter.api.Test;
 
-import vsvirus.card.Color;
 import vsvirus.card.virus.VirusCard;
 
-class ApplicationCardsTest {
+class AppliedCardsTest {
+
     @Nested
     class AddTest {
         @Test
-        void カードを1枚追加できる() {
+        void 最大枚数が2枚のときにカードを1枚追加できる() {
             // Given:
-            ApplicationCards cards = new ApplicationCards();
-            
-            // When:
+            AppliedCards cards = new AppliedCards(2);
             var virus1 = VirusCard.create(Color.BLUE);
+
+            // When:
             cards.add(virus1);
 
             // Then:
@@ -26,14 +26,14 @@ class ApplicationCardsTest {
         }
 
         @Test
-        void カードを2枚追加できる() {
+        void 最大枚数が2枚のときにカードを2枚追加できる() {
             // Given:
-            ApplicationCards cards = new ApplicationCards();
+            AppliedCards cards = new AppliedCards(2);
             var virus1 = VirusCard.create(Color.BLUE);
-            cards.add(virus1);
-
-            // When:
             var virus2 = VirusCard.create(Color.BLUE);
+            
+            // When:
+            cards.add(virus1);
             cards.add(virus2);
 
             // Then:
@@ -42,14 +42,14 @@ class ApplicationCardsTest {
         }
 
         @Test
-        void カードを3枚追加すると例外がスローされる() {
+        void 最大枚数が2枚のときにカードを3枚追加すると例外がスローされる() {
             // Given:
-            ApplicationCards cards = new ApplicationCards();
+            AppliedCards cards = new AppliedCards(2);
             var virus1 = VirusCard.create(Color.BLUE);
             var virus2 = VirusCard.create(Color.BLUE);
             cards.add(virus1);
             cards.add(virus2);
-
+            
             // When/Then:
             assertThrows(IllegalStateException.class, () -> {
                 var virus3 = VirusCard.create(Color.BLUE);

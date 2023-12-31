@@ -1,16 +1,15 @@
-package vsvirus.card.body;
+package vsvirus.card;
 
 import java.util.ArrayList;
 import java.util.Collections;
 import java.util.List;
 
-import vsvirus.card.ICard;
-
 /**
- * 適用カード
+ * 適用されたカード
  */
-public final class ApplicationCards {
+public final class AppliedCards {
 
+    private final int max;
     private final List<ICard> cards;
 
     public List<ICard> getEvilCards() {
@@ -18,14 +17,14 @@ public final class ApplicationCards {
         return Collections.unmodifiableList(this.cards);
     }
 
-    // TODO: ApplicationPolicy持たせてadd()でverify()する？
-    ApplicationCards() {
+    public AppliedCards(final int max) {
+        this.max = max;
         this.cards = new ArrayList<>();
     }
 
     public void add(final ICard card) {
-        // 適用できるカードは2枚まで
-        if (this.cards.size() == 2) {
+        // 適用できるカードは最大枚数まで
+        if (this.cards.size() == this.max) {
             throw new IllegalStateException();
         }
         this.cards.add(card);
