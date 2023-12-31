@@ -1,9 +1,9 @@
-package vsvirus.card.policy;
+package vsvirus.card;
 
 import java.util.ArrayList;
 import java.util.List;
 
-import vsvirus.card.ICard;
+import vsvirus.shared.rules.Rule;
 
 /**
  * 適用ポリシー

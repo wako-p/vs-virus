@@ -1,4 +1,4 @@
-package vsvirus.card.policy;
+package vsvirus.shared.rules;
 
 import vsvirus.card.ICard;
 

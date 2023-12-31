@@ -3,12 +3,12 @@ package vsvirus.card.body;
 import java.util.ArrayList;
 import java.util.List;
 
+import vsvirus.card.ApplicationPolicy;
 import vsvirus.card.Color;
 import vsvirus.card.ICard;
 import vsvirus.card.medicine.MedicineCard;
-import vsvirus.card.policy.ApplicationPolicy;
-import vsvirus.card.policy.ColorRule;
-import vsvirus.card.policy.TypeRule;
+import vsvirus.card.rules.ColorRule;
+import vsvirus.card.rules.TypeRule;
 import vsvirus.card.virus.VirusCard;
 
 /**

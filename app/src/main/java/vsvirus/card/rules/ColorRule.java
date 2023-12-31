@@ -1,7 +1,8 @@
-package vsvirus.card.policy;
+package vsvirus.card.rules;
 
 import vsvirus.card.Color;
 import vsvirus.card.ICard;
+import vsvirus.shared.rules.Rule;
 
 /**
  * カードカラーのルール

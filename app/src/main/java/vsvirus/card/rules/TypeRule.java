@@ -1,6 +1,7 @@
-package vsvirus.card.policy;
+package vsvirus.card.rules;
 
 import vsvirus.card.ICard;
+import vsvirus.shared.rules.Rule;
 
 /**
  * カード種のルール
