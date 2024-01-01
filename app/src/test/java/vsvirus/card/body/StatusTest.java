@@ -5,6 +5,7 @@ import static org.junit.jupiter.api.Assertions.assertThrows;
 
 import java.util.stream.Stream;
 
+import org.junit.jupiter.api.DisplayName;
 import org.junit.jupiter.api.Nested;
 import org.junit.jupiter.api.Test;
 import org.junit.jupiter.params.ParameterizedTest;
@@ -20,7 +21,8 @@ class StatusTest {
     @Nested
     class NextTest {
         @Test
-        void 健康から感染に遷移できる() {
+        @DisplayName("健康から感染に遷移できる")
+        void success1() {
             // Given:
             var card = VirusCard.create(Color.BLUE);
             var status = Status.HEALTHY;
@@ -33,7 +35,8 @@ class StatusTest {
         }
 
         @Test
-        void 健康から仮免疫に遷移できる() {
+        @DisplayName("健康から仮免疫に遷移できる")
+        void success2() {
             // Given:
             var card = MedicineCard.create(Color.BLUE);
             var status = Status.HEALTHY;
@@ -46,7 +49,8 @@ class StatusTest {
         }
 
         @Test
-        void 感染から発症に遷移できる() {
+        @DisplayName("感染から発症に遷移できる")
+        void success3() {
             // Given:
             var card = VirusCard.create(Color.BLUE);
             var status = Status.INFECTED;
@@ -59,7 +63,8 @@ class StatusTest {
         }
 
         @Test
-        void 感染から健康に遷移できる() {
+        @DisplayName("感染から健康に遷移できる")
+        void success4() {
             // Given:
             var card = MedicineCard.create(Color.BLUE);
             var status = Status.INFECTED;
@@ -72,7 +77,8 @@ class StatusTest {
         }
 
         @Test
-        void 仮免疫から健康に遷移できる() {
+        @DisplayName("仮免疫から健康に遷移できる")
+        void success5() {
             // Given:
             var card = VirusCard.create(Color.BLUE);
             var status = Status.PASSIVELY_IMMUNIZED;
@@ -85,7 +91,8 @@ class StatusTest {
         }
 
         @Test
-        void 仮免疫から免疫に遷移できる() {
+        @DisplayName("仮免疫から免疫に遷移できる")
+        void success6() {
             // Given:
             var card = MedicineCard.create(Color.BLUE);
             var status = Status.PASSIVELY_IMMUNIZED;
@@ -106,7 +113,8 @@ class StatusTest {
 
         @ParameterizedTest
         @MethodSource("cards")
-        void 免疫からは遷移できない(ICard card) {
+        @DisplayName("免疫からは遷移できない")
+        void failure1(ICard card) {
             // Given:
             var status = Status.IMMUNIZED;
 
@@ -118,7 +126,8 @@ class StatusTest {
 
         @ParameterizedTest
         @MethodSource("cards")
-        void 発症からは遷移できない(ICard card) {
+        @DisplayName("発症からは遷移できない")
+        void failrue2(ICard card) {
             // Given:
             var status = Status.SYMPTOMATIC;
 

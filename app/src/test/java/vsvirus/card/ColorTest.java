@@ -5,6 +5,7 @@ import static org.junit.jupiter.api.Assertions.assertTrue;
 
 import java.util.stream.Stream;
 
+import org.junit.jupiter.api.DisplayName;
 import org.junit.jupiter.api.Nested;
 import org.junit.jupiter.params.ParameterizedTest;
 import org.junit.jupiter.params.provider.Arguments;
@@ -27,7 +28,8 @@ class ColorTest {
 
         @ParameterizedTest
         @MethodSource("colors1")
-        void 同じ色の比較の場合はtrueを返す(Color color1, Color color2) {
+        @DisplayName("同じ色の比較の場合はtrueを返す")
+        void success1(Color color1, Color color2) {
             // When:
             var actual = color1.equals(color2);
 
@@ -54,7 +56,8 @@ class ColorTest {
 
         @ParameterizedTest
         @MethodSource("colors2")
-        void 違う色の比較の場合はfalseを返す(Color color1, Color color2) {
+        @DisplayName("違う色の比較の場合はfalseを返す")
+        void success2(Color color1, Color color2) {
             // When:
             var actual = color1.equals(color2);
 
@@ -77,7 +80,8 @@ class ColorTest {
 
         @ParameterizedTest
         @MethodSource("colors3")
-        void マルチカラーは何色との比較でもtrueを返す(Color color1, Color color2) {
+        @DisplayName("マルチカラーは何色と比較してもtrueを返す")
+        void success3(Color color1, Color color2) {
             // When:
             var actual = color1.equals(color2);
 

@@ -2,18 +2,22 @@ package vsvirus.field;
 
 import static org.junit.jupiter.api.Assertions.assertEquals;
 
+import org.junit.jupiter.api.DisplayName;
 import org.junit.jupiter.api.Nested;
 import org.junit.jupiter.api.Test;
 
 import vsvirus.card.Color;
 import vsvirus.card.body.BodyPartCard;
+import vsvirus.card.medicine.MedicineCard;
+import vsvirus.card.virus.VirusCard;
 
 class DiscardPileTest {
 
     @Nested
     class CreateTest {
         @Test
-        void 捨て札のカードが0枚で生成される() {
+        @DisplayName("捨て札のカードが0枚で生成される")
+        void success() {
             // When:
             var discardPile = DiscardPile.create();
 
@@ -25,26 +29,24 @@ class DiscardPileTest {
     @Nested
     class PlaceTest {
         @Test
-        void 捨て札にカードを置くことができる() {
+        @DisplayName("捨て札にカードを置くことができる")
+        void success() {
             // Given:
             var card1 = BodyPartCard.create(Color.BLUE);
-            var card2 = BodyPartCard.create(Color.RED);
-            var card3 = BodyPartCard.create(Color.GREEN);
-            var card4 = BodyPartCard.create(Color.YELLOW);
+            var card2 = MedicineCard.create(Color.RED);
+            var card3 = VirusCard.create(Color.GREEN);
             var discardPile = DiscardPile.create();
 
             // When:
             discardPile.place(card1);
             discardPile.place(card2);
             discardPile.place(card3);
-            discardPile.place(card4);
 
             // Then:
-            assertEquals(4, discardPile.getCount());
-            assertEquals(Color.BLUE, discardPile.getEvilCards().get(0).getColor());
-            assertEquals(Color.RED, discardPile.getEvilCards().get(1).getColor());
-            assertEquals(Color.GREEN, discardPile.getEvilCards().get(2).getColor());
-            assertEquals(Color.YELLOW, discardPile.getEvilCards().get(3).getColor());
+            assertEquals(3, discardPile.getCount());
+            assertEquals(card1, discardPile.getEvilCards().get(0));
+            assertEquals(card2, discardPile.getEvilCards().get(1));
+            assertEquals(card3, discardPile.getEvilCards().get(2));
         }
     }
 }

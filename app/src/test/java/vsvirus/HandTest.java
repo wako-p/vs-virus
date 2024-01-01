@@ -3,6 +3,7 @@ package vsvirus;
 import static org.junit.jupiter.api.Assertions.assertEquals;
 import static org.junit.jupiter.api.Assertions.assertThrows;
 
+import org.junit.jupiter.api.DisplayName;
 import org.junit.jupiter.api.Nested;
 import org.junit.jupiter.api.Test;
 
@@ -14,7 +15,8 @@ class HandTest {
     @Nested
     class CreateTest {
         @Test
-        void 手札のカードが0枚で生成される() {
+        @DisplayName("手札のカードが0枚で生成される")
+        void success() {
             // When:
             var hand = Hand.create();
 
@@ -27,7 +29,8 @@ class HandTest {
     class AddTest {
 
         @Test
-        void 手札にカードを3枚まで追加することができる() {
+        @DisplayName("手札にカードを3枚まで追加することができる")
+        void success() {
             // Given:
             var card1 = BodyPartCard.create(Color.BLUE);
             var card2 = BodyPartCard.create(Color.RED);
@@ -44,12 +47,12 @@ class HandTest {
         }
 
         @Test
-        void 手札が3枚のときにカードを追加すると例外がスローされる() {
+        @DisplayName("手札が3枚のときにカードを追加すると例外がスローされる")
+        void failure() {
             // Given:
             var card1 = BodyPartCard.create(Color.BLUE);
             var card2 = BodyPartCard.create(Color.RED);
             var card3 = BodyPartCard.create(Color.GREEN);
-            var card4 = BodyPartCard.create(Color.YELLOW);
 
             var hand = Hand.create();
             hand.add(card1);
@@ -58,6 +61,7 @@ class HandTest {
 
             // When/Then:
             assertThrows(RuntimeException.class, () -> {
+                var card4 = BodyPartCard.create(Color.YELLOW);
                 hand.add(card4);
             });
         }

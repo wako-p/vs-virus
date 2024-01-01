@@ -5,6 +5,7 @@ import static org.junit.jupiter.api.Assertions.assertThrows;
 
 import java.util.stream.Stream;
 
+import org.junit.jupiter.api.DisplayName;
 import org.junit.jupiter.api.Nested;
 import org.junit.jupiter.api.Test;
 import org.junit.jupiter.params.ParameterizedTest;
@@ -19,7 +20,8 @@ class BodyAreaTest {
     @Nested
     class CreateTest {
         @Test
-        void からだパーツカードが0枚の状態で生成される() {
+        @DisplayName("からだパーツカードが0枚の状態で生成される")
+        void success() {
             // When:
             var bodyArea = BodyArea.create();
 
@@ -31,7 +33,8 @@ class BodyAreaTest {
     @Nested
     class PlaceTest {
         @Test
-        void からだエリアにからだパーツカードを4枚まで置くことができる() {
+        @DisplayName("からだエリアにからだパーツカードを4枚まで置くことができる")
+        void success1() {
             // Given:
             var card1 = BodyPartCard.create(Color.BLUE);
             var card2 = BodyPartCard.create(Color.RED);
@@ -53,7 +56,8 @@ class BodyAreaTest {
         }
 
         @Test
-        void からだエリアが4枚のときにからだパーツカードを置くと例外がスローされる() {
+        @DisplayName("からだエリアが4枚のときにからだパーツカードを置くと例外がスローされる")
+        void failure1() {
             // Given:
             var card1 = BodyPartCard.create(Color.BLUE);
             var card2 = BodyPartCard.create(Color.RED);
@@ -114,7 +118,8 @@ class BodyAreaTest {
 
         @ParameterizedTest
         @MethodSource("duplicateCardCombinations1")
-        void からだエリアに同じ色のからだパーツカードが既に置かれている場合は例外がスローされる1(BodyPartCard card1, BodyPartCard card2) {
+        @DisplayName("からだエリアに同じ色のからだパーツカードが既に置かれている場合は例外がスローされる1")
+        void failure2(BodyPartCard card1, BodyPartCard card2) {
             // Given:
             var bodyArea = BodyArea.create();
             bodyArea.place(card1);
@@ -127,7 +132,8 @@ class BodyAreaTest {
 
         @ParameterizedTest
         @MethodSource("duplicateCardCombinations2")
-        void からだエリアに同じ色のからだパーツカードが既に置かれている場合は例外がスローされる2(BodyPartCard card1, BodyPartCard card2, BodyPartCard card3) {
+        @DisplayName("からだエリアに同じ色のからだパーツカードが既に置かれている場合は例外がスローされる2")
+        void failure3(BodyPartCard card1, BodyPartCard card2, BodyPartCard card3) {
             // Given:
             var bodyArea = BodyArea.create();
             bodyArea.place(card1);
@@ -141,7 +147,8 @@ class BodyAreaTest {
 
         @ParameterizedTest
         @MethodSource("duplicateCardCombinations3")
-        void からだエリアに同じ色のからだパーツカードが既に置かれている場合は例外がスローされる3(BodyPartCard card1, BodyPartCard card2, BodyPartCard card3, BodyPartCard card4) {
+        @DisplayName("からだエリアに同じ色のからだパーツカードが既に置かれている場合は例外がスローされる3")
+        void failure4(BodyPartCard card1, BodyPartCard card2, BodyPartCard card3, BodyPartCard card4) {
             // Given:
             var bodyArea = BodyArea.create();
             bodyArea.place(card1);

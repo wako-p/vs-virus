@@ -5,6 +5,7 @@ import static org.junit.jupiter.api.Assertions.assertThrows;
 
 import java.util.stream.Stream;
 
+import org.junit.jupiter.api.DisplayName;
 import org.junit.jupiter.api.Nested;
 import org.junit.jupiter.params.ParameterizedTest;
 import org.junit.jupiter.params.provider.Arguments;
@@ -31,7 +32,8 @@ class TrasitionsTest {
 
         @ParameterizedTest
         @MethodSource("data")
-        void 引数に遷移前の状態とカードの型を指定すると遷移後の状態を取得できる(Status from, Class<ICard> type, Status expected) {
+        @DisplayName("引数に遷移前の状態とカードの型を指定すると遷移後の状態を取得できる")
+        void success(Status from, Class<ICard> type, Status expected) {
             // Given:
             var trasitions = new Trasitions();
 
@@ -51,7 +53,8 @@ class TrasitionsTest {
 
         @ParameterizedTest
         @MethodSource("types")
-        void 免疫からは遷移できない(Class<? extends ICard> type) {
+        @DisplayName("免疫からは遷移できない")
+        void failure1(Class<? extends ICard> type) {
             // Given:
             var trasitions = new Trasitions();
 
@@ -63,7 +66,8 @@ class TrasitionsTest {
 
         @ParameterizedTest
         @MethodSource("types")
-        void 発症からは遷移できない(Class<? extends ICard> type) {
+        @DisplayName("発症からは遷移できない")
+        void failure2(Class<? extends ICard> type) {
             // Given:
             var trasitions = new Trasitions();
 

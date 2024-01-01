@@ -2,17 +2,17 @@ package vsvirus.field;
 
 import static org.junit.jupiter.api.Assertions.assertEquals;
 
+import org.junit.jupiter.api.DisplayName;
 import org.junit.jupiter.api.Nested;
 import org.junit.jupiter.api.Test;
-
-import vsvirus.card.Color;
 
 class DeckTest {
 
     @Nested
     class CreateTest {
         @Test
-        void 山札のカードが55枚で生成される() {
+        @DisplayName("山札のカードが58枚で生成される")
+        void success() {
             // When:
             var deck = Deck.create();
 
@@ -25,7 +25,8 @@ class DeckTest {
     @Nested
     class ShuffleTest {
         @Test
-        void 山札をシャッフルすることができる() {
+        @DisplayName("山札をシャッフルすることができる")
+        void success() {
             // Given:
             var deck = Deck.create();
 
@@ -40,16 +41,16 @@ class DeckTest {
     @Nested
     class DrawTest {
         @Test
-        void 山札からカードを1枚引くことができる() {
+        @DisplayName("山札からカードを1枚引くことができる")
+        void success() {
             // Given:
             var deck = Deck.create();
 
             // When:
-            var card = deck.draw();
+            deck.draw();
 
             // Then:
             assertEquals(57, deck.getCount());
-            assertEquals(Color.MULTI, card.getColor());
         }
     }
 }

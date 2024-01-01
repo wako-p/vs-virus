@@ -5,6 +5,7 @@ import static org.junit.jupiter.api.Assertions.assertThrows;
 
 import java.util.stream.Stream;
 
+import org.junit.jupiter.api.DisplayName;
 import org.junit.jupiter.api.Nested;
 import org.junit.jupiter.api.Test;
 import org.junit.jupiter.params.ParameterizedTest;
@@ -33,7 +34,8 @@ class BodyPartCardTest {
 
         @ParameterizedTest
         @MethodSource("colors")
-        void 引数に指定した色の健康なからだパーツカードを生成できる(Color color, Color expected) {
+        @DisplayName("引数に指定した色の健康なからだパーツカードを生成できる")
+        void success(Color color, Color expected) {
             // When:
             var card = BodyPartCard.create(color);
 

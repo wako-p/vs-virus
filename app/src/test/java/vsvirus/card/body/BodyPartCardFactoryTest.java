@@ -4,6 +4,7 @@ import static org.junit.jupiter.api.Assertions.assertEquals;
 
 import java.util.List;
 
+import org.junit.jupiter.api.DisplayName;
 import org.junit.jupiter.api.Nested;
 import org.junit.jupiter.api.Test;
 
@@ -14,7 +15,8 @@ class BodyPartCardFactoryTest {
     @Nested
     class CreateTest {
         @Test
-        void 青赤緑黄色のカードがそれぞれ5枚ずつとマルチカラーのカードが1枚生成される() {
+        @DisplayName("BRULE/RED/GREEN/YELLOWカードがそれぞれ5枚とMULTIカードが1枚生成される")
+        void success() {
             // Given:
             var factory = new BodyPartCardFactory();
 
@@ -22,45 +24,17 @@ class BodyPartCardFactoryTest {
             var cards = factory.create();
 
             // Then:
-            assertEquals(5, countBule(cards));
-            assertEquals(5, countRed(cards));
-            assertEquals(5, countGreen(cards));
-            assertEquals(5, countYellow(cards));
-            assertEquals(1, countMulti(cards));
+            assertEquals(5, count(Color.BLUE, cards));
+            assertEquals(5, count(Color.RED, cards));
+            assertEquals(5, count(Color.GREEN, cards));
+            assertEquals(5, count(Color.YELLOW, cards));
+            assertEquals(1, count(Color.MULTI, cards));
         }
 
-        int countBule(List<ICard> cards) {
+        int count(final Color color, final List<ICard> cards) {
             return (int)(cards
                 .stream()
-                .filter(card -> card.getColor() == Color.BLUE)
-                .count());
-        }
-
-        int countRed(List<ICard> cards) {
-            return (int)(cards
-                .stream()
-                .filter(card -> card.getColor() == Color.RED)
-                .count());
-        }
-
-        int countGreen(List<ICard> cards) {
-            return (int)(cards
-                .stream()
-                .filter(card -> card.getColor() == Color.GREEN)
-                .count());
-        }
-
-        int countYellow(List<ICard> cards) {
-            return (int)(cards
-                .stream()
-                .filter(card -> card.getColor() == Color.YELLOW)
-                .count());
-        }
-
-        int countMulti(List<ICard> cards) {
-            return (int)(cards
-                .stream()
-                .filter(card -> card.getColor() == Color.MULTI)
+                .filter(card -> card.getColor() == color)
                 .count());
         }
 

@@ -4,6 +4,7 @@ import static org.junit.jupiter.api.Assertions.assertEquals;
 
 import java.util.stream.Stream;
 
+import org.junit.jupiter.api.DisplayName;
 import org.junit.jupiter.api.Nested;
 import org.junit.jupiter.params.ParameterizedTest;
 import org.junit.jupiter.params.provider.Arguments;
@@ -28,7 +29,8 @@ class VirusCardTest {
 
         @ParameterizedTest
         @MethodSource("colors")
-        void 引数に指定した色のウィルスカードを生成できる(Color color, Color expected) {
+        @DisplayName("引数に指定した色のウィルスカードを生成できる")
+        void success(Color color, Color expected) {
             // When:
             var card = VirusCard.create(color);
 

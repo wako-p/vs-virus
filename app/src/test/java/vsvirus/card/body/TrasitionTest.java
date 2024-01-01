@@ -4,6 +4,7 @@ import static org.junit.jupiter.api.Assertions.assertEquals;
 
 import java.util.stream.Stream;
 
+import org.junit.jupiter.api.DisplayName;
 import org.junit.jupiter.api.Nested;
 import org.junit.jupiter.api.Test;
 import org.junit.jupiter.params.ParameterizedTest;
@@ -20,7 +21,8 @@ class TrasitionTest {
     class MatchTest {
 
         @Test
-        void 引数に指定したカードの型と遷移前の状態が一致する場合はtrueが返る() {
+        @DisplayName("引数に指定したカードの型と遷移前の状態が一致する場合はtrueが返る")
+        void success1() {
             // Given:
             var trasition = new Trasition(Status.HEALTHY, Status.INFECTED, VirusCard.class);
 
@@ -33,26 +35,28 @@ class TrasitionTest {
         }
 
         @Test
-        void 引数に指定したカードの型が一致しない場合はfalseが返る() {
-            // Given:
-            var trasition = new Trasition(Status.HEALTHY, Status.INFECTED, VirusCard.class);
-
-            // When:
-            var card = MedicineCard.create(Color.BLUE);
-            var actual = trasition.match(Status.HEALTHY, card.getClass());
-
-            // Then:
-            assertEquals(false, actual);
-        }
-
-        @Test
-        void 引数に指定した遷移前の状態が一致しない場合はfalseが返る() {
+        @DisplayName("引数に指定した遷移前の状態が一致しない場合はfalseが返る")
+        void success2() {
             // Given:
             var trasition = new Trasition(Status.HEALTHY, Status.INFECTED, VirusCard.class);
 
             // When:
             var card = VirusCard.create(Color.BLUE);
             var actual = trasition.match(Status.INFECTED, card.getClass());
+
+            // Then:
+            assertEquals(false, actual);
+        }
+
+        @Test
+        @DisplayName("引数に指定したカードの型が一致しない場合はfalseが返る")
+        void success3() {
+            // Given:
+            var trasition = new Trasition(Status.HEALTHY, Status.INFECTED, VirusCard.class);
+
+            // When:
+            var card = MedicineCard.create(Color.BLUE);
+            var actual = trasition.match(Status.HEALTHY, card.getClass());
 
             // Then:
             assertEquals(false, actual);
@@ -75,7 +79,8 @@ class TrasitionTest {
 
         @ParameterizedTest
         @MethodSource("status")
-        void 生成時に指定した遷移後の状態が返される(Status from, Status expected) {
+        @DisplayName("生成時に指定した遷移後の状態が返される")
+        void success(Status from, Status expected) {
             // Given:
             var trasition = new Trasition(Status.HEALTHY, from, VirusCard.class);
 

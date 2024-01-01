@@ -4,6 +4,7 @@ import static org.junit.jupiter.api.Assertions.assertEquals;
 
 import java.util.UUID;
 
+import org.junit.jupiter.api.DisplayName;
 import org.junit.jupiter.api.Nested;
 import org.junit.jupiter.api.Test;
 import org.mockito.Mockito;
@@ -14,7 +15,8 @@ class PlayerTest {
     class CreateTest {
 
         @Test
-        void 引数に名前を指定して生成することができる() {
+        @DisplayName("引数に名前を指定して生成することができる")
+        void success() {
             // Given:
             // UUIDのrandomUUID()が固定値を返すようにモックする
             var fakeUUID = UUID.fromString("00000000-0000-0000-0000-000000000001");

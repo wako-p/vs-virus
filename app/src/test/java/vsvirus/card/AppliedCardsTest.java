@@ -3,6 +3,7 @@ package vsvirus.card;
 import static org.junit.jupiter.api.Assertions.assertEquals;
 import static org.junit.jupiter.api.Assertions.assertThrows;
 
+import org.junit.jupiter.api.DisplayName;
 import org.junit.jupiter.api.Nested;
 import org.junit.jupiter.api.Test;
 
@@ -13,25 +14,13 @@ class AppliedCardsTest {
     @Nested
     class AddTest {
         @Test
-        void 最大枚数が2枚のときにカードを1枚追加できる() {
-            // Given:
-            AppliedCards cards = new AppliedCards(2);
-            var virus1 = VirusCard.create(Color.BLUE);
-
-            // When:
-            cards.add(virus1);
-
-            // Then:
-            assertEquals(virus1, cards.getEvilCards().get(0));
-        }
-
-        @Test
-        void 最大枚数が2枚のときにカードを2枚追加できる() {
+        @DisplayName("最大枚数までカードを追加できる")
+        void success() {
             // Given:
             AppliedCards cards = new AppliedCards(2);
             var virus1 = VirusCard.create(Color.BLUE);
             var virus2 = VirusCard.create(Color.BLUE);
-            
+
             // When:
             cards.add(virus1);
             cards.add(virus2);
@@ -42,14 +31,15 @@ class AppliedCardsTest {
         }
 
         @Test
-        void 最大枚数が2枚のときにカードを3枚追加すると例外がスローされる() {
+        @DisplayName("最大枚数を超えてカードを追加しようとすると例外がスローされる")
+        void failure() {
             // Given:
             AppliedCards cards = new AppliedCards(2);
             var virus1 = VirusCard.create(Color.BLUE);
             var virus2 = VirusCard.create(Color.BLUE);
             cards.add(virus1);
             cards.add(virus2);
-            
+
             // When/Then:
             assertThrows(IllegalStateException.class, () -> {
                 var virus3 = VirusCard.create(Color.BLUE);
