@@ -2,7 +2,7 @@
     "name": "VS ViRUS Development Environment",
     "dockerComposeFile": "../docker-compose.yml",
     "service": "app",
-    "workspaceFolder": "/home/work",
+    "workspaceFolder": "/home/app",
     "customizations": {
         "vscode": {
             "settings": {
