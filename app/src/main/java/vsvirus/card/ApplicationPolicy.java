@@ -17,12 +17,9 @@ public final class ApplicationPolicy {
     }
 
     public boolean verify(final ICard card) {
-        for (Rule rule : this.rules) {
-            if (!rule.ok(card)) {
-                return false;
-            }
-        }
-        return true;
+        return this.rules
+            .stream()
+            .allMatch(rule -> rule.ok(card));
     }
 
 }
