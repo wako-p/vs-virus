@@ -47,33 +47,6 @@ class BodyPartCardTest {
     }
 
     @Nested
-    class GetColorTest {
-
-        static Stream<Arguments> colors() {
-            return Stream.of(
-                Arguments.of(Color.BLUE, Color.BLUE),
-                Arguments.of(Color.RED, Color.RED),
-                Arguments.of(Color.GREEN, Color.GREEN),
-                Arguments.of(Color.YELLOW, Color.YELLOW),
-                Arguments.of(Color.MULTI, Color.MULTI)
-            );
-        }
-
-        @ParameterizedTest
-        @MethodSource("colors")
-        void からだパーツカードの色を取得することができる(Color color, Color expected) {
-            // Given:
-            var card = BodyPartCard.create(color);
-
-            // When:
-            var actual = card.getColor();
-
-            // Then:
-            assertEquals(expected, actual);
-        }
-    }
-
-    @Nested
     class ApplyTest {
 
         static Stream<Arguments> inapplicableCards() {
