@@ -21,7 +21,7 @@ public enum Status {
         this.name = name;
     }
 
-    public Status next(final ICard card) {
+    Status next(final ICard card) {
         return trasitions.next(this, card.getClass());
     }
 

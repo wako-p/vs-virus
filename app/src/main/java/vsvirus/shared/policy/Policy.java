@@ -1,14 +1,15 @@
-package vsvirus.card;
+package vsvirus.shared.policy;
 
 import java.util.ArrayList;
 import java.util.List;
 
+import vsvirus.card.ICard;
 import vsvirus.shared.rules.Rule;
 
 /**
- * 適用ポリシー
+ * ポリシー
  */
-public final class ApplicationPolicy {
+public class Policy {
 
     private final List<Rule> rules = new ArrayList<>();
 
@@ -16,7 +17,7 @@ public final class ApplicationPolicy {
         this.rules.add(rule);
     }
 
-    public boolean verify(final ICard card) {
+    public boolean complyWithAll(final ICard card) {
         return this.rules
             .stream()
             .allMatch(rule -> rule.ok(card));

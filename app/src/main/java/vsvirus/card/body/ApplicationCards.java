@@ -1,30 +1,32 @@
-package vsvirus.card;
+package vsvirus.card.body;
 
 import java.util.ArrayList;
 import java.util.Collections;
 import java.util.List;
 
-/**
- * 適用されたカード
- */
-public final class AppliedCards {
+import vsvirus.card.ICard;
 
-    private final int max;
+/**
+ * 適用カード
+ */
+final class ApplicationCards {
+
+    private final int fullSize;
     private final List<ICard> cards;
 
-    public List<ICard> getEvilCards() {
+    List<ICard> getEvilCards() {
         // 変更できないようにして返す
         return Collections.unmodifiableList(this.cards);
     }
 
-    public AppliedCards(final int max) {
-        this.max = max;
+    ApplicationCards(final int fullSize) {
+        this.fullSize = fullSize;
         this.cards = new ArrayList<>();
     }
 
-    public void add(final ICard card) {
+    void add(final ICard card) {
         // 適用できるカードは最大枚数まで
-        if (this.cards.size() == this.max) {
+        if (this.cards.size() == this.fullSize) {
             throw new IllegalStateException();
         }
         this.cards.add(card);

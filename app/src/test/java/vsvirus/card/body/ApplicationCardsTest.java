@@ -1,4 +1,4 @@
-package vsvirus.card;
+package vsvirus.card.body;
 
 import static org.junit.jupiter.api.Assertions.assertEquals;
 import static org.junit.jupiter.api.Assertions.assertThrows;
@@ -7,9 +7,10 @@ import org.junit.jupiter.api.DisplayName;
 import org.junit.jupiter.api.Nested;
 import org.junit.jupiter.api.Test;
 
+import vsvirus.card.Color;
 import vsvirus.card.virus.VirusCard;
 
-class AppliedCardsTest {
+class ApplicationCardsTest {
 
     @Nested
     class AddTest {
@@ -17,7 +18,7 @@ class AppliedCardsTest {
         @DisplayName("最大枚数までカードを追加できる")
         void success() {
             // Given:
-            AppliedCards cards = new AppliedCards(2);
+            ApplicationCards cards = new ApplicationCards(2);
             var virus1 = VirusCard.create(Color.BLUE);
             var virus2 = VirusCard.create(Color.BLUE);
 
@@ -34,7 +35,7 @@ class AppliedCardsTest {
         @DisplayName("最大枚数を超えてカードを追加しようとすると例外がスローされる")
         void failure() {
             // Given:
-            AppliedCards cards = new AppliedCards(2);
+            ApplicationCards cards = new ApplicationCards(2);
             var virus1 = VirusCard.create(Color.BLUE);
             var virus2 = VirusCard.create(Color.BLUE);
             cards.add(virus1);
