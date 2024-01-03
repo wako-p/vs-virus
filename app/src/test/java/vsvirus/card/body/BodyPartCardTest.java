@@ -7,12 +7,12 @@ import java.util.stream.Stream;
 
 import org.junit.jupiter.api.DisplayName;
 import org.junit.jupiter.api.Nested;
+import org.junit.jupiter.api.Test;
 import org.junit.jupiter.params.ParameterizedTest;
 import org.junit.jupiter.params.provider.Arguments;
 import org.junit.jupiter.params.provider.MethodSource;
 
 import vsvirus.card.Color;
-import vsvirus.card.ICard;
 import vsvirus.card.medicine.MedicineCard;
 import vsvirus.card.virus.VirusCard;
 
@@ -190,40 +190,6 @@ class BodyPartCardTest {
 
         static Stream<Arguments> failure1Pattern() {
             return Stream.of(
-                Arguments.of(Color.BLUE, Color.BLUE),
-                Arguments.of(Color.BLUE, Color.RED),
-                Arguments.of(Color.BLUE, Color.GREEN),
-                Arguments.of(Color.BLUE, Color.YELLOW),
-                Arguments.of(Color.RED, Color.BLUE),
-                Arguments.of(Color.RED, Color.RED),
-                Arguments.of(Color.RED, Color.GREEN),
-                Arguments.of(Color.RED, Color.YELLOW),
-                Arguments.of(Color.GREEN, Color.BLUE),
-                Arguments.of(Color.GREEN, Color.RED),
-                Arguments.of(Color.GREEN, Color.GREEN),
-                Arguments.of(Color.GREEN, Color.YELLOW),
-                Arguments.of(Color.YELLOW, Color.BLUE),
-                Arguments.of(Color.YELLOW, Color.RED),
-                Arguments.of(Color.YELLOW, Color.GREEN),
-                Arguments.of(Color.YELLOW, Color.YELLOW));
-        }
-
-        @ParameterizedTest
-        @MethodSource("failure1Pattern")
-        @DisplayName("からだパーツカードを適用すると例外がスローされる")
-        void failure1(final Color color1, final Color color2) {
-            // Given:
-            var body1 = BodyPartCard.create(color1);
-            var body2 = BodyPartCard.create(color2);
-
-            // When/Then:
-            assertThrows(IllegalArgumentException.class, () -> {
-                body1.apply(body2);
-            });
-        }
-
-        static Stream<Arguments> failure2Pattern() {
-            return Stream.of(
                 Arguments.of(BodyPartCard.create(Color.BLUE), VirusCard.create(Color.RED)),
                 Arguments.of(BodyPartCard.create(Color.BLUE), VirusCard.create(Color.GREEN)),
                 Arguments.of(BodyPartCard.create(Color.BLUE), VirusCard.create(Color.YELLOW)),
@@ -239,16 +205,16 @@ class BodyPartCardTest {
         }
 
         @ParameterizedTest
-        @MethodSource("failure2Pattern")
+        @MethodSource("failure1Pattern")
         @DisplayName("からだパーツカードと異なる色のウィルスカードを適用すると例外がスローされる")
-        void failure2(final BodyPartCard body, final VirusCard virus) {
+        void failure1(final BodyPartCard body, final VirusCard virus) {
             // When/Then:
             assertThrows(IllegalArgumentException.class, () -> {
                 body.apply(virus);
             });
         }
 
-        static Stream<Arguments> failure3Pattern() {
+        static Stream<Arguments> failure2Pattern() {
             return Stream.of(
                 Arguments.of(BodyPartCard.create(Color.BLUE), MedicineCard.create(Color.RED)),
                 Arguments.of(BodyPartCard.create(Color.BLUE), MedicineCard.create(Color.GREEN)),
@@ -265,36 +231,30 @@ class BodyPartCardTest {
         }
 
         @ParameterizedTest
-        @MethodSource("failure3Pattern")
+        @MethodSource("failure2Pattern")
         @DisplayName("からだパーツカードの色と異なる薬カードを適用すると例外がスローされる")
-        void failure3(final BodyPartCard body, final MedicineCard medicine) {
+        void failure2(final BodyPartCard body, final MedicineCard medicine) {
             // When/Then:
             assertThrows(IllegalArgumentException.class, () -> {
                 body.apply(medicine);
             });
         }
 
-        static Stream<Arguments> failure4Pattern() {
-            return Stream.of(
-                Arguments.of(VirusCard.create(Color.BLUE), VirusCard.create(Color.BLUE), VirusCard.create(Color.BLUE)),
-                Arguments.of(VirusCard.create(Color.BLUE), VirusCard.create(Color.BLUE), MedicineCard.create(Color.BLUE)),
-                Arguments.of(MedicineCard.create(Color.BLUE), MedicineCard.create(Color.BLUE), MedicineCard.create(Color.BLUE)),
-                Arguments.of(MedicineCard.create(Color.BLUE), MedicineCard.create(Color.BLUE), VirusCard.create(Color.BLUE))
-            );
-        }
-
-        @ParameterizedTest
-        @MethodSource("failure4Pattern")
+        @Test
         @DisplayName("3枚目のカードを適用すると例外がスローされる")
-        void failure4(final ICard applyCard1, final ICard applyCard2, final ICard applyCard3) {
+        void failure3() {
             // Given:
             var body = BodyPartCard.create(Color.BLUE);
-            body.apply(applyCard1);
-            body.apply(applyCard2);
+            var virus1 = VirusCard.create(Color.BLUE);
+            var virus2 = VirusCard.create(Color.BLUE);
+            var virus3 = VirusCard.create(Color.BLUE);
+
+            body.apply(virus1);
+            body.apply(virus2);
 
             // When/Then:
             assertThrows(IllegalStateException.class, () -> {
-                body.apply(applyCard3);
+                body.apply(virus3);
             });
         }
 

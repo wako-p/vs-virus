@@ -5,7 +5,8 @@ import java.util.List;
 import lombok.Getter;
 import vsvirus.card.Color;
 import vsvirus.card.ICard;
-import vsvirus.card.rules.ColorRule;
+import vsvirus.card.medicine.MedicineCard;
+import vsvirus.card.virus.VirusCard;
 
 /**
  * からだパーツカード
@@ -17,15 +18,11 @@ public final class BodyPartCard implements ICard {
 
     @Getter
     private Status status;
-
-    private final ApplicationPolicy applicationPolicy;
     private final ApplicationCards applicationCards;
 
     private BodyPartCard(final Color color, final Status status, final ApplicationCards applyedCards) {
         this.color = color;
         this.status = status;
-
-        this.applicationPolicy = new ApplicationPolicy(new ColorRule(color));
         this.applicationCards = applyedCards;
     }
 
@@ -37,14 +34,30 @@ public final class BodyPartCard implements ICard {
         return this.applicationCards.getEvilCards();
     }
 
-    public void apply(final ICard card) {
-        // 適用ポリシー満たしてる？
-        if (!this.applicationPolicy.complyWithAll(card)) {
+    @Override
+    public void apply(final MedicineCard medicine) {
+
+        if (!isValidColor(medicine.getColor())) {
             throw new IllegalArgumentException();
         }
 
-        this.applicationCards.add(card);
-        this.status = this.status.next(card);
+        this.applicationCards.add(medicine);
+        this.status = this.status.next(medicine);
+    }
+
+    @Override
+    public void apply(final VirusCard virus) {
+
+        if (!isValidColor(virus.getColor())) {
+            throw new IllegalArgumentException();
+        }
+
+        this.applicationCards.add(virus);
+        this.status = this.status.next(virus);
+    }
+
+    private boolean isValidColor(final Color color) {
+        return this.color.equals(color);
     }
 
 }
