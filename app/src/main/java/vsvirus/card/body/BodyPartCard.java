@@ -20,14 +20,14 @@ public final class BodyPartCard implements ICard {
     private Status status;
     private final ApplicationCards applicationCards;
 
-    private BodyPartCard(final Color color, final Status status, final ApplicationCards applyedCards) {
+    private BodyPartCard(final Color color, final Status status, final ApplicationCards applicationCards) {
         this.color = color;
         this.status = status;
-        this.applicationCards = applyedCards;
+        this.applicationCards = applicationCards;
     }
 
     public static BodyPartCard create(final Color color) {
-        return new BodyPartCard(color, Status.HEALTHY, new ApplicationCards(2));
+        return new BodyPartCard(color, Status.HEALTHY, new ApplicationCards());
     }
 
     public List<ICard> getApplicationCards() {

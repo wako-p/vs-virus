@@ -11,7 +11,6 @@ import vsvirus.card.ICard;
  */
 final class ApplicationCards {
 
-    private final int fullSize;
     private final List<ICard> cards;
 
     List<ICard> getEvilCards() {
@@ -19,14 +18,13 @@ final class ApplicationCards {
         return Collections.unmodifiableList(this.cards);
     }
 
-    ApplicationCards(final int fullSize) {
-        this.fullSize = fullSize;
+    ApplicationCards() {
         this.cards = new ArrayList<>();
     }
 
     void add(final ICard card) {
         // 適用できるカードは最大枚数まで
-        if (this.cards.size() == this.fullSize) {
+        if (this.cards.size() == 2) {
             throw new IllegalStateException();
         }
         this.cards.add(card);

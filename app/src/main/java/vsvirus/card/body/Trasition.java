@@ -5,10 +5,10 @@ import vsvirus.card.ICard;
 /**
  * 遷移前、遷移後、カード型の組み合わせを扱う
  */
-public final class Trasition {
+final class Trasition {
 
-    private final Status to;
     private final Status from;
+    private final Status to;
     private final Class<? extends ICard> type;
 
     Trasition(final Status from, final Status to, final Class<? extends ICard> type) {

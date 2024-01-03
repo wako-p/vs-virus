@@ -15,10 +15,10 @@ class ApplicationCardsTest {
     @Nested
     class AddTest {
         @Test
-        @DisplayName("最大枚数までカードを追加できる")
+        @DisplayName("2枚までカードを追加できる")
         void success() {
             // Given:
-            ApplicationCards cards = new ApplicationCards(2);
+            ApplicationCards cards = new ApplicationCards();
             var virus1 = VirusCard.create(Color.BLUE);
             var virus2 = VirusCard.create(Color.BLUE);
 
@@ -32,10 +32,10 @@ class ApplicationCardsTest {
         }
 
         @Test
-        @DisplayName("最大枚数を超えてカードを追加しようとすると例外がスローされる")
+        @DisplayName("2枚を超えてカードを追加しようとすると例外がスローされる")
         void failure() {
             // Given:
-            ApplicationCards cards = new ApplicationCards(2);
+            ApplicationCards cards = new ApplicationCards();
             var virus1 = VirusCard.create(Color.BLUE);
             var virus2 = VirusCard.create(Color.BLUE);
             cards.add(virus1);

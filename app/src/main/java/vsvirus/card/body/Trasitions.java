@@ -10,7 +10,7 @@ import vsvirus.card.virus.VirusCard;
 /**
  * からだパーツカードの状態遷移を扱う
  */
-public final class Trasitions {
+final class Trasitions {
 
     private final List<Trasition> trasitions;
 

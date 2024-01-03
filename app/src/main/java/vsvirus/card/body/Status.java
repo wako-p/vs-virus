@@ -6,7 +6,7 @@ import vsvirus.card.ICard;
 /**
  * 状態
  */
-public enum Status {
+enum Status {
     HEALTHY("健康"),
     INFECTED("感染"),
     SYMPTOMATIC("発症"),
