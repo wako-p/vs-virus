@@ -34,7 +34,6 @@ public final class BodyPartCard implements ICard {
         return this.applicationCards.getEvilCards();
     }
 
-    @Override
     public void apply(final MedicineCard medicine) {
 
         if (!isValidColor(medicine.getColor())) {
@@ -45,7 +44,6 @@ public final class BodyPartCard implements ICard {
         this.status = this.status.next(medicine);
     }
 
-    @Override
     public void apply(final VirusCard virus) {
 
         if (!isValidColor(virus.getColor())) {
