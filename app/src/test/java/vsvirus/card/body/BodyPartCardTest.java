@@ -226,4 +226,105 @@ class BodyPartCardTest {
 
     }
 
+    @Nested
+    class DispatchAllTest {
+
+        @Test
+        @DisplayName("薬カードとウィルスカードが適用されている場合は取り外すことができる")
+        void success1() {
+            // Given:
+            var virus = VirusCard.create(Color.BLUE);
+            var medicine = MedicineCard.create(Color.BLUE);
+            var body = BodyPartCard.create(Color.BLUE);
+            body.apply(virus);
+            body.apply(medicine);
+
+            // When:
+            var actual = body.dispatchAll();
+
+            // Then:
+            assertEquals(Status.HEALTHY, body.getStatus());
+            assertEquals(virus, actual.get(0));
+            assertEquals(medicine, actual.get(1));
+        }
+
+        @Test
+        @DisplayName("ウィルスカードと薬カードが適用されている場合は取り外すことができる")
+        void success2() {
+            // Given:
+            var medicine = MedicineCard.create(Color.BLUE);
+            var virus = VirusCard.create(Color.BLUE);
+            var body = BodyPartCard.create(Color.BLUE);
+            body.apply(medicine);
+            body.apply(virus);
+
+            // When:
+            var actual = body.dispatchAll();
+
+            // Then:
+            assertEquals(Status.HEALTHY, body.getStatus());
+            assertEquals(medicine, actual.get(0));
+            assertEquals(virus, actual.get(1));
+        }
+
+        @Test
+        @DisplayName("適用されたカードが0枚の場合は例外がスローされる")
+        void failure1() {
+            // Given:
+            var body = BodyPartCard.create(Color.BLUE);
+
+            // When/Then:
+            assertThrows(IllegalStateException.class, () -> {
+                body.dispatchAll();
+            });
+        }
+
+        @Test
+        @DisplayName("適用されたカードが1枚の場合は例外がスローされる")
+        void failure2() {
+            // Given:
+            var virus = VirusCard.create(Color.BLUE);
+            var body = BodyPartCard.create(Color.BLUE);
+            body.apply(virus);
+
+            // When/Then:
+            assertThrows(IllegalStateException.class, () -> {
+                body.dispatchAll();
+            });
+        }
+
+        @Test
+        @DisplayName("薬カードが2枚適用されている場合は例外がスローされる")
+        void failure3() {
+            // Given:
+            var medicine1 = MedicineCard.create(Color.BLUE);
+            var medicine2 = MedicineCard.create(Color.BLUE);
+            var body = BodyPartCard.create(Color.BLUE);
+            body.apply(medicine1);
+            body.apply(medicine2);
+
+            // When/Then:
+            assertThrows(IllegalStateException.class, () -> {
+                body.dispatchAll();
+            });
+        }
+
+        @Test
+        @DisplayName("ウィルスカードが2枚適用されている場合は例外がスローされる")
+        void failure4() {
+            // Given:
+            var virus1 = VirusCard.create(Color.BLUE);
+            var virus2 = VirusCard.create(Color.BLUE);
+            var body = BodyPartCard.create(Color.BLUE);
+            body.apply(virus1);
+            body.apply(virus2);
+
+            // When/Then:
+            assertThrows(IllegalStateException.class, () -> {
+                body.dispatchAll();
+            });
+        }
+
+    }
+
 }

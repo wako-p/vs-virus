@@ -58,4 +58,14 @@ public final class BodyPartCard implements ICard {
         return this.color.equals(color);
     }
 
+    public List<ICard> dispatchAll() {
+
+        if (this.status == Status.HEALTHY &&
+            this.applicationCards.isFull()) {
+                return this.applicationCards.removeAll();
+        }
+
+        throw new IllegalStateException();
+    }
+
 }
