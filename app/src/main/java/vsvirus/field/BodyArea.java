@@ -18,37 +18,60 @@ public final class BodyArea {
     }
 
     public static BodyArea create() {
-        List<BodyPartCard> cards = new ArrayList<>();
+        var cards = new ArrayList<BodyPartCard>(Collections.nCopies(4, null));
         return new BodyArea(cards);
     }
 
-    public List<BodyPartCard> evilCards() {
+    public long count() {
+        return this.cards
+                .stream()
+                .filter(card -> card != null)
+                .count();
+    }
+
+    public List<BodyPartCard> getEvilCards() {
         // 追加、変更、削除ができないようにして返す
         return Collections.unmodifiableList(this.cards);
     }
 
-    public int getCount() {
-        return this.cards.size();
-    }
+    public void place(final int index, final BodyPartCard card) {
 
-    public void place(final BodyPartCard card) {
-        if (this.cards.size() == 4) {
-            throw new RuntimeException();
+        if (!isValidIndex(index)) {
+            throw new IllegalArgumentException();
+        }
+
+        if (isValidExist(index)) {
+            throw new IllegalStateException();
         }
 
         // 同じ色のからだパーツカードを複数置くことはできない
-        if (isDuplicate(card)) {
-            throw new RuntimeException();
+        if (isValidDuplicate(card)) {
+            throw new IllegalStateException();
         }
 
-        this.cards.add(card);
+        this.cards.add(index, card);
     }
 
-    private boolean isDuplicate(final BodyPartCard newCard) {
+    public BodyPartCard get(final int index) {
+        if (!isValidIndex(index)) {
+            throw new IllegalArgumentException();
+        }
+        return this.cards.get(index);
+    }
+
+    private boolean isValidIndex(final int index) {
+        return 0 <= index && index <= 3;
+    }
+
+    private boolean isValidExist(final int index) {
+        return this.cards.get(index) != null;
+    } 
+
+    private boolean isValidDuplicate(final BodyPartCard newCard) {
         // 同じ色のからだパーツカードでフィルタしてその数をカウントする
         var duplicateCount = this.cards
                 .stream()
-                .filter(card -> card.getColor() == newCard.getColor())
+                .filter(card -> card != null && card.getColor() == newCard.getColor())
                 .count();
 
         // 重複してたら0にならない

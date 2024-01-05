@@ -11,6 +11,7 @@ import org.junit.jupiter.api.Test;
 import org.junit.jupiter.params.ParameterizedTest;
 import org.junit.jupiter.params.provider.Arguments;
 import org.junit.jupiter.params.provider.MethodSource;
+import org.junit.jupiter.params.provider.ValueSource;
 
 import vsvirus.card.Color;
 import vsvirus.card.body.BodyPartCard;
@@ -26,140 +27,208 @@ class BodyAreaTest {
             var bodyArea = BodyArea.create();
 
             // Then:
-            assertEquals(0, bodyArea.getCount());
+            assertEquals(0, bodyArea.count());
         }
     }
 
     @Nested
     class PlaceTest {
+
         @Test
-        @DisplayName("からだエリアにからだパーツカードを4枚まで置くことができる")
+        @DisplayName("からだパーツカードをインデックス位置(0-3)に置くことができる")
         void success1() {
             // Given:
-            var card1 = BodyPartCard.create(Color.BLUE);
-            var card2 = BodyPartCard.create(Color.RED);
-            var card3 = BodyPartCard.create(Color.GREEN);
-            var card4 = BodyPartCard.create(Color.YELLOW);
+            var body1 = BodyPartCard.create(Color.BLUE);
+            var body2 = BodyPartCard.create(Color.RED);
+            var body3 = BodyPartCard.create(Color.GREEN);
+            var body4 = BodyPartCard.create(Color.YELLOW);
             var bodyArea = BodyArea.create();
 
             // When:
-            bodyArea.place(card1);
-            bodyArea.place(card2);
-            bodyArea.place(card3);
-            bodyArea.place(card4);
+            bodyArea.place(0, body1);
+            bodyArea.place(1, body2);
+            bodyArea.place(2, body3);
+            bodyArea.place(3, body4);
+
+            assertEquals(body1, bodyArea.getEvilCards().get(0));
+            assertEquals(body2, bodyArea.getEvilCards().get(1));
+            assertEquals(body3, bodyArea.getEvilCards().get(2));
+            assertEquals(body4, bodyArea.getEvilCards().get(3));
+        }
+
+        @ParameterizedTest
+        @ValueSource(ints = {-2, -1, 4, 5})
+        @DisplayName("インデックス位置が0-3の範囲外の場合は例外がスローされる")
+        void failure1(final int index) {
+            // Given:
+            var body = BodyPartCard.create(Color.BLUE);
+            var bodyArea = BodyArea.create();
+
+            // When/Then:
+            assertThrows(IllegalArgumentException.class, () -> {
+                bodyArea.place(index, body);
+            });
+        }
+
+        @ParameterizedTest
+        @ValueSource(ints = {0, 1, 2, 3})
+        @DisplayName("既にからだパーツカードが置かれているインデックス位置(0-3)には置けない")
+        void failure2(final int index) {
+            // Given:
+            var body1 = BodyPartCard.create(Color.BLUE);
+            var body2 = BodyPartCard.create(Color.RED);
+            var bodyArea = BodyArea.create();
+
+            // When:
+            bodyArea.place(index, body1);
 
             // Then:
-            assertEquals(card1.getColor(), bodyArea.evilCards().get(0).getColor());
-            assertEquals(card2.getColor(), bodyArea.evilCards().get(1).getColor());
-            assertEquals(card3.getColor(), bodyArea.evilCards().get(2).getColor());
-            assertEquals(card4.getColor(), bodyArea.evilCards().get(3).getColor());
-        }
-
-        @Test
-        @DisplayName("からだエリアが4枚のときにからだパーツカードを置くと例外がスローされる")
-        void failure1() {
-            // Given:
-            var card1 = BodyPartCard.create(Color.BLUE);
-            var card2 = BodyPartCard.create(Color.RED);
-            var card3 = BodyPartCard.create(Color.GREEN);
-            var card4 = BodyPartCard.create(Color.YELLOW);
-            var card5 = BodyPartCard.create(Color.MULTI);
-
-            var bodyArea = BodyArea.create();
-            bodyArea.place(card1);
-            bodyArea.place(card2);
-            bodyArea.place(card3);
-            bodyArea.place(card4);
-
-            // When/Then:
-            assertThrows(RuntimeException.class, () -> {
-                bodyArea.place(card5);
+            assertThrows(IllegalStateException.class, () -> {
+                bodyArea.place(index, body2);
             });
         }
 
-        static Stream<Arguments> duplicateCardCombinations1() {
+        static Stream<Arguments> failure3Pattern() {
             return Stream.of(
-                    Arguments.of(BodyPartCard.create(Color.BLUE), BodyPartCard.create(Color.BLUE)),
-                    Arguments.of(BodyPartCard.create(Color.RED), BodyPartCard.create(Color.RED)),
-                    Arguments.of(BodyPartCard.create(Color.GREEN), BodyPartCard.create(Color.GREEN)),
-                    Arguments.of(BodyPartCard.create(Color.YELLOW), BodyPartCard.create(Color.YELLOW))
-            );
-        }
-
-        static Stream<Arguments> duplicateCardCombinations2() {
-            return Stream.of(
-                    Arguments.of(BodyPartCard.create(Color.BLUE), BodyPartCard.create(Color.RED), BodyPartCard.create(Color.BLUE)),
-                    Arguments.of(BodyPartCard.create(Color.BLUE), BodyPartCard.create(Color.RED), BodyPartCard.create(Color.RED)),
-                    Arguments.of(BodyPartCard.create(Color.RED), BodyPartCard.create(Color.GREEN), BodyPartCard.create(Color.RED)),
-                    Arguments.of(BodyPartCard.create(Color.RED), BodyPartCard.create(Color.GREEN), BodyPartCard.create(Color.GREEN)),
-                    Arguments.of(BodyPartCard.create(Color.GREEN), BodyPartCard.create(Color.YELLOW), BodyPartCard.create(Color.GREEN)),
-                    Arguments.of(BodyPartCard.create(Color.GREEN), BodyPartCard.create(Color.YELLOW), BodyPartCard.create(Color.YELLOW)),
-                    Arguments.of(BodyPartCard.create(Color.YELLOW), BodyPartCard.create(Color.BLUE), BodyPartCard.create(Color.YELLOW)),
-                    Arguments.of(BodyPartCard.create(Color.YELLOW), BodyPartCard.create(Color.BLUE), BodyPartCard.create(Color.BLUE))
-            );
-        }
-
-        static Stream<Arguments> duplicateCardCombinations3() {
-            return Stream.of(
-                    Arguments.of(BodyPartCard.create(Color.BLUE), BodyPartCard.create(Color.RED), BodyPartCard.create(Color.GREEN), BodyPartCard.create(Color.BLUE)),
-                    Arguments.of(BodyPartCard.create(Color.BLUE), BodyPartCard.create(Color.RED), BodyPartCard.create(Color.GREEN), BodyPartCard.create(Color.RED)),
-                    Arguments.of(BodyPartCard.create(Color.BLUE), BodyPartCard.create(Color.RED), BodyPartCard.create(Color.GREEN), BodyPartCard.create(Color.GREEN)),
-                    Arguments.of(BodyPartCard.create(Color.RED), BodyPartCard.create(Color.GREEN), BodyPartCard.create(Color.YELLOW), BodyPartCard.create(Color.RED)),
-                    Arguments.of(BodyPartCard.create(Color.RED), BodyPartCard.create(Color.GREEN), BodyPartCard.create(Color.YELLOW), BodyPartCard.create(Color.GREEN)),
-                    Arguments.of(BodyPartCard.create(Color.RED), BodyPartCard.create(Color.GREEN), BodyPartCard.create(Color.YELLOW), BodyPartCard.create(Color.YELLOW)),
-                    Arguments.of(BodyPartCard.create(Color.GREEN), BodyPartCard.create(Color.YELLOW), BodyPartCard.create(Color.BLUE), BodyPartCard.create(Color.GREEN)),
-                    Arguments.of(BodyPartCard.create(Color.GREEN), BodyPartCard.create(Color.YELLOW), BodyPartCard.create(Color.BLUE), BodyPartCard.create(Color.YELLOW)),
-                    Arguments.of(BodyPartCard.create(Color.GREEN), BodyPartCard.create(Color.YELLOW), BodyPartCard.create(Color.BLUE), BodyPartCard.create(Color.BLUE)),
-                    Arguments.of(BodyPartCard.create(Color.YELLOW), BodyPartCard.create(Color.BLUE), BodyPartCard.create(Color.RED), BodyPartCard.create(Color.YELLOW)),
-                    Arguments.of(BodyPartCard.create(Color.YELLOW), BodyPartCard.create(Color.BLUE), BodyPartCard.create(Color.RED), BodyPartCard.create(Color.BLUE)),
-                    Arguments.of(BodyPartCard.create(Color.YELLOW), BodyPartCard.create(Color.BLUE), BodyPartCard.create(Color.RED), BodyPartCard.create(Color.RED))
+                Arguments.of(BodyPartCard.create(Color.BLUE), BodyPartCard.create(Color.BLUE)),
+                Arguments.of(BodyPartCard.create(Color.RED), BodyPartCard.create(Color.RED)),
+                Arguments.of(BodyPartCard.create(Color.GREEN), BodyPartCard.create(Color.GREEN)),
+                Arguments.of(BodyPartCard.create(Color.YELLOW), BodyPartCard.create(Color.YELLOW))
             );
         }
 
         @ParameterizedTest
-        @MethodSource("duplicateCardCombinations1")
+        @MethodSource("failure3Pattern")
         @DisplayName("からだエリアに同じ色のからだパーツカードが既に置かれている場合は例外がスローされる1")
-        void failure2(BodyPartCard card1, BodyPartCard card2) {
+        void failure3(BodyPartCard card1, BodyPartCard card2) {
             // Given:
             var bodyArea = BodyArea.create();
-            bodyArea.place(card1);
+            bodyArea.place(0, card1);
 
             // When/Then:
-            assertThrows(RuntimeException.class, () -> {
-                bodyArea.place(card2);
+            assertThrows(IllegalStateException.class, () -> {
+                bodyArea.place(1, card2);
             });
         }
 
+        static Stream<Arguments> failure4Pattern() {
+            return Stream.of(
+                Arguments.of(BodyPartCard.create(Color.BLUE), BodyPartCard.create(Color.RED), BodyPartCard.create(Color.BLUE)),
+                Arguments.of(BodyPartCard.create(Color.BLUE), BodyPartCard.create(Color.RED), BodyPartCard.create(Color.RED)),
+                Arguments.of(BodyPartCard.create(Color.RED), BodyPartCard.create(Color.GREEN), BodyPartCard.create(Color.RED)),
+                Arguments.of(BodyPartCard.create(Color.RED), BodyPartCard.create(Color.GREEN), BodyPartCard.create(Color.GREEN)),
+                Arguments.of(BodyPartCard.create(Color.GREEN), BodyPartCard.create(Color.YELLOW), BodyPartCard.create(Color.GREEN)),
+                Arguments.of(BodyPartCard.create(Color.GREEN), BodyPartCard.create(Color.YELLOW), BodyPartCard.create(Color.YELLOW)),
+                Arguments.of(BodyPartCard.create(Color.YELLOW), BodyPartCard.create(Color.BLUE), BodyPartCard.create(Color.YELLOW)),
+                Arguments.of(BodyPartCard.create(Color.YELLOW), BodyPartCard.create(Color.BLUE), BodyPartCard.create(Color.BLUE))
+            );
+        }
+
         @ParameterizedTest
-        @MethodSource("duplicateCardCombinations2")
+        @MethodSource("failure4Pattern")
         @DisplayName("からだエリアに同じ色のからだパーツカードが既に置かれている場合は例外がスローされる2")
-        void failure3(BodyPartCard card1, BodyPartCard card2, BodyPartCard card3) {
+        void failure4(BodyPartCard card1, BodyPartCard card2, BodyPartCard card3) {
             // Given:
             var bodyArea = BodyArea.create();
-            bodyArea.place(card1);
-            bodyArea.place(card2);
+            bodyArea.place(0, card1);
+            bodyArea.place(1, card2);
 
             // When/Then:
-            assertThrows(RuntimeException.class, () -> {
-                bodyArea.place(card3);
+            assertThrows(IllegalStateException.class, () -> {
+                bodyArea.place(2, card3);
             });
         }
 
+        static Stream<Arguments> failure5Pattern() {
+            return Stream.of(
+                Arguments.of(BodyPartCard.create(Color.BLUE), BodyPartCard.create(Color.RED), BodyPartCard.create(Color.GREEN), BodyPartCard.create(Color.BLUE)),
+                Arguments.of(BodyPartCard.create(Color.BLUE), BodyPartCard.create(Color.RED), BodyPartCard.create(Color.GREEN), BodyPartCard.create(Color.RED)),
+                Arguments.of(BodyPartCard.create(Color.BLUE), BodyPartCard.create(Color.RED), BodyPartCard.create(Color.GREEN), BodyPartCard.create(Color.GREEN)),
+                Arguments.of(BodyPartCard.create(Color.RED), BodyPartCard.create(Color.GREEN), BodyPartCard.create(Color.YELLOW), BodyPartCard.create(Color.RED)),
+                Arguments.of(BodyPartCard.create(Color.RED), BodyPartCard.create(Color.GREEN), BodyPartCard.create(Color.YELLOW), BodyPartCard.create(Color.GREEN)),
+                Arguments.of(BodyPartCard.create(Color.RED), BodyPartCard.create(Color.GREEN), BodyPartCard.create(Color.YELLOW), BodyPartCard.create(Color.YELLOW)),
+                Arguments.of(BodyPartCard.create(Color.GREEN), BodyPartCard.create(Color.YELLOW), BodyPartCard.create(Color.BLUE), BodyPartCard.create(Color.GREEN)),
+                Arguments.of(BodyPartCard.create(Color.GREEN), BodyPartCard.create(Color.YELLOW), BodyPartCard.create(Color.BLUE), BodyPartCard.create(Color.YELLOW)),
+                Arguments.of(BodyPartCard.create(Color.GREEN), BodyPartCard.create(Color.YELLOW), BodyPartCard.create(Color.BLUE), BodyPartCard.create(Color.BLUE)),
+                Arguments.of(BodyPartCard.create(Color.YELLOW), BodyPartCard.create(Color.BLUE), BodyPartCard.create(Color.RED), BodyPartCard.create(Color.YELLOW)),
+                Arguments.of(BodyPartCard.create(Color.YELLOW), BodyPartCard.create(Color.BLUE), BodyPartCard.create(Color.RED), BodyPartCard.create(Color.BLUE)),
+                Arguments.of(BodyPartCard.create(Color.YELLOW), BodyPartCard.create(Color.BLUE), BodyPartCard.create(Color.RED), BodyPartCard.create(Color.RED))
+            );
+        }
+
         @ParameterizedTest
-        @MethodSource("duplicateCardCombinations3")
+        @MethodSource("failure5Pattern")
         @DisplayName("からだエリアに同じ色のからだパーツカードが既に置かれている場合は例外がスローされる3")
-        void failure4(BodyPartCard card1, BodyPartCard card2, BodyPartCard card3, BodyPartCard card4) {
+        void failure5(BodyPartCard card1, BodyPartCard card2, BodyPartCard card3, BodyPartCard card4) {
             // Given:
             var bodyArea = BodyArea.create();
-            bodyArea.place(card1);
-            bodyArea.place(card2);
-            bodyArea.place(card3);
+            bodyArea.place(0, card1);
+            bodyArea.place(1, card2);
+            bodyArea.place(2, card3);
 
             // When/Then:
-            assertThrows(RuntimeException.class, () -> {
-                bodyArea.place(card4);
+            assertThrows(IllegalStateException.class, () -> {
+                bodyArea.place(3, card4);
             });
         }
 
     }
+
+    @Nested
+    class GetTest {
+
+        @Test
+        @DisplayName("からだエリアに置かれたからだパーツカードを取得することができる")
+        void success1() {
+            // Given:
+            var body1 = BodyPartCard.create(Color.BLUE);
+            var body2 = BodyPartCard.create(Color.RED);
+            var body3 = BodyPartCard.create(Color.GREEN);
+            var body4 = BodyPartCard.create(Color.YELLOW);
+            var bodyArea = BodyArea.create();
+            bodyArea.place(0, body1);
+            bodyArea.place(1, body2);
+            bodyArea.place(2, body3);
+            bodyArea.place(3, body4);
+
+            // When:
+            var actual1 = bodyArea.get(0);
+            var actual2 = bodyArea.get(1);
+            var actual3 = bodyArea.get(2);
+            var actual4 = bodyArea.get(3);
+
+            // Then:
+            assertEquals(body1, actual1);
+            assertEquals(body2, actual2);
+            assertEquals(body3, actual3);
+            assertEquals(body4, actual4);
+        }
+
+        @Test
+        @DisplayName("からだパーツカードが置かれていない位置からはnullが取得される")
+        void success2() {
+            // Given:
+            var body1 = BodyPartCard.create(Color.BLUE);
+            var body2 = BodyPartCard.create(Color.RED);
+            var bodyArea = BodyArea.create();
+            bodyArea.place(0, body1);
+            bodyArea.place(1, body2);
+
+            // When:
+            var actual3 = bodyArea.get(2);
+            var actual4 = bodyArea.get(3);
+
+            // Then:
+            assertEquals(null, actual3);
+            assertEquals(null, actual4);
+        }
+
+        @Test
+        @DisplayName("")
+        void failure1() {
+
+        }
+
+    }
+
 }
