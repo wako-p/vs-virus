@@ -50,10 +50,10 @@ class BodyAreaTest {
             bodyArea.place(2, body3);
             bodyArea.place(3, body4);
 
-            assertEquals(body1, bodyArea.getEvilCards().get(0));
-            assertEquals(body2, bodyArea.getEvilCards().get(1));
-            assertEquals(body3, bodyArea.getEvilCards().get(2));
-            assertEquals(body4, bodyArea.getEvilCards().get(3));
+            assertEquals(body1, bodyArea.getEvilCards().get(0).get());
+            assertEquals(body2, bodyArea.getEvilCards().get(1).get());
+            assertEquals(body3, bodyArea.getEvilCards().get(2).get());
+            assertEquals(body4, bodyArea.getEvilCards().get(3).get());
         }
 
         @ParameterizedTest
@@ -198,14 +198,14 @@ class BodyAreaTest {
             var actual4 = bodyArea.get(3);
 
             // Then:
-            assertEquals(body1, actual1);
-            assertEquals(body2, actual2);
-            assertEquals(body3, actual3);
-            assertEquals(body4, actual4);
+            assertEquals(body1, actual1.get());
+            assertEquals(body2, actual2.get());
+            assertEquals(body3, actual3.get());
+            assertEquals(body4, actual4.get());
         }
 
         @Test
-        @DisplayName("からだパーツカードが置かれていない位置からはnullが取得される")
+        @DisplayName("からだパーツカードが置かれていない位置からは取得できない")
         void success2() {
             // Given:
             var body1 = BodyPartCard.create(Color.BLUE);
@@ -219,14 +219,8 @@ class BodyAreaTest {
             var actual4 = bodyArea.get(3);
 
             // Then:
-            assertEquals(null, actual3);
-            assertEquals(null, actual4);
-        }
-
-        @Test
-        @DisplayName("")
-        void failure1() {
-
+            assertEquals(true, actual3.isEmpty());
+            assertEquals(true, actual4.isEmpty());
         }
 
     }

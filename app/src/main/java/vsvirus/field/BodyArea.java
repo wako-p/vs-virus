@@ -3,6 +3,7 @@ package vsvirus.field;
 import java.util.ArrayList;
 import java.util.Collections;
 import java.util.List;
+import java.util.Optional;
 
 import vsvirus.card.body.BodyPartCard;
 
@@ -11,25 +12,25 @@ import vsvirus.card.body.BodyPartCard;
  */
 public final class BodyArea {
 
-    private final List<BodyPartCard> cards;
+    private final List<Optional<BodyPartCard>> cards;
 
-    private BodyArea(final List<BodyPartCard> cards) {
+    private BodyArea(final List<Optional<BodyPartCard>> cards) {
         this.cards = cards;
     }
 
     public static BodyArea create() {
-        var cards = new ArrayList<BodyPartCard>(Collections.nCopies(4, null));
+        var cards = new ArrayList<Optional<BodyPartCard>>(Collections.nCopies(4, Optional.empty()));
         return new BodyArea(cards);
     }
 
     public long count() {
         return this.cards
                 .stream()
-                .filter(card -> card != null)
+                .filter(Optional::isPresent)
                 .count();
     }
 
-    public List<BodyPartCard> getEvilCards() {
+    public List<Optional<BodyPartCard>> getEvilCards() {
         // 追加、変更、削除ができないようにして返す
         return Collections.unmodifiableList(this.cards);
     }
@@ -49,10 +50,10 @@ public final class BodyArea {
             throw new IllegalStateException();
         }
 
-        this.cards.add(index, card);
+        this.cards.add(index, Optional.of(card));
     }
 
-    public BodyPartCard get(final int index) {
+    public Optional<BodyPartCard> get(final int index) {
         if (!isValidIndex(index)) {
             throw new IllegalArgumentException();
         }
@@ -64,14 +65,16 @@ public final class BodyArea {
     }
 
     private boolean isValidExist(final int index) {
-        return this.cards.get(index) != null;
+        return this.cards.get(index).isPresent();
     } 
 
     private boolean isValidDuplicate(final BodyPartCard newCard) {
         // 同じ色のからだパーツカードでフィルタしてその数をカウントする
         var duplicateCount = this.cards
                 .stream()
-                .filter(card -> card != null && card.getColor() == newCard.getColor())
+                .filter(maybeCard -> maybeCard
+                    .map(card -> card.getColor() == newCard.getColor())
+                    .orElse(false))
                 .count();
 
         // 重複してたら0にならない
