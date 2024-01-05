@@ -1,4 +1,4 @@
-package vsvirus;
+package vsvirus.player;
 
 import java.util.UUID;
 
