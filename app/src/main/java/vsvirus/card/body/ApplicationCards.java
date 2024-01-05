@@ -3,6 +3,7 @@ package vsvirus.card.body;
 import java.util.ArrayList;
 import java.util.Collections;
 import java.util.List;
+import java.util.Optional;
 import java.util.stream.Collectors;
 
 import vsvirus.card.ICard;
@@ -13,9 +14,9 @@ import vsvirus.card.ICard;
 final class ApplicationCards {
 
     private static final int FULL = 2;
-    private final List<ICard> cards;
+    private final List<Optional<ICard>> cards;
 
-    List<ICard> getEvilCards() {
+    List<Optional<ICard>> getEvilCards() {
         // 変更できないようにして返す
         return Collections.unmodifiableList(this.cards);
     }
@@ -24,12 +25,16 @@ final class ApplicationCards {
         this.cards = new ArrayList<>();
     }
 
+    ApplicationCards(final List<Optional<ICard>> cards) {
+        this.cards = cards;
+    }
+
     void add(final ICard card) {
         // 適用できるカードは最大枚数まで
         if (this.cards.size() == FULL) {
             throw new IllegalStateException();
         }
-        this.cards.add(card);
+        this.cards.add(Optional.of(card));
     }
 
     boolean isFull() {
@@ -44,15 +49,15 @@ final class ApplicationCards {
         return this.cards.isEmpty();
     }
 
-    ICard first() {
+    Optional<ICard> first() {
         return this.cards.get(0);
     }
 
-    ICard second() {
+    Optional<ICard> second() {
         return this.cards.get(1);
     }
 
-    ICard removeLast() {
+    Optional<ICard> removeLast() {
         var lastIndex = this.cards.size() - 1;
         if (lastIndex < 0) {
             throw new IllegalStateException();
@@ -60,7 +65,7 @@ final class ApplicationCards {
         return this.cards.remove(lastIndex);
     }
 
-    List<ICard> removeAll() {
+    List<Optional<ICard>> removeAll() {
         var removeCards = this.cards
             .stream()
             .collect(Collectors.toList());

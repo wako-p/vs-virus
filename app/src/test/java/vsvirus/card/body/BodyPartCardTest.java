@@ -244,8 +244,8 @@ class BodyPartCardTest {
 
             // Then:
             assertEquals(Status.HEALTHY, body.getStatus());
-            assertEquals(virus, actual.get(0));
-            assertEquals(medicine, actual.get(1));
+            assertEquals(virus, actual.get(0).get());
+            assertEquals(medicine, actual.get(1).get());
         }
 
         @Test
@@ -263,8 +263,8 @@ class BodyPartCardTest {
 
             // Then:
             assertEquals(Status.HEALTHY, body.getStatus());
-            assertEquals(medicine, actual.get(0));
-            assertEquals(virus, actual.get(1));
+            assertEquals(medicine, actual.get(0).get());
+            assertEquals(virus, actual.get(1).get());
         }
 
         @Test

@@ -1,6 +1,7 @@
 package vsvirus.card.body;
 
 import java.util.List;
+import java.util.Optional;
 
 import lombok.Getter;
 import vsvirus.card.Color;
@@ -30,7 +31,7 @@ public final class BodyPartCard implements ICard {
         return new BodyPartCard(color, Status.HEALTHY, new ApplicationCards());
     }
 
-    public List<ICard> getApplicationCards() {
+    public List<Optional<ICard>> getApplicationCards() {
         return this.applicationCards.getEvilCards();
     }
 
@@ -58,7 +59,7 @@ public final class BodyPartCard implements ICard {
         return this.color.equals(color);
     }
 
-    public List<ICard> dispatchAll() {
+    public List<Optional<ICard>> dispatchAll() {
 
         if (this.status == Status.HEALTHY &&
             this.applicationCards.isFull()) {

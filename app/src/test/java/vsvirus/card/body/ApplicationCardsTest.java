@@ -29,8 +29,8 @@ class ApplicationCardsTest {
             applicationCards.add(virus2);
 
             // Then:
-            assertEquals(virus1, applicationCards.getEvilCards().get(0));
-            assertEquals(virus2, applicationCards.getEvilCards().get(1));
+            assertEquals(virus1, applicationCards.getEvilCards().get(0).get());
+            assertEquals(virus2, applicationCards.getEvilCards().get(1).get());
         }
 
         @Test
@@ -166,7 +166,7 @@ class ApplicationCardsTest {
 
             // Then:
             assertEquals(0, applicationCards.getEvilCards().size());
-            assertEquals(virus, actual);
+            assertEquals(virus, actual.get());
         }
 
         @Test
@@ -183,8 +183,8 @@ class ApplicationCardsTest {
 
             // Then:
             assertEquals(1, applicationCards.getEvilCards().size());
-            assertEquals(virsu1, applicationCards.getEvilCards().get(0));
-            assertEquals(virsu2, actual);
+            assertEquals(virsu1, applicationCards.getEvilCards().get(0).get());
+            assertEquals(virsu2, actual.get());
         }
 
         @Test
@@ -202,8 +202,8 @@ class ApplicationCardsTest {
 
             // Then:
             assertEquals(0, applicationCards.getEvilCards().size());
-            assertEquals(virsu1, actual1);
-            assertEquals(virsu2, actual2);
+            assertEquals(virsu1, actual1.get());
+            assertEquals(virsu2, actual2.get());
         }
 
         @Test
@@ -247,7 +247,7 @@ class ApplicationCardsTest {
 
             // Then:
             assertEquals(true, applicationCards.isEmpty());
-            assertEquals(virsu1, actual.get(0));
+            assertEquals(virsu1, actual.get(0).get());
         }
 
         @Test
@@ -264,8 +264,8 @@ class ApplicationCardsTest {
 
             // Then:
             assertEquals(true, applicationCards.isEmpty());
-            assertEquals(virsu1, actual.get(0));
-            assertEquals(virsu2, actual.get(1));
+            assertEquals(virsu1, actual.get(0).get());
+            assertEquals(virsu2, actual.get(1).get());
         }
 
     }
