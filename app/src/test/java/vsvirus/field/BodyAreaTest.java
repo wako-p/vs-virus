@@ -15,6 +15,7 @@ import org.junit.jupiter.params.provider.ValueSource;
 
 import vsvirus.card.Color;
 import vsvirus.card.body.BodyPartCard;
+import vsvirus.card.virus.VirusCard;
 
 class BodyAreaTest {
 
@@ -221,6 +222,133 @@ class BodyAreaTest {
             // Then:
             assertEquals(true, actual3.isEmpty());
             assertEquals(true, actual4.isEmpty());
+        }
+
+    }
+
+    @Nested
+    class ExcludeSymptomaticTest {
+
+        @Test
+        @DisplayName("発症したからだパーツカードを除外できる1")
+        void success1() {
+            // Given:
+            var bodyB = BodyPartCard.create(Color.BLUE);
+            var bodyR = BodyPartCard.create(Color.RED);
+            var bodyG = BodyPartCard.create(Color.GREEN);
+            var bodyY = BodyPartCard.create(Color.YELLOW);
+
+            var bodyArea = BodyArea.create();
+            bodyArea.place(0, bodyB);
+            bodyArea.place(1, bodyR);
+            bodyArea.place(2, bodyG);
+            bodyArea.place(3, bodyY);
+
+            bodyArea.get(0).ifPresent(card -> card.apply(VirusCard.create(Color.BLUE)));
+            bodyArea.get(0).ifPresent(card -> card.apply(VirusCard.create(Color.BLUE)));
+
+            // When:
+            var actuals = bodyArea.excludeSymptomatic();
+
+            // Then:
+            assertEquals(3, bodyArea.count());
+            assertEquals(bodyB, actuals.get(0).get());
+        }
+
+        @Test
+        @DisplayName("発症したからだパーツカードを除外できる2")
+        void success2() {
+            // Given:
+            var bodyB = BodyPartCard.create(Color.BLUE);
+            var bodyR = BodyPartCard.create(Color.RED);
+            var bodyG = BodyPartCard.create(Color.GREEN);
+            var bodyY = BodyPartCard.create(Color.YELLOW);
+
+            var bodyArea = BodyArea.create();
+            bodyArea.place(0, bodyB);
+            bodyArea.place(1, bodyR);
+            bodyArea.place(2, bodyG);
+            bodyArea.place(3, bodyY);
+
+            bodyArea.get(0).ifPresent(card -> card.apply(VirusCard.create(Color.BLUE)));
+            bodyArea.get(0).ifPresent(card -> card.apply(VirusCard.create(Color.BLUE)));
+            bodyArea.get(1).ifPresent(card -> card.apply(VirusCard.create(Color.RED)));
+            bodyArea.get(1).ifPresent(card -> card.apply(VirusCard.create(Color.RED)));
+
+            // When:
+            var actuals = bodyArea.excludeSymptomatic();
+
+            // Then:
+            assertEquals(2, bodyArea.count());
+            assertEquals(bodyB, actuals.get(0).get());
+            assertEquals(bodyR, actuals.get(1).get());
+        }
+
+        @Test
+        @DisplayName("発症したからだパーツカードを除外できる3")
+        void success3() {
+            // Given:
+            var bodyB = BodyPartCard.create(Color.BLUE);
+            var bodyR = BodyPartCard.create(Color.RED);
+            var bodyG = BodyPartCard.create(Color.GREEN);
+            var bodyY = BodyPartCard.create(Color.YELLOW);
+
+            var bodyArea = BodyArea.create();
+            bodyArea.place(0, bodyB);
+            bodyArea.place(1, bodyR);
+            bodyArea.place(2, bodyG);
+            bodyArea.place(3, bodyY);
+
+            bodyArea.get(0).ifPresent(card -> card.apply(VirusCard.create(Color.BLUE)));
+            bodyArea.get(0).ifPresent(card -> card.apply(VirusCard.create(Color.BLUE)));
+            bodyArea.get(1).ifPresent(card -> card.apply(VirusCard.create(Color.RED)));
+            bodyArea.get(1).ifPresent(card -> card.apply(VirusCard.create(Color.RED)));
+            bodyArea.get(2).ifPresent(card -> card.apply(VirusCard.create(Color.GREEN)));
+            bodyArea.get(2).ifPresent(card -> card.apply(VirusCard.create(Color.GREEN)));
+
+            // When:
+            var actuals = bodyArea.excludeSymptomatic();
+
+            // Then:
+            assertEquals(1, bodyArea.count());
+            assertEquals(bodyB, actuals.get(0).get());
+            assertEquals(bodyR, actuals.get(1).get());
+            assertEquals(bodyG, actuals.get(2).get());
+        }
+
+        @Test
+        @DisplayName("発症したからだパーツカードを除外できる4")
+        void success4() {
+            // Given:
+            var bodyB = BodyPartCard.create(Color.BLUE);
+            var bodyR = BodyPartCard.create(Color.RED);
+            var bodyG = BodyPartCard.create(Color.GREEN);
+            var bodyY = BodyPartCard.create(Color.YELLOW);
+
+            var bodyArea = BodyArea.create();
+            bodyArea.place(0, bodyB);
+            bodyArea.place(1, bodyR);
+            bodyArea.place(2, bodyG);
+            bodyArea.place(3, bodyY);
+
+            bodyArea.get(0).ifPresent(card -> card.apply(VirusCard.create(Color.BLUE)));
+            bodyArea.get(0).ifPresent(card -> card.apply(VirusCard.create(Color.BLUE)));
+            bodyArea.get(1).ifPresent(card -> card.apply(VirusCard.create(Color.RED)));
+            bodyArea.get(1).ifPresent(card -> card.apply(VirusCard.create(Color.RED)));
+            bodyArea.get(2).ifPresent(card -> card.apply(VirusCard.create(Color.GREEN)));
+            bodyArea.get(2).ifPresent(card -> card.apply(VirusCard.create(Color.GREEN)));
+            bodyArea.get(3).ifPresent(card -> card.apply(VirusCard.create(Color.YELLOW)));
+            bodyArea.get(3).ifPresent(card -> card.apply(VirusCard.create(Color.YELLOW)));
+
+            // When:
+            var actuals = bodyArea.excludeSymptomatic();
+
+            // Then:
+            assertEquals(0, bodyArea.count());
+            assertEquals(bodyB, actuals.get(0).get());
+            assertEquals(bodyR, actuals.get(1).get());
+            assertEquals(bodyG, actuals.get(2).get());
+            assertEquals(bodyY, actuals.get(3).get());
         }
 
     }
