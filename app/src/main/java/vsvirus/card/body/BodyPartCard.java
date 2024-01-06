@@ -85,6 +85,10 @@ public final class BodyPartCard implements ICard {
         return true;
     }
 
+    public boolean canNotExclude() {
+        return !canExclude();
+    }
+
     public boolean symptomaticed() {
         return this.status == Status.SYMPTOMATIC;
     }

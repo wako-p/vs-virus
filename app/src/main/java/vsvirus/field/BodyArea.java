@@ -5,7 +5,10 @@ import java.util.Collections;
 import java.util.List;
 import java.util.Optional;
 
+import vsvirus.card.ICard;
 import vsvirus.card.body.BodyPartCard;
+import vsvirus.card.medicine.MedicineCard;
+import vsvirus.card.virus.VirusCard;
 
 /**
  * からだエリア
@@ -40,16 +43,16 @@ public final class BodyArea {
 
     public void place(final int index, final BodyPartCard body) {
 
-        if (!isValidIndex(index)) {
+        if (outRange(index)) {
             throw new IllegalArgumentException();
         }
 
-        if (isValidExist(index)) {
+        if (exists(index)) {
             throw new IllegalStateException();
         }
 
         // 同じ色のからだパーツカードを複数置くことはできない
-        if (isValidDuplicate(body)) {
+        if (isDuplicate(body)) {
             throw new IllegalStateException();
         }
 
@@ -57,21 +60,72 @@ public final class BodyArea {
     }
 
     public Optional<BodyPartCard> get(final int index) {
-        if (!isValidIndex(index)) {
+        if (outRange(index)) {
             throw new IllegalArgumentException();
         }
         return this.bodies.get(index);
     }
 
-    private boolean isValidIndex(final int index) {
+    public List<Optional<ICard>> applyTo(final int index, final MedicineCard medicine) {
+
+        if (outRange(index)) {
+            throw new IllegalArgumentException();
+        }
+
+        if (notExists(index)) {
+            throw new IllegalStateException();
+        }
+
+        var body = this.bodies.get(index).get();
+        body.apply(medicine);
+
+        if (body.canNotExclude()) {
+            return new ArrayList<>();
+        }
+
+        var exclusions = body.exclude();
+        return exclusions;
+    }
+
+    public List<Optional<ICard>> applyTo(final int index, final VirusCard virus) {
+
+        if (outRange(index)) {
+            throw new IllegalArgumentException();
+        }
+
+        if (notExists(index)) {
+            throw new IllegalStateException();
+        }
+
+        var body = this.bodies.get(index).get();
+        body.apply(virus);
+
+        if (body.canNotExclude()) {
+            return new ArrayList<>();
+        }
+
+        var exclusions = body.exclude();
+        return exclusions;
+    }
+
+
+    private boolean inRange(final int index) {
         return MIN <= index && index <= MAX;
     }
 
-    private boolean isValidExist(final int index) {
+    private boolean outRange(final int index) {
+        return !inRange(index);
+    }
+
+    private boolean exists(final int index) {
         return this.bodies.get(index).isPresent();
+    }
+
+    private boolean notExists(final int index) {
+        return !exists(index);
     } 
 
-    private boolean isValidDuplicate(final BodyPartCard newBody) {
+    private boolean isDuplicate(final BodyPartCard newBody) {
         // 同じ色のからだパーツカードでフィルタしてその数をカウントする
         var duplicateCount = this.bodies
                 .stream()

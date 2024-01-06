@@ -15,6 +15,8 @@ import org.junit.jupiter.params.provider.ValueSource;
 
 import vsvirus.card.Color;
 import vsvirus.card.body.BodyPartCard;
+import vsvirus.card.body.Status;
+import vsvirus.card.medicine.MedicineCard;
 import vsvirus.card.virus.VirusCard;
 
 class BodyAreaTest {
@@ -222,6 +224,127 @@ class BodyAreaTest {
             // Then:
             assertEquals(true, actual3.isEmpty());
             assertEquals(true, actual4.isEmpty());
+        }
+
+    }
+
+    @Nested
+    class ApplyToTest {
+
+        @Test
+        void success1() {
+            // Given:
+            var bodyB = BodyPartCard.create(Color.BLUE);
+            var bodyArea = BodyArea.create();
+            bodyArea.place(0, bodyB);
+
+            // When:
+            var actuals = bodyArea.applyTo(0, MedicineCard.create(Color.BLUE));
+
+            // Then:
+            assertEquals(0, actuals.size());
+            assertEquals(Status.PASSIVELY_IMMUNIZED, bodyArea.get(0).get().getStatus());
+        }
+
+        @Test
+        void success2() {
+            // Given:
+            var bodyB = BodyPartCard.create(Color.BLUE);
+            var bodyArea = BodyArea.create();
+            bodyArea.place(0, bodyB);
+
+            var medicine = MedicineCard.create(Color.BLUE);
+            var virus = VirusCard.create(Color.BLUE);
+
+            // When:
+            var actuals1 = bodyArea.applyTo(0, medicine);
+            var actuals2 = bodyArea.applyTo(0, virus);
+
+            // Then:
+            assertEquals(0, actuals1.size());
+            assertEquals(2, actuals2.size());
+            assertEquals(medicine, actuals2.get(0).get());
+            assertEquals(virus, actuals2.get(1).get());
+            assertEquals(Status.HEALTHY, bodyArea.get(0).get().getStatus());
+        }
+
+        @Test
+        void success3() {
+            // Given:
+            var bodyB = BodyPartCard.create(Color.BLUE);
+            var bodyArea = BodyArea.create();
+            bodyArea.place(0, bodyB);
+
+            var medicine1 = MedicineCard.create(Color.BLUE);
+            var medicine2 = MedicineCard.create(Color.BLUE);
+
+            // When:
+            var actuals1 = bodyArea.applyTo(0, medicine1);
+            var actuals2 = bodyArea.applyTo(0, medicine2);
+
+            // Then:
+            assertEquals(0, actuals1.size());
+            assertEquals(0, actuals2.size());
+            assertEquals(Status.IMMUNIZED, bodyArea.get(0).get().getStatus());
+        }
+
+        @Test
+        void success4() {
+            // Given:
+            var bodyB = BodyPartCard.create(Color.BLUE);
+            var bodyArea = BodyArea.create();
+            bodyArea.place(0, bodyB);
+
+            // When:
+            var actuals = bodyArea.applyTo(0, VirusCard.create(Color.BLUE));
+
+            // Then:
+            assertEquals(0, actuals.size());
+            assertEquals(Status.INFECTED, bodyArea.get(0).get().getStatus());
+        }
+
+        @Test
+        void success5() {
+            // Given:
+            var bodyB = BodyPartCard.create(Color.BLUE);
+            var bodyArea = BodyArea.create();
+            bodyArea.place(0, bodyB);
+
+            var virus = VirusCard.create(Color.BLUE);
+            var medicine = MedicineCard.create(Color.BLUE);
+
+            // When:
+            var actuals1 = bodyArea.applyTo(0, virus);
+            var actuals2 = bodyArea.applyTo(0, medicine);
+
+            // Then:
+            assertEquals(0, actuals1.size());
+            assertEquals(2, actuals2.size());
+            assertEquals(virus, actuals2.get(0).get());
+            assertEquals(medicine, actuals2.get(1).get());
+            assertEquals(Status.HEALTHY, bodyArea.get(0).get().getStatus());
+        }
+
+        @Test
+        void success6() {
+            // Given:
+            var bodyB = BodyPartCard.create(Color.BLUE);
+            var bodyArea = BodyArea.create();
+            bodyArea.place(0, bodyB);
+
+            var virus1 = VirusCard.create(Color.BLUE);
+            var virus2 = VirusCard.create(Color.BLUE);
+
+            // When:
+            var actuals1 = bodyArea.applyTo(0, virus1);
+            var actuals2 = bodyArea.applyTo(0, virus2);
+
+            // Then:
+            assertEquals(0, actuals1.size());
+            assertEquals(2, actuals2.size());
+            assertEquals(virus1, actuals2.get(0).get());
+            assertEquals(virus2, actuals2.get(1).get());
+            assertEquals(Status.SYMPTOMATIC, bodyArea.get(0).get().getStatus());
         }
 
     }
