@@ -4,6 +4,7 @@ import java.util.ArrayList;
 import java.util.Collections;
 import java.util.List;
 import java.util.Optional;
+import java.util.stream.Collectors;
 
 import vsvirus.card.ICard;
 import vsvirus.card.body.BodyPartCard;
@@ -59,7 +60,7 @@ public final class BodyArea {
         this.bodies.add(index, Optional.of(body));
     }
 
-    public Optional<BodyPartCard> get(final int index) {
+    Optional<BodyPartCard> get(final int index) {
         if (outRange(index)) {
             throw new IllegalArgumentException();
         }
@@ -151,6 +152,17 @@ public final class BodyArea {
         }
 
         return excludeBodies;
+    }
+
+    @Override
+    public String toString() {
+        var result = this.bodies
+            .stream()
+            .filter(Optional::isPresent)
+            .map(maybeBody -> maybeBody.map(body -> body.toString()).orElse(""))
+            .collect(Collectors.toList());
+
+        return String.join(System.getProperty("line.separator"), result);
     }
 
 }

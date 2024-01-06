@@ -75,4 +75,15 @@ final class ApplicationCards {
         return removeCards;
     }
 
+    @Override
+    public String toString() {
+        var result = this.cards
+            .stream()
+            .filter(Optional::isPresent)
+            .map(maybeBody -> maybeBody.map(card -> card.toString()).orElse(""))
+            .collect(Collectors.toList());
+
+        return String.join("", result);
+    }
+
 }

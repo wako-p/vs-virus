@@ -20,4 +20,9 @@ public final class VirusCard implements ICard {
         return new VirusCard(color);
     }
 
+    @Override
+    public String toString() {
+        return "[V%s]".formatted(this.color.toString());
+    }
+
 }

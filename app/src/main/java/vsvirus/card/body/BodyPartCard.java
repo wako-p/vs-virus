@@ -93,4 +93,9 @@ public final class BodyPartCard implements ICard {
         return this.status == Status.SYMPTOMATIC;
     }
 
+    @Override
+    public String toString() {
+        return "[B%s]%s".formatted(this.color.toString(), this.applicationCards.toString());
+    }
+
 }

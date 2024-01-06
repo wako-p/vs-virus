@@ -20,4 +20,9 @@ public final class MedicineCard implements ICard {
         return new MedicineCard(color);
     }
 
+    @Override
+    public String toString() {
+        return "[M%s]".formatted(this.color.toString());
+    }
+
 }

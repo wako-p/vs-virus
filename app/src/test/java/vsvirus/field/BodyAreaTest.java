@@ -476,4 +476,153 @@ class BodyAreaTest {
 
     }
 
+    @Nested
+    class ToStringTest {
+
+        @Test
+        void success1() {
+            // Given:
+            var bodyArea = BodyArea.create();
+
+            // When:
+            var actual = bodyArea.toString();
+
+            // Then:
+            assertEquals("", actual);
+        }
+
+        @Test
+        void success2() {
+            // Given:
+            var bodyArea = BodyArea.create();
+            bodyArea.place(0, BodyPartCard.create(Color.BLUE));
+
+            // When:
+            var actual = bodyArea.toString();
+
+            // Then:
+            assertEquals("[BB]", actual);
+        }
+
+        @Test
+        void success3() {
+            // Given:
+            var bodyArea = BodyArea.create();
+            bodyArea.place(0, BodyPartCard.create(Color.BLUE));
+            bodyArea.place(1, BodyPartCard.create(Color.RED));
+
+            // When:
+            var actual = bodyArea.toString();
+
+            // Then:
+            assertEquals("""
+                [BB]
+                [BR]""", actual);
+        }
+
+        @Test
+        void success4() {
+            // Given:
+            var bodyArea = BodyArea.create();
+            bodyArea.place(0, BodyPartCard.create(Color.BLUE));
+            bodyArea.place(1, BodyPartCard.create(Color.RED));
+            bodyArea.place(2, BodyPartCard.create(Color.GREEN));
+
+            // When:
+            var actual = bodyArea.toString();
+
+            // Then:
+            assertEquals("""
+                [BB]
+                [BR]
+                [BG]""", actual);
+        }
+
+        @Test
+        void success5() {
+            // Given:
+            var bodyArea = BodyArea.create();
+            bodyArea.place(0, BodyPartCard.create(Color.BLUE));
+            bodyArea.place(1, BodyPartCard.create(Color.RED));
+            bodyArea.place(2, BodyPartCard.create(Color.GREEN));
+            bodyArea.place(3, BodyPartCard.create(Color.YELLOW));
+
+            // When:
+            var actual = bodyArea.toString();
+
+            // Then:
+            assertEquals("""
+                [BB]
+                [BR]
+                [BG]
+                [BY]""", actual);
+        }
+
+        @Test
+        void success6() {
+            // Given:
+            var bodyArea = BodyArea.create();
+            bodyArea.place(0, BodyPartCard.create(Color.BLUE));
+            bodyArea.place(1, BodyPartCard.create(Color.RED));
+            bodyArea.place(2, BodyPartCard.create(Color.GREEN));
+            bodyArea.place(3, BodyPartCard.create(Color.YELLOW));
+
+            // When:
+            bodyArea.applyTo(0, VirusCard.create(Color.BLUE));
+            var actual = bodyArea.toString();
+
+            // Then:
+            assertEquals("""
+                [BB][VB]
+                [BR]
+                [BG]
+                [BY]""", actual);
+        }
+
+        @Test
+        void success7() {
+            // Given:
+            var bodyArea = BodyArea.create();
+            bodyArea.place(0, BodyPartCard.create(Color.BLUE));
+            bodyArea.place(1, BodyPartCard.create(Color.RED));
+            bodyArea.place(2, BodyPartCard.create(Color.GREEN));
+            bodyArea.place(3, BodyPartCard.create(Color.YELLOW));
+
+            // When:
+            bodyArea.applyTo(0, VirusCard.create(Color.BLUE));
+            bodyArea.applyTo(1, VirusCard.create(Color.RED));
+            var actual = bodyArea.toString();
+
+            // Then:
+            assertEquals("""
+                [BB][VB]
+                [BR][VR]
+                [BG]
+                [BY]""", actual);
+        }
+
+        @Test
+        void success8() {
+            // Given:
+            var bodyArea = BodyArea.create();
+            bodyArea.place(0, BodyPartCard.create(Color.BLUE));
+            bodyArea.place(1, BodyPartCard.create(Color.RED));
+            bodyArea.place(2, BodyPartCard.create(Color.GREEN));
+            bodyArea.place(3, BodyPartCard.create(Color.YELLOW));
+
+            // When:
+            bodyArea.applyTo(0, MedicineCard.create(Color.BLUE));
+            bodyArea.applyTo(0, MedicineCard.create(Color.BLUE));
+            var actual = bodyArea.toString();
+
+            // Then:
+            assertEquals("""
+                [BB][MB][MB]
+                [BR]
+                [BG]
+                [BY]""", actual);
+        }
+
+    }
+
 }

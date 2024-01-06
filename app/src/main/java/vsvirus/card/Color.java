@@ -4,11 +4,17 @@ package vsvirus.card;
  * 色
  */
 public enum Color {
-    RED,
-    BLUE,
-    GREEN,
-    YELLOW,
-    MULTI;
+    BLUE("B"),
+    RED("R"),
+    GREEN("G"),
+    YELLOW("Y"),
+    MULTI("M");
+
+    private final String symbol;
+
+    private Color(final String symbol) {
+        this.symbol = symbol;
+    }
 
     public boolean equals(final Color other) {
 
@@ -21,6 +27,11 @@ public enum Color {
         }
 
         return false;
+    }
+
+    @Override
+    public String toString() {
+        return this.symbol;
     }
 
 }

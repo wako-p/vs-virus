@@ -330,4 +330,125 @@ class BodyPartCardTest {
 
     }
 
+    @Nested
+    class ToStringTest {
+
+        static Stream<Arguments> success1Pattern() {
+            return Stream.of(
+                Arguments.of(Color.BLUE, "[BB]"),
+                Arguments.of(Color.RED, "[BR]"),
+                Arguments.of(Color.GREEN, "[BG]"),
+                Arguments.of(Color.YELLOW, "[BY]")
+            );
+        }
+
+        @ParameterizedTest
+        @MethodSource("success1Pattern")
+        void success1(final Color color, final String expected) {
+            // Given:
+            var body = BodyPartCard.create(color);
+
+            // When:
+            var actual = body.toString();
+
+            // Then:
+            assertEquals(expected, actual);
+        }
+
+        static Stream<Arguments> success2Pattern() {
+            return Stream.of(
+                Arguments.of(Color.BLUE, "[BB][VB]"),
+                Arguments.of(Color.RED, "[BR][VR]"),
+                Arguments.of(Color.GREEN, "[BG][VG]"),
+                Arguments.of(Color.YELLOW, "[BY][VY]")
+            );
+        }
+
+        @ParameterizedTest
+        @MethodSource("success2Pattern")
+        void success2(final Color color, final String expected) {
+            // Given:
+            var body = BodyPartCard.create(color);
+            body.apply(VirusCard.create(color));
+
+            // When:
+            var actual = body.toString();
+
+            // Then:
+            assertEquals(expected, actual);
+        }
+
+        static Stream<Arguments> success3Pattern() {
+            return Stream.of(
+                Arguments.of(Color.BLUE, "[BB][VB][VB]"),
+                Arguments.of(Color.RED, "[BR][VR][VR]"),
+                Arguments.of(Color.GREEN, "[BG][VG][VG]"),
+                Arguments.of(Color.YELLOW, "[BY][VY][VY]")
+            );
+        }
+
+        @ParameterizedTest
+        @MethodSource("success3Pattern")
+        void success3(final Color color, final String expected) {
+            // Given:
+            var body = BodyPartCard.create(color);
+            body.apply(VirusCard.create(color));
+            body.apply(VirusCard.create(color));
+
+            // When:
+            var actual = body.toString();
+
+            // Then:
+            assertEquals(expected, actual);
+        }
+
+        static Stream<Arguments> success4Pattern() {
+            return Stream.of(
+                Arguments.of(Color.BLUE, "[BB][MB]"),
+                Arguments.of(Color.RED, "[BR][MR]"),
+                Arguments.of(Color.GREEN, "[BG][MG]"),
+                Arguments.of(Color.YELLOW, "[BY][MY]")
+            );
+        }
+
+        @ParameterizedTest
+        @MethodSource("success4Pattern")
+        void success4(final Color color, final String expected) {
+            // Given:
+            var body = BodyPartCard.create(color);
+            body.apply(MedicineCard.create(color));
+
+            // When:
+            var actual = body.toString();
+
+            // Then:
+            assertEquals(expected, actual);
+        }
+
+        static Stream<Arguments> success5Pattern() {
+            return Stream.of(
+                Arguments.of(Color.BLUE, "[BB][MB][MB]"),
+                Arguments.of(Color.RED, "[BR][MR][MR]"),
+                Arguments.of(Color.GREEN, "[BG][MG][MG]"),
+                Arguments.of(Color.YELLOW, "[BY][MY][MY]")
+            );
+        }
+
+        @ParameterizedTest
+        @MethodSource("success5Pattern")
+        void success5(final Color color, final String expected) {
+            // Given:
+            var body = BodyPartCard.create(color);
+            body.apply(MedicineCard.create(color));
+            body.apply(MedicineCard.create(color));
+
+            // When:
+            var actual = body.toString();
+
+            // Then:
+            assertEquals(expected, actual);
+        }
+
+    }
+
 }
