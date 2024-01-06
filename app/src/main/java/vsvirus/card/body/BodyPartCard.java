@@ -59,14 +59,34 @@ public final class BodyPartCard implements ICard {
         return this.color.equals(color);
     }
 
-    public List<Optional<ICard>> dispatchAll() {
+    public List<Optional<ICard>> exclude() {
 
-        if (this.status == Status.HEALTHY &&
-            this.applicationCards.isFull()) {
-                return this.applicationCards.removeAll();
+        if (canExclude()) {
+            return this.applicationCards.removeAll();
         }
 
         throw new IllegalStateException();
+    }
+
+    public boolean canExclude() {
+
+        if (this.applicationCards.isNotFull()) {
+            return false;
+        }
+
+        var maybe1st = this.applicationCards.first();
+        var maybe2nd = this.applicationCards.second();
+
+        if (maybe1st.map(card -> card.getClass() == MedicineCard.class).orElse(false) &&
+            maybe2nd.map(card -> card.getClass() == MedicineCard.class).orElse(false)) {
+            return false;
+        }
+
+        return true;
+    }
+
+    public boolean symptomaticed() {
+        return this.status == Status.SYMPTOMATIC;
     }
 
 }

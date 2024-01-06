@@ -227,10 +227,10 @@ class BodyPartCardTest {
     }
 
     @Nested
-    class DispatchAllTest {
+    class ExcludeTest {
 
         @Test
-        @DisplayName("薬カードとウィルスカードが適用されている場合は取り外すことができる")
+        @DisplayName("薬カードとウィルスカードが適用されている場合は除外できる")
         void success1() {
             // Given:
             var virus = VirusCard.create(Color.BLUE);
@@ -240,16 +240,16 @@ class BodyPartCardTest {
             body.apply(medicine);
 
             // When:
-            var actual = body.dispatchAll();
+            var actuals = body.exclude();
 
             // Then:
             assertEquals(Status.HEALTHY, body.getStatus());
-            assertEquals(virus, actual.get(0).get());
-            assertEquals(medicine, actual.get(1).get());
+            assertEquals(virus, actuals.get(0).get());
+            assertEquals(medicine, actuals.get(1).get());
         }
 
         @Test
-        @DisplayName("ウィルスカードと薬カードが適用されている場合は取り外すことができる")
+        @DisplayName("ウィルスカードと薬カードが適用されている場合は除外できる")
         void success2() {
             // Given:
             var medicine = MedicineCard.create(Color.BLUE);
@@ -259,12 +259,31 @@ class BodyPartCardTest {
             body.apply(virus);
 
             // When:
-            var actual = body.dispatchAll();
+            var actuals = body.exclude();
 
             // Then:
             assertEquals(Status.HEALTHY, body.getStatus());
-            assertEquals(medicine, actual.get(0).get());
-            assertEquals(virus, actual.get(1).get());
+            assertEquals(medicine, actuals.get(0).get());
+            assertEquals(virus, actuals.get(1).get());
+        }
+
+        @Test
+        @DisplayName("ウィルスカードが2枚適用されている場合は除外できる")
+        void success3() {
+            // Given:
+            var virus1 = VirusCard.create(Color.BLUE);
+            var virus2 = VirusCard.create(Color.BLUE);
+            var body = BodyPartCard.create(Color.BLUE);
+            body.apply(virus1);
+            body.apply(virus2);
+
+            // When:
+            var actuals = body.exclude();
+
+            // Then:
+            assertEquals(Status.SYMPTOMATIC, body.getStatus());
+            assertEquals(virus1, actuals.get(0).get());
+            assertEquals(virus2, actuals.get(1).get());
         }
 
         @Test
@@ -275,7 +294,7 @@ class BodyPartCardTest {
 
             // When/Then:
             assertThrows(IllegalStateException.class, () -> {
-                body.dispatchAll();
+                body.exclude();
             });
         }
 
@@ -289,7 +308,7 @@ class BodyPartCardTest {
 
             // When/Then:
             assertThrows(IllegalStateException.class, () -> {
-                body.dispatchAll();
+                body.exclude();
             });
         }
 
@@ -305,23 +324,7 @@ class BodyPartCardTest {
 
             // When/Then:
             assertThrows(IllegalStateException.class, () -> {
-                body.dispatchAll();
-            });
-        }
-
-        @Test
-        @DisplayName("ウィルスカードが2枚適用されている場合は例外がスローされる")
-        void failure4() {
-            // Given:
-            var virus1 = VirusCard.create(Color.BLUE);
-            var virus2 = VirusCard.create(Color.BLUE);
-            var body = BodyPartCard.create(Color.BLUE);
-            body.apply(virus1);
-            body.apply(virus2);
-
-            // When/Then:
-            assertThrows(IllegalStateException.class, () -> {
-                body.dispatchAll();
+                body.exclude();
             });
         }
 
